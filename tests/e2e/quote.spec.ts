@@ -33,8 +33,20 @@ async function watchWhatsApp(page: Page) {
 const messageIn = (url: string) => new URL(url).searchParams.get("text") ?? "";
 const referenceIn = (text: string) => /ABE-Q-\d{6}-[0-9A-Z]{4}/.exec(text)?.[0] ?? "";
 
+/** A click before React takes over the page does nothing. */
+async function waitForHydration(page: Page) {
+  await expect
+    .poll(() =>
+      page.evaluate(() =>
+        Object.keys(document.querySelector("main") ?? {}).some((key) => key.startsWith("__react")),
+      ),
+    )
+    .toBe(true);
+}
+
 async function addThreeMachines(page: Page) {
   await page.goto("/machinery?cat=rice-processing");
+  await waitForHydration(page);
   const names = ["SB10 Rice Mill", "JLX Rice Destoner", "CHP150 Rice Mill"];
   for (const [index, name] of names.entries()) {
     await page.getByRole("button", { name: `Add ${name} to quote list` }).click();
@@ -58,6 +70,35 @@ async function fillForm(page: Page) {
   await page.getByLabel("ABE may contact me about this request").check();
   await page.waitForTimeout(2100); // Faster than this looks like a bot.
 }
+
+// React ignores input events while a view transition starts, so one running over a form silently
+// loses what the customer entered: the field looks filled in, but the request goes without it.
+test("view transitions run only when the page changes", async ({ page }) => {
+  await page.addInitScript(() => {
+    const start = document.startViewTransition.bind(document);
+    const counter = window as unknown as { viewTransitions: number };
+    counter.viewTransitions = 0;
+    document.startViewTransition = ((update: never) => {
+      counter.viewTransitions += 1;
+      return start(update);
+    }) as typeof document.startViewTransition;
+  });
+  const count = () =>
+    page.evaluate(() => (window as unknown as { viewTransitions: number }).viewTransitions);
+
+  await page.goto("/machinery?cat=rice-processing");
+  await waitForHydration(page);
+  await page.getByRole("button", { name: "Add SB10 Rice Mill to quote list" }).click();
+  await expect(page.getByRole("banner").locator("[data-quote-target]")).toContainText("1");
+  await page.waitForTimeout(1_000);
+  expect(await count(), "adding to the list stays on the same page").toBe(0);
+
+  await page.getByRole("banner").locator("[data-quote-target]").click();
+  await page.getByRole("dialog").getByRole("link", { name: "Review and send request" }).click();
+  await expect(page.getByLabel("Full name")).toBeVisible();
+  await page.waitForTimeout(2_000);
+  expect(await count(), "one cross-fade to the new page, and none over the form").toBe(1);
+});
 
 test("add 3 items, submit: correct WhatsApp link, lead saved, email sent", async ({ page }) => {
   const opened = await watchWhatsApp(page);
