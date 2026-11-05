@@ -40,15 +40,20 @@ async function play(evalCase: EvalCase): Promise<Transcript> {
     customerText += ` ${turn}`;
     messages.push({ role: "user", content: turn });
     // Streams like the API route does, so evals take the same path as customers.
+    let streamError: unknown;
     const result = streamText({
       model,
       ...kobbySettings("", { customerText }),
       messages,
       onError: ({ error }) => {
-        throw error;
+        streamError = error;
       },
     });
-    const usage = await result.usage;
+    // The SDK reports a failed stream as "no output", so report the cause it passed to onError.
+    const usage = await Promise.resolve(result.usage).catch((error: unknown) => {
+      throw streamError ?? error;
+    });
+    if (streamError) throw streamError;
     messages.push(...(await result.response).messages);
     transcript.replies.push(await result.text);
     for (const step of await result.steps) {

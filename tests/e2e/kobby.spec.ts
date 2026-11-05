@@ -132,6 +132,8 @@ test("the chat survives moving to another page, and reset clears it", async ({ p
   await say(page, "Hello");
   const reply = dialog.getByText("Tell me what you grow or process, and I will");
   await expect(reply).toBeVisible();
+  // The chips return when the reply has finished, which is when the chat is saved.
+  await expect(dialog.getByRole("button", { name: "Get a quote" })).toBeVisible();
 
   await page.keyboard.press("Escape");
   await page.goto("/about");
