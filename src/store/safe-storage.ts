@@ -1,0 +1,26 @@
+import type { StateStorage } from "zustand/middleware";
+
+// Private windows and blocked site data make localStorage throw (BUILD_SPEC §2).
+export const safeStorage: StateStorage = {
+  getItem(name) {
+    try {
+      return localStorage.getItem(name);
+    } catch {
+      return null;
+    }
+  },
+  setItem(name, value) {
+    try {
+      localStorage.setItem(name, value);
+    } catch {
+      // The list still works for this visit.
+    }
+  },
+  removeItem(name) {
+    try {
+      localStorage.removeItem(name);
+    } catch {
+      // Nothing to remove.
+    }
+  },
+};

@@ -1,5 +1,6 @@
 import { create } from "zustand";
-import { createJSONStorage, persist, type StateStorage } from "zustand/middleware";
+import { createJSONStorage, persist } from "zustand/middleware";
+import { safeStorage } from "@/store/safe-storage";
 
 const MAX_LINES = 50;
 const MAX_QTY = 999;
@@ -14,31 +15,6 @@ type QuoteState = {
    * Returns the new quantity, or 0 if the list is full.
    */
   add: (slug: string, qty?: number) => number;
-};
-
-// Private windows and blocked site data make localStorage throw (BUILD_SPEC §2).
-const safeStorage: StateStorage = {
-  getItem(name) {
-    try {
-      return localStorage.getItem(name);
-    } catch {
-      return null;
-    }
-  },
-  setItem(name, value) {
-    try {
-      localStorage.setItem(name, value);
-    } catch {
-      // The list still works for this visit.
-    }
-  },
-  removeItem(name) {
-    try {
-      localStorage.removeItem(name);
-    } catch {
-      // Nothing to remove.
-    }
-  },
 };
 
 export const useQuoteStore = create<QuoteState>()(

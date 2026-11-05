@@ -1,6 +1,6 @@
-import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Disclosure, DisclosureGroup } from "@/components/ui/disclosure";
 import faqs from "../../../content/faq.json";
 import { SectionHeading } from "./section-heading";
 
@@ -15,20 +15,13 @@ export function FaqTeaser() {
           </Button>
         }
       />
-      <div className="max-w-3xl divide-y divide-border border-y border-border">
+      <DisclosureGroup>
         {faqs.slice(0, 4).map((faq) => (
-          <details key={faq.question} className="group">
-            <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 py-3 font-semibold [&::-webkit-details-marker]:hidden">
-              {faq.question}
-              <ChevronDown
-                aria-hidden
-                className="size-5 shrink-0 text-forest transition-transform group-open:rotate-180"
-              />
-            </summary>
-            <p className="max-w-prose pb-4">{faq.answer}</p>
-          </details>
+          <Disclosure key={faq.question} summary={faq.question}>
+            <p>{faq.answer}</p>
+          </Disclosure>
         ))}
-      </div>
+      </DisclosureGroup>
     </section>
   );
 }

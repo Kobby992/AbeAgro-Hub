@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { ViewTransition, type ReactNode } from "react";
 import { FloatingButtons } from "@/components/layout/floating-buttons";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
@@ -31,7 +31,8 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
         }
       />
       <main id="main" tabIndex={-1} className="outline-none">
-        {children}
+        {/* Cross-fades pages; named elements inside morph between them (BUILD_SPEC §5.1). */}
+        <ViewTransition>{children}</ViewTransition>
       </main>
       <Footer />
       <FloatingButtons />

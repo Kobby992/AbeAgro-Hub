@@ -1,22 +1,18 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { FlyToQuote } from "@/components/motion/fly-to-quote";
 import { MachineCard } from "@/components/product/machine-card";
 import { Button } from "@/components/ui/button";
-import { notify } from "@/lib/notify";
+import { useAddToQuote } from "@/hooks/use-add-to-quote";
 import type { CardProduct } from "@/lib/products";
-import { useQuoteStore } from "@/store/quote";
 
 /** Swipes natively on touch and shows arrows on desktop (BUILD_SPEC §6.2). */
 export function FeaturedCarousel({ products }: { products: CardProduct[] }) {
   const rail = useRef<HTMLUListElement>(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
-  const addToQuote = useQuoteStore((state) => state.add);
-  const router = useRouter();
+  const addToQuote = useAddToQuote();
 
   const updateEnds = useCallback(() => {
     const element = rail.current;
@@ -43,17 +39,6 @@ export function FeaturedCarousel({ products }: { products: CardProduct[] }) {
     });
   }
 
-  function confirmAdded(name: string, qty: number) {
-    const viewList = { label: "View list", onClick: () => router.push("/quote") };
-    if (qty > 1) {
-      void notify(`${name} is already on your list. Quantity is now ${qty}.`, viewList);
-    } else if (qty === 1) {
-      void notify("Added to your quote list", viewList);
-    } else {
-      void notify("Your quote list is full. Send this request, then start a new one.", viewList);
-    }
-  }
-
   return (
     <div>
       <div className="mb-3 hidden justify-end gap-2 lg:flex">
@@ -77,31 +62,25 @@ export function FeaturedCarousel({ products }: { products: CardProduct[] }) {
         </Button>
       </div>
 
-      <FlyToQuote>
-        {(fly) => (
-          <ul
-            ref={rail}
-            onScroll={updateEnds}
-            tabIndex={0}
-            aria-label="Featured machines"
-            className="no-scrollbar -mx-(--gutter) flex snap-x snap-mandatory scroll-px-(--gutter) gap-3 overflow-x-auto px-(--gutter) py-2 md:gap-4"
+      <ul
+        ref={rail}
+        onScroll={updateEnds}
+        tabIndex={0}
+        aria-label="Featured machines"
+        className="no-scrollbar -mx-(--gutter) flex snap-x snap-mandatory scroll-px-(--gutter) gap-3 overflow-x-auto px-(--gutter) py-2 md:gap-4"
+      >
+        {products.map((product) => (
+          <li
+            key={product.slug}
+            className="w-[72%] max-w-72 shrink-0 snap-start sm:w-64 lg:w-[calc((100%-3rem)/4)] lg:max-w-none"
           >
-            {products.map(({ slug, ...product }) => (
-              <li
-                key={slug}
-                className="w-[72%] max-w-72 shrink-0 snap-start sm:w-64 lg:w-[calc((100%-3rem)/4)] lg:max-w-none"
-              >
-                <MachineCard
-                  {...product}
-                  onAdd={(trigger) =>
-                    fly(trigger, () => confirmAdded(product.name, addToQuote(slug)))
-                  }
-                />
-              </li>
-            ))}
-          </ul>
-        )}
-      </FlyToQuote>
+            <MachineCard
+              {...product}
+              onAdd={(trigger) => addToQuote(trigger, product.slug, product.name)}
+            />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

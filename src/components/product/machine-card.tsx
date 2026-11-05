@@ -3,6 +3,7 @@
 import { Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { ViewTransition, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/field";
 import { CategoryBadge, ConfirmHint, SpecPlate } from "@/components/ui/tags";
@@ -10,7 +11,13 @@ import { categoryName, type CategorySlug } from "@/config/categories";
 import { cn } from "@/lib/utils";
 
 export type MachineCardProps = {
+  /** Turns on the photo morph into the product page (BUILD_SPEC §5.1). */
+  slug?: string;
   name: string;
+  /** Replaces the visible name, for example with search matches highlighted. */
+  nameContent?: ReactNode;
+  /** For cards in the first row, so the photo loads straight away. */
+  priority?: boolean;
   summary: string;
   image: string;
   category: CategorySlug;
@@ -33,7 +40,10 @@ export type MachineCardProps = {
  * they help buyers compare, and hiding them left a large gap in every card on desktop.
  */
 export function MachineCard({
+  slug,
   name,
+  nameContent,
+  priority = false,
   summary,
   image,
   category,
@@ -49,6 +59,22 @@ export function MachineCard({
 }: MachineCardProps) {
   const previewing = preview === "hover";
 
+  const stage = (
+    <div className="machine-stage">
+      <Image
+        src={image}
+        alt={`${name} — ${categoryName(category)}`}
+        fill
+        priority={priority}
+        sizes="(min-width: 1024px) 300px, (min-width: 768px) 33vw, 50vw"
+        className={cn(
+          "object-contain p-4 group-focus-within:scale-[1.04] group-hover:scale-[1.04]",
+          previewing && "scale-[1.04]",
+        )}
+      />
+    </div>
+  );
+
   return (
     <article
       data-cat={category}
@@ -56,19 +82,14 @@ export function MachineCard({
       data-fly-root
       className="group lift-card flex h-full flex-col rounded-lg border-t-[3px] border-cat bg-card shadow-sm"
     >
-      <Link href={href} tabIndex={-1} aria-hidden className="block">
-        <div className="machine-stage">
-          <Image
-            src={image}
-            alt=""
-            fill
-            sizes="(min-width: 1024px) 300px, (min-width: 768px) 33vw, 50vw"
-            className={cn(
-              "object-contain p-4 group-focus-within:scale-[1.04] group-hover:scale-[1.04]",
-              previewing && "scale-[1.04]",
-            )}
-          />
-        </div>
+      <Link href={href} tabIndex={-1} className="block">
+        {slug ? (
+          <ViewTransition name={`product-${slug}`} share="morph" default="none">
+            {stage}
+          </ViewTransition>
+        ) : (
+          stage
+        )}
       </Link>
 
       <div className="flex flex-1 flex-col gap-2 p-3 sm:p-4">
@@ -77,7 +98,7 @@ export function MachineCard({
         </CategoryBadge>
         <h3 className="text-lg leading-tight">
           <Link href={href} className="hover:underline">
-            {name}
+            {nameContent ?? name}
           </Link>
         </h3>
         <p className="line-clamp-2 text-sm text-muted-foreground">{summary}</p>

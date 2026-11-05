@@ -12,7 +12,7 @@ import { selectQuoteCount, useQuoteStore } from "@/store/quote";
 // Only the launcher ships with the page; the panel loads on first open (BUILD_SPEC §7.6).
 const KobbyPanel = dynamic(() => import("@/components/kobby/kobby-panel"), { ssr: false });
 
-const SAFE_BOTTOM = "bottom-[max(1rem,env(safe-area-inset-bottom))]";
+const SAFE_BOTTOM = "bottom-(--floating-bottom)";
 
 export function FloatingButtons() {
   const count = useQuoteStore(selectQuoteCount);

@@ -1,6 +1,6 @@
 import { Bird, CookingPot, Nut, ShowerHead, SprayCan, Wheat, Wrench } from "lucide-react";
 import Link from "next/link";
-import type { ComponentType, SVGProps } from "react";
+import { ViewTransition, type ComponentType, type SVGProps } from "react";
 import {
   DropIcon,
   GearIcon,
@@ -34,15 +34,29 @@ const icons: Record<
   utility: { Icon: ShowerHead, motion: "icon-sway" },
 };
 
-export function CategoryIconTile({ category }: { category: CategorySlug }) {
+export function CategoryIconTile({
+  category,
+  morph = false,
+}: {
+  category: CategorySlug;
+  /** Morphs between the home tile and the category page header (BUILD_SPEC §5.1). */
+  morph?: boolean;
+}) {
   const { Icon, motion } = icons[category];
-  return (
+  const tile = (
     <span
       data-cat={category}
       className="flex size-12 items-center justify-center rounded-md bg-cat text-cat-on"
     >
       <Icon aria-hidden className={`size-6 ${motion}`} />
     </span>
+  );
+  return morph ? (
+    <ViewTransition name={`category-${category}`} share="morph" default="none">
+      {tile}
+    </ViewTransition>
+  ) : (
+    tile
   );
 }
 
@@ -64,7 +78,7 @@ export function CategoryTile({
         data-preview={preview}
         className="group lift-card flex h-full min-h-32 flex-col justify-between gap-4 rounded-lg border-t-[3px] border-cat bg-card p-4 shadow-sm"
       >
-        <CategoryIconTile category={category} />
+        <CategoryIconTile category={category} morph />
         <span className="font-display text-lg leading-tight font-bold [font-stretch:87.5%]">
           {categoryName(category)}
         </span>

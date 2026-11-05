@@ -1,13 +1,13 @@
 "use client";
 
-import Fuse from "fuse.js";
 import { Search } from "lucide-react";
 import Form from "next/form";
 import Link from "next/link";
 import { Dialog } from "radix-ui";
 import { useEffect, useMemo, useState } from "react";
+import { createProductSearch, type SearchEntry } from "@/lib/search";
 
-type Entry = { slug: string; name: string; category: string; summary: string };
+type Entry = SearchEntry & { category: string };
 
 const MAX_RESULTS = 8;
 
@@ -40,25 +40,9 @@ export default function SearchPalette({
     };
   }, []);
 
-  // Tolerates typos such as "hamer mil" (BUILD_SPEC §2).
-  const fuse = useMemo(
-    () =>
-      new Fuse(entries, {
-        threshold: 0.4,
-        ignoreLocation: true,
-        keys: [
-          { name: "name", weight: 3 },
-          { name: "category", weight: 1 },
-          { name: "summary", weight: 1 },
-        ],
-      }),
-    [entries],
-  );
-
+  const search = useMemo(() => createProductSearch(entries), [entries]);
   const trimmed = query.trim();
-  const results = trimmed
-    ? fuse.search(trimmed, { limit: MAX_RESULTS }).map((hit) => hit.item)
-    : [];
+  const results = (search(trimmed) ?? []).slice(0, MAX_RESULTS).map((hit) => hit.item);
   const close = () => onOpenChange(false);
 
   return (

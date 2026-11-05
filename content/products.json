@@ -46,7 +46,19 @@
     ],
     "typicalUses": "Weeding, bush clearing, plantation and orchard maintenance, roadside and compound grass cutting.",
     "image": "/products/ztl-543-brush-cutter.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "ZTL-543 Brush Cutter",
+    "powerSource": [
+      "petrol"
+    ],
+    "scale": "small-business",
+    "crops": [],
+    "relatedSlugs": [
+      "precision-seed-planter",
+      "solo-port-423-motorized-mist-blower",
+      "petrol-water-pump-3-inch-wp30"
+    ],
+    "featured": false
   },
   {
     "id": 2,
@@ -87,7 +99,22 @@
     ],
     "typicalUses": "Preparing chopped forage and crushed grain for cattle, sheep, goats, rabbits and poultry.",
     "image": "/products/multi-purpose-chaff-cutter.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Chaff Cutter",
+    "powerSource": [
+      "electric"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "maize",
+      "livestock-feed"
+    ],
+    "relatedSlugs": [
+      "hammer-mill",
+      "electric-feed-pelletizing-machine",
+      "electric-motors-for-agricultural-machinery"
+    ],
+    "featured": false
   },
   {
     "id": 3,
@@ -128,7 +155,27 @@
     ],
     "typicalUses": "Farm and community threshing of cereals and legumes; contract threshing services.",
     "image": "/products/model-900-multi-functional-thresher.jpg",
-    "needsConfirmation": true
+    "needsConfirmation": true,
+    "shortName": "Model 900 Thresher",
+    "powerSource": [
+      "diesel",
+      "electric"
+    ],
+    "scale": "commercial",
+    "crops": [
+      "maize",
+      "rice",
+      "sorghum",
+      "millet",
+      "soybean",
+      "beans"
+    ],
+    "relatedSlugs": [
+      "diesel-engine-for-agricultural-machinery",
+      "electric-maize-thresher",
+      "jlx-rice-destoner"
+    ],
+    "featured": false
   },
   {
     "id": 4,
@@ -165,7 +212,27 @@
     ],
     "typicalUses": "Maize flour, millet and sorghum flour, livestock feed meal, spice powders.",
     "image": "/products/grain-grinding-mill.jpg",
-    "needsConfirmation": true
+    "needsConfirmation": true,
+    "shortName": "Grain Grinding Mill",
+    "powerSource": [
+      "electric",
+      "diesel"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "maize",
+      "millet",
+      "sorghum",
+      "livestock-feed",
+      "pepper"
+    ],
+    "relatedSlugs": [
+      "diesel-engine-for-agricultural-machinery",
+      "electric-motors-for-agricultural-machinery",
+      "corn-mill",
+      "hammer-mill"
+    ],
+    "featured": false
   },
   {
     "id": 5,
@@ -206,7 +273,23 @@
     ],
     "typicalUses": "Cocoa, coffee and plantation spraying, vegetable and orchard pest control, public-health fogging.",
     "image": "/products/solo-port-423-motorized-mist-blower.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "SOLO 423 Mist Blower",
+    "powerSource": [
+      "petrol"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "cocoa",
+      "vegetables"
+    ],
+    "relatedSlugs": [
+      "ztl-543-brush-cutter",
+      "precision-seed-planter",
+      "petrol-water-pump-3-inch-wp30"
+    ],
+    "featured": true,
+    "imageNeedsReplacement": true
   },
   {
     "id": 6,
@@ -243,7 +326,23 @@
     ],
     "typicalUses": "Cleaning rice in milling lines and at packaging centres.",
     "image": "/products/jlx-rice-destoner.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "JLX Rice Destoner",
+    "powerSource": [
+      "electric"
+    ],
+    "scale": "commercial",
+    "crops": [
+      "rice",
+      "beans"
+    ],
+    "relatedSlugs": [
+      "sb10-rice-huller-mill",
+      "sb30-rice-huller-mill",
+      "satake-bucket-elevator",
+      "chp150-rice-milling-machine"
+    ],
+    "featured": false
   },
   {
     "id": 7,
@@ -284,7 +383,23 @@
     ],
     "typicalUses": "Field irrigation from rivers, dams and canals; fish ponds; drainage and dewatering.",
     "image": "/products/belt-driven-centrifugal-water-pump.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Belt-Driven Water Pump",
+    "powerSource": [
+      "diesel",
+      "electric",
+      "tractor-pto"
+    ],
+    "scale": "commercial",
+    "crops": [
+      "vegetables"
+    ],
+    "relatedSlugs": [
+      "pvc-lay-flat-irrigation-hose",
+      "diesel-engine-for-agricultural-machinery",
+      "electric-motors-for-agricultural-machinery"
+    ],
+    "featured": false
   },
   {
     "id": 8,
@@ -321,7 +436,22 @@
     ],
     "typicalUses": "Shelling groundnuts for seed, oil, paste and sale.",
     "image": "/products/groundnut-sheller.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Groundnut Sheller",
+    "powerSource": [
+      "electric",
+      "diesel"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "groundnut"
+    ],
+    "relatedSlugs": [
+      "groundnut-huller",
+      "groundnut-paste-machine",
+      "diesel-engine-for-agricultural-machinery"
+    ],
+    "featured": true
   },
   {
     "id": 9,
@@ -362,7 +492,19 @@
     ],
     "typicalUses": "Powering water pumps, grinding mills, rice hullers, threshers and sprayers.",
     "image": "/products/plus-honday-gx200-gasoline-engine.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "PLUS.HONDAY GX200 Engine",
+    "powerSource": [
+      "petrol"
+    ],
+    "scale": "small-business",
+    "crops": [],
+    "relatedSlugs": [
+      "petrol-water-pump-3-inch-wp30",
+      "wet-dry-mini-grinding-mill",
+      "cassava-grater"
+    ],
+    "featured": false
   },
   {
     "id": 10,
@@ -395,7 +537,26 @@
     ],
     "typicalUses": "Corn-mill kiosks, households, restaurants and food vendors.",
     "image": "/products/wet-dry-mini-grinding-mill.jpg",
-    "needsConfirmation": true
+    "needsConfirmation": true,
+    "shortName": "Wet & Dry Mini Mill",
+    "powerSource": [
+      "petrol"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "maize",
+      "millet",
+      "beans",
+      "groundnut",
+      "pepper"
+    ],
+    "relatedSlugs": [
+      "corn-mill",
+      "pepper-mill",
+      "petrol-engine-for-agricultural-machinery",
+      "plus-honday-gx200-gasoline-engine"
+    ],
+    "featured": false
   },
   {
     "id": 11,
@@ -432,7 +593,22 @@
     ],
     "typicalUses": "Whitening and polishing rice in small and medium rice mills.",
     "image": "/products/chp150-rice-milling-machine.jpg",
-    "needsConfirmation": true
+    "needsConfirmation": true,
+    "shortName": "CHP150 Rice Mill",
+    "powerSource": [
+      "electric"
+    ],
+    "scale": "commercial",
+    "crops": [
+      "rice"
+    ],
+    "relatedSlugs": [
+      "sb30-rice-huller-mill",
+      "jlx-rice-destoner",
+      "satake-bucket-elevator",
+      "electric-motors-for-agricultural-machinery"
+    ],
+    "featured": false
   },
   {
     "id": 12,
@@ -469,7 +645,21 @@
     ],
     "typicalUses": "On-farm poultry, fish and livestock feed production; also biomass pellets with suitable dies.",
     "image": "/products/electric-feed-pelletizing-machine.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Feed Pelletizer",
+    "powerSource": [
+      "electric"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "livestock-feed"
+    ],
+    "relatedSlugs": [
+      "hammer-mill",
+      "multi-purpose-chaff-cutter",
+      "electric-motors-for-agricultural-machinery"
+    ],
+    "featured": false
   },
   {
     "id": 13,
@@ -506,7 +696,22 @@
     ],
     "typicalUses": "Shelling dried maize on farms and at aggregation centres.",
     "image": "/products/electric-maize-thresher.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Electric Maize Thresher",
+    "powerSource": [
+      "electric",
+      "petrol"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "maize"
+    ],
+    "relatedSlugs": [
+      "corn-mill",
+      "hammer-mill",
+      "model-900-multi-functional-thresher"
+    ],
+    "featured": false
   },
   {
     "id": 14,
@@ -538,7 +743,25 @@
     ],
     "typicalUses": "Smallholder planting with better germination and less seed waste than hand planting.",
     "image": "/products/precision-seed-planter.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Precision Seed Planter",
+    "powerSource": [
+      "manual"
+    ],
+    "scale": "household",
+    "crops": [
+      "maize",
+      "groundnut",
+      "beans",
+      "soybean",
+      "sorghum"
+    ],
+    "relatedSlugs": [
+      "ztl-543-brush-cutter",
+      "electric-maize-thresher",
+      "groundnut-sheller"
+    ],
+    "featured": false
   },
   {
     "id": 15,
@@ -575,7 +798,21 @@
     ],
     "typicalUses": "Peanut paste, snack and confectionery production.",
     "image": "/products/groundnut-huller.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Groundnut Huller",
+    "powerSource": [
+      "electric"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "groundnut"
+    ],
+    "relatedSlugs": [
+      "groundnut-sheller",
+      "groundnut-paste-machine",
+      "electric-motors-for-agricultural-machinery"
+    ],
+    "featured": false
   },
   {
     "id": 16,
@@ -607,7 +844,26 @@
     ],
     "typicalUses": "Community corn-milling services, maize flour and feed production.",
     "image": "/products/corn-mill.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Corn Mill",
+    "powerSource": [
+      "electric",
+      "diesel"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "maize",
+      "millet",
+      "sorghum",
+      "rice"
+    ],
+    "relatedSlugs": [
+      "diesel-engine-for-agricultural-machinery",
+      "electric-motors-for-agricultural-machinery",
+      "hammer-mill",
+      "electric-maize-thresher"
+    ],
+    "featured": true
   },
   {
     "id": 17,
@@ -644,7 +900,22 @@
     ],
     "typicalUses": "Flour, spice powder, herbs and dried pepper.",
     "image": "/products/disc-mill.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Disc Mill",
+    "powerSource": [
+      "electric"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "maize",
+      "pepper"
+    ],
+    "relatedSlugs": [
+      "pepper-mill",
+      "multi-purpose-grinding-machine",
+      "electric-motors-for-agricultural-machinery"
+    ],
+    "featured": false
   },
   {
     "id": 18,
@@ -676,7 +947,24 @@
     ],
     "typicalUses": "Poultry, pig and cattle feed preparation; grinding maize, soybean, straw and grass.",
     "image": "/products/hammer-mill.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Hammer Mill",
+    "powerSource": [
+      "electric"
+    ],
+    "scale": "commercial",
+    "crops": [
+      "maize",
+      "soybean",
+      "livestock-feed"
+    ],
+    "relatedSlugs": [
+      "electric-feed-pelletizing-machine",
+      "multi-purpose-chaff-cutter",
+      "electric-motors-for-agricultural-machinery",
+      "diesel-engine-for-agricultural-machinery"
+    ],
+    "featured": true
   },
   {
     "id": 19,
@@ -708,7 +996,21 @@
     ],
     "typicalUses": "Pepper, chilli, ginger, spice powders and seasoning production.",
     "image": "/products/pepper-mill.png",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Pepper Mill",
+    "powerSource": [
+      "electric"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "pepper"
+    ],
+    "relatedSlugs": [
+      "disc-mill",
+      "multi-purpose-grinding-machine",
+      "wet-dry-mini-grinding-mill"
+    ],
+    "featured": false
   },
   {
     "id": 20,
@@ -736,7 +1038,23 @@
     ],
     "typicalUses": "Grains, legumes, spices and vegetables.",
     "image": "/products/multi-purpose-grinding-machine.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Multi-Purpose Grinder",
+    "powerSource": [
+      "electric"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "vegetables",
+      "beans",
+      "pepper"
+    ],
+    "relatedSlugs": [
+      "disc-mill",
+      "pepper-mill",
+      "wet-dry-mini-grinding-mill"
+    ],
+    "featured": false
   },
   {
     "id": 21,
@@ -772,7 +1090,21 @@
     ],
     "typicalUses": "Groundnut paste, sesame paste (tahini), shea and other nut/seed pastes.",
     "image": "/products/groundnut-paste-machine.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Groundnut Paste Machine",
+    "powerSource": [
+      "electric"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "groundnut"
+    ],
+    "relatedSlugs": [
+      "groundnut-huller",
+      "groundnut-sheller",
+      "electric-motors-for-agricultural-machinery"
+    ],
+    "featured": false
   },
   {
     "id": 22,
@@ -800,7 +1132,22 @@
     ],
     "typicalUses": "Gari, agbelima, kokonte and cassava starch processing.",
     "image": "/products/cassava-grater.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Cassava Grater",
+    "powerSource": [
+      "electric",
+      "petrol"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "cassava"
+    ],
+    "relatedSlugs": [
+      "petrol-engine-for-agricultural-machinery",
+      "wet-dry-mini-grinding-mill",
+      "commercial-fufu-machine"
+    ],
+    "featured": true
   },
   {
     "id": 23,
@@ -828,7 +1175,21 @@
     ],
     "typicalUses": "Chop bars, restaurants, hotels, institutional kitchens.",
     "image": "/products/commercial-fufu-machine.png",
-    "needsConfirmation": true
+    "needsConfirmation": true,
+    "shortName": "Commercial Fufu Machine",
+    "powerSource": [
+      "electric"
+    ],
+    "scale": "commercial",
+    "crops": [
+      "cassava"
+    ],
+    "relatedSlugs": [
+      "2-in-1-fufu-machine",
+      "cassava-grater",
+      "wet-dry-mini-grinding-mill"
+    ],
+    "featured": true
   },
   {
     "id": 24,
@@ -856,7 +1217,21 @@
     ],
     "typicalUses": "Homes and small restaurants – fufu, banku, kenkey dough and blending.",
     "image": "/products/2-in-1-fufu-machine.png",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "2-in-1 Fufu Machine",
+    "powerSource": [
+      "electric"
+    ],
+    "scale": "household",
+    "crops": [
+      "cassava"
+    ],
+    "relatedSlugs": [
+      "commercial-fufu-machine",
+      "cassava-grater",
+      "wet-dry-mini-grinding-mill"
+    ],
+    "featured": false
   },
   {
     "id": 25,
@@ -896,7 +1271,23 @@
     ],
     "typicalUses": "Village and commercial rice milling.",
     "image": "/products/sb10-rice-huller-mill.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "SB10 Rice Mill",
+    "powerSource": [
+      "electric",
+      "diesel"
+    ],
+    "scale": "commercial",
+    "crops": [
+      "rice"
+    ],
+    "relatedSlugs": [
+      "jlx-rice-destoner",
+      "satake-bucket-elevator",
+      "diesel-engine-for-agricultural-machinery",
+      "sb30-rice-huller-sieve"
+    ],
+    "featured": true
   },
   {
     "id": 26,
@@ -923,7 +1314,22 @@
     ],
     "typicalUses": "Rural rice milling without mains electricity.",
     "image": "/products/sb10d-rice-mill.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "SB10D Rice Mill",
+    "powerSource": [
+      "diesel"
+    ],
+    "scale": "commercial",
+    "crops": [
+      "rice"
+    ],
+    "relatedSlugs": [
+      "jlx-rice-destoner",
+      "satake-bucket-elevator",
+      "diesel-engine-for-agricultural-machinery",
+      "chp150-rice-milling-machine"
+    ],
+    "featured": false
   },
   {
     "id": 27,
@@ -962,7 +1368,23 @@
     ],
     "typicalUses": "Commercial rice milling businesses.",
     "image": "/products/sb30-rice-huller-mill.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "SB30 Rice Mill",
+    "powerSource": [
+      "electric",
+      "diesel"
+    ],
+    "scale": "commercial",
+    "crops": [
+      "rice"
+    ],
+    "relatedSlugs": [
+      "jlx-rice-destoner",
+      "satake-bucket-elevator",
+      "sb30-rice-huller-sieve",
+      "diesel-engine-for-agricultural-machinery"
+    ],
+    "featured": false
   },
   {
     "id": 28,
@@ -985,7 +1407,19 @@
     ],
     "typicalUses": "Maintenance and repair of SB-30 rice mills.",
     "image": "/products/sb30-rice-huller-sieve.jpg",
-    "needsConfirmation": true
+    "needsConfirmation": true,
+    "shortName": "SB30 Huller Sieve",
+    "powerSource": [],
+    "scale": "commercial",
+    "crops": [
+      "rice"
+    ],
+    "relatedSlugs": [
+      "sb30-rice-huller-mill",
+      "sb10-rice-huller-mill",
+      "chp150-rice-milling-machine"
+    ],
+    "featured": false
   },
   {
     "id": 29,
@@ -1013,7 +1447,22 @@
     ],
     "typicalUses": "Moving paddy and rice between cleaners, hullers, whiteners and bins.",
     "image": "/products/satake-bucket-elevator.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Satake Bucket Elevator",
+    "powerSource": [
+      "electric"
+    ],
+    "scale": "commercial",
+    "crops": [
+      "rice"
+    ],
+    "relatedSlugs": [
+      "sb30-rice-huller-mill",
+      "jlx-rice-destoner",
+      "sb10-rice-huller-mill",
+      "chp150-rice-milling-machine"
+    ],
+    "featured": false
   },
   {
     "id": 30,
@@ -1053,7 +1502,21 @@
     ],
     "typicalUses": "Vegetable irrigation, water transfer and dewatering.",
     "image": "/products/petrol-water-pump-3-inch-wp30.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "3-inch Petrol Pump",
+    "powerSource": [
+      "petrol"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "vegetables"
+    ],
+    "relatedSlugs": [
+      "pvc-lay-flat-irrigation-hose",
+      "petrol-engine-for-agricultural-machinery",
+      "plus-honday-gx200-gasoline-engine"
+    ],
+    "featured": true
   },
   {
     "id": 31,
@@ -1089,7 +1552,22 @@
     ],
     "typicalUses": "Larger-field irrigation, pond filling and dewatering.",
     "image": "/products/4-inch-diesel-water-pump.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "4-inch Diesel Pump",
+    "powerSource": [
+      "diesel"
+    ],
+    "scale": "commercial",
+    "crops": [
+      "vegetables",
+      "rice"
+    ],
+    "relatedSlugs": [
+      "pvc-lay-flat-irrigation-hose",
+      "diesel-engine-for-agricultural-machinery",
+      "belt-driven-centrifugal-water-pump"
+    ],
+    "featured": false
   },
   {
     "id": 32,
@@ -1116,7 +1594,22 @@
     ],
     "typicalUses": "Irrigation schemes, dams and canals, water transfer.",
     "image": "/products/4x4-water-pump-with-diesel-engine.jpg",
-    "needsConfirmation": true
+    "needsConfirmation": true,
+    "shortName": "4x4 Diesel Pump Set",
+    "powerSource": [
+      "diesel"
+    ],
+    "scale": "commercial",
+    "crops": [
+      "vegetables",
+      "rice"
+    ],
+    "relatedSlugs": [
+      "pvc-lay-flat-irrigation-hose",
+      "diesel-engine-for-agricultural-machinery",
+      "6x6-kirloskar-pump-set-with-10hp-diesel-engine"
+    ],
+    "featured": false
   },
   {
     "id": 33,
@@ -1147,7 +1640,21 @@
     ],
     "typicalUses": "Large-scale irrigation, rice fields, flood dewatering.",
     "image": "/products/6x6-kirloskar-pump-set-with-10hp-diesel-engine.jpg",
-    "needsConfirmation": true
+    "needsConfirmation": true,
+    "shortName": "6x6 Kirloskar Pump Set",
+    "powerSource": [
+      "diesel"
+    ],
+    "scale": "commercial",
+    "crops": [
+      "rice"
+    ],
+    "relatedSlugs": [
+      "pvc-lay-flat-irrigation-hose",
+      "diesel-engine-for-agricultural-machinery",
+      "4x4-water-pump-with-diesel-engine"
+    ],
+    "featured": false
   },
   {
     "id": 34,
@@ -1175,7 +1682,21 @@
     ],
     "typicalUses": "Domestic water supply, drip irrigation, boosting pressure.",
     "image": "/products/pressure-pump.png",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Pressure Pump",
+    "powerSource": [
+      "electric"
+    ],
+    "scale": "household",
+    "crops": [
+      "vegetables"
+    ],
+    "relatedSlugs": [
+      "pvc-lay-flat-irrigation-hose",
+      "electric-motors-for-agricultural-machinery",
+      "petrol-water-pump-3-inch-wp30"
+    ],
+    "featured": false
   },
   {
     "id": 35,
@@ -1207,7 +1728,21 @@
     ],
     "typicalUses": "Pump discharge, irrigation, dewatering.",
     "image": "/products/pvc-lay-flat-irrigation-hose.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "PVC Lay-Flat Hose",
+    "powerSource": [],
+    "scale": "small-business",
+    "crops": [
+      "vegetables",
+      "rice"
+    ],
+    "relatedSlugs": [
+      "petrol-water-pump-3-inch-wp30",
+      "4-inch-diesel-water-pump",
+      "belt-driven-centrifugal-water-pump",
+      "pressure-pump"
+    ],
+    "featured": false
   },
   {
     "id": 36,
@@ -1235,7 +1770,20 @@
     ],
     "typicalUses": "Powering mills, hullers, pumps, threshers and generators.",
     "image": "/products/diesel-engine-for-agricultural-machinery.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Diesel Engine",
+    "powerSource": [
+      "diesel"
+    ],
+    "scale": "small-business",
+    "crops": [],
+    "relatedSlugs": [
+      "corn-mill",
+      "sb10d-rice-mill",
+      "belt-driven-centrifugal-water-pump",
+      "4-inch-diesel-water-pump"
+    ],
+    "featured": false
   },
   {
     "id": 37,
@@ -1262,7 +1810,19 @@
     ],
     "typicalUses": "Small pumps, mini mills, sprayers, generators.",
     "image": "/products/petrol-engine-for-agricultural-machinery.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Petrol Engine",
+    "powerSource": [
+      "petrol"
+    ],
+    "scale": "small-business",
+    "crops": [],
+    "relatedSlugs": [
+      "wet-dry-mini-grinding-mill",
+      "petrol-water-pump-3-inch-wp30",
+      "cassava-grater"
+    ],
+    "featured": false
   },
   {
     "id": 38,
@@ -1289,7 +1849,20 @@
     ],
     "typicalUses": "Driving any belt-driven agro-processing machine.",
     "image": "/products/electric-motors-for-agricultural-machinery.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Electric Motors",
+    "powerSource": [
+      "electric"
+    ],
+    "scale": "small-business",
+    "crops": [],
+    "relatedSlugs": [
+      "corn-mill",
+      "sb10-rice-huller-mill",
+      "hammer-mill",
+      "electric-feed-pelletizing-machine"
+    ],
+    "featured": false
   },
   {
     "id": 39,
@@ -1317,6 +1890,19 @@
     ],
     "typicalUses": "Car washing bays, cleaning tractors and equipment, farm hygiene.",
     "image": "/products/car-washing-machine.jpg",
-    "needsConfirmation": false
+    "needsConfirmation": false,
+    "shortName": "Car Washing Machine",
+    "powerSource": [
+      "electric",
+      "petrol"
+    ],
+    "scale": "small-business",
+    "crops": [],
+    "relatedSlugs": [
+      "petrol-engine-for-agricultural-machinery",
+      "electric-motors-for-agricultural-machinery",
+      "pvc-lay-flat-irrigation-hose"
+    ],
+    "featured": false
   }
 ]

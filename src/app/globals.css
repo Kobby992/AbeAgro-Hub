@@ -93,9 +93,35 @@
   letter-spacing: -0.01em;
 }
 
+/* §5.1: morph product photos and category tiles between pages. */
+::view-transition-group(.morph) {
+  animation-duration: 400ms;
+  animation-timing-function: var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
+  }
+
+  :root {
+    --floating-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  /* §6.1: on phones, floating buttons sit above a sticky product bar, which never hides content. */
+  @media (max-width: 1023px) {
+    body:has([data-sticky-bar]) {
+      --floating-bottom: 5.5rem;
+      padding-bottom: 4.75rem;
+    }
   }
 
   body {

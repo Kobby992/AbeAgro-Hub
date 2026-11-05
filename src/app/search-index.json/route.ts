@@ -12,6 +12,8 @@ export function GET() {
       name: product.name,
       category: categoryName(product.category as CategorySlug),
       summary: product.summary,
+      uses: product.typicalUses,
+      crops: product.crops,
     })),
   );
 }
