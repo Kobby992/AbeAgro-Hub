@@ -23,11 +23,11 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-forest: var(--abe-forest);
+  --color-forest-700: var(--abe-forest-700);
   --color-forest-900: var(--abe-forest-900);
   --color-leaf: var(--abe-leaf);
   --color-gold: var(--abe-gold);
   --color-gold-600: var(--abe-gold-600);
-  --color-cream: var(--abe-cream);
   --color-soil: var(--abe-soil);
   --color-water: var(--abe-water);
   --color-pepper: var(--abe-pepper);
@@ -39,14 +39,14 @@
   --color-cat-on: var(--cat-on);
 
   /* Type */
-  --font-display: var(--font-archivo), "Arial Narrow", Arial, sans-serif;
-  --font-sans: var(--font-source-sans), "Segoe UI", Roboto, Arial, sans-serif;
+  --font-display: var(--font-montserrat), "Segoe UI", Arial, sans-serif;
+  --font-sans: var(--font-montserrat), "Segoe UI", Arial, sans-serif;
   --text-xs: 0.8125rem;
   --text-xs--line-height: 1.4;
   --text-sm: 0.875rem;
   --text-sm--line-height: 1.5;
   --text-base: 1rem;
-  --text-base--line-height: 1.6;
+  --text-base--line-height: 1.65;
   --text-lg: 1.125rem;
   --text-lg--line-height: 1.6;
   --text-xl: 1.3125rem;
@@ -88,15 +88,29 @@
 }
 
 @utility text-hero {
-  font-size: clamp(2.5rem, 7.5vw, 4.5rem);
-  line-height: 1.02;
-  letter-spacing: -0.01em;
+  font-size: clamp(2.25rem, 5.4vw, 4.25rem);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
 }
 
 /* §5.1: morph product photos and category tiles between pages. */
 ::view-transition-group(.morph) {
-  animation-duration: 400ms;
+  animation-duration: 420ms;
   animation-timing-function: var(--ease-out);
+}
+
+/* The header stays still; only the page content moves. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+::view-transition-old(.page-out) {
+  animation: page-out 160ms ease-in both;
+}
+
+::view-transition-new(.page-in) {
+  animation: page-in 340ms var(--ease-out) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -126,15 +140,20 @@
 
   body {
     @apply bg-background text-foreground;
+    font-weight: 450;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
   }
 
   h1,
   h2,
   h3,
   h4 {
-    font-family: var(--font-display);
-    font-stretch: 87.5%;
-    font-weight: 800;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     text-wrap: balance;
   }
 
@@ -153,24 +172,29 @@
     overflow: hidden;
     background: var(--btn-bg);
     color: var(--btn-fg);
-    border: 2px solid var(--btn-border, transparent);
-    font-family: var(--font-display);
-    font-stretch: 87.5%;
-    font-weight: 700;
+    border: 1.5px solid var(--btn-border, transparent);
+    box-shadow: var(--btn-shadow, none);
+    font-weight: 600;
+    letter-spacing: -0.01em;
     transition: transform var(--dur-fast) var(--ease-out);
   }
 
-  /* §5.2-9: underline sweep. Colour changes are instant so only transforms animate (§5.3). */
+  /* A band of light crosses the button on hover. Only its transform animates (§5.3). */
   .btn::after {
     content: "";
     position: absolute;
-    inset-inline: 0;
-    bottom: 0;
-    height: 3px;
-    background: var(--btn-sweep);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform var(--dur-base) var(--ease-out);
+    inset-block: 0;
+    left: 0;
+    width: 60%;
+    background: linear-gradient(
+      100deg,
+      transparent,
+      var(--btn-sheen, rgb(255 255 255 / 0.22)),
+      transparent
+    );
+    transform: translateX(-120%);
+    pointer-events: none;
+    transition: transform 550ms var(--ease-out);
   }
 
   .btn[data-preview="hover"] {
@@ -178,7 +202,7 @@
   }
 
   .btn[data-preview="hover"]::after {
-    transform: scaleX(1);
+    transform: translateX(190%);
   }
 
   @media (hover: hover) {
@@ -187,13 +211,13 @@
     }
 
     .btn:hover:not(:disabled)::after {
-      transform: scaleX(1);
+      transform: translateX(190%);
     }
   }
 
   .btn:active:not(:disabled),
   .btn[data-preview="active"] {
-    transform: scale(0.98);
+    transform: scale(0.97);
   }
 
   .btn:disabled,
@@ -203,17 +227,18 @@
   }
 
   .btn-primary {
-    --btn-bg: var(--abe-forest);
+    --btn-bg: linear-gradient(135deg, var(--abe-forest-700), var(--abe-forest));
     --btn-fg: var(--abe-white);
-    --btn-hover: var(--abe-forest-900);
-    --btn-sweep: var(--abe-gold);
+    --btn-hover: linear-gradient(135deg, var(--abe-forest), var(--abe-forest-900));
+    --btn-shadow: 0 1px 2px rgb(6 40 31 / 0.2), 0 6px 16px rgb(0 90 64 / 0.22);
   }
 
   .btn-gold {
-    --btn-bg: var(--abe-gold);
+    --btn-bg: linear-gradient(135deg, var(--abe-gold-300), var(--abe-gold));
     --btn-fg: var(--abe-charcoal);
-    --btn-hover: var(--abe-gold-600);
-    --btn-sweep: var(--abe-forest-900);
+    --btn-hover: linear-gradient(135deg, var(--abe-gold), var(--abe-gold-600));
+    --btn-sheen: rgb(255 255 255 / 0.5);
+    --btn-shadow: 0 1px 2px rgb(6 40 31 / 0.2), 0 6px 16px rgb(248 196 36 / 0.28);
   }
 
   .btn-outline {
@@ -221,14 +246,14 @@
     --btn-fg: var(--abe-forest);
     --btn-border: var(--abe-forest);
     --btn-hover: var(--accent);
-    --btn-sweep: var(--abe-gold);
+    --btn-sheen: rgb(0 90 64 / 0.1);
   }
 
   .btn-ghost {
     --btn-bg: transparent;
     --btn-fg: var(--abe-forest);
     --btn-hover: var(--accent);
-    --btn-sweep: var(--abe-leaf);
+    --btn-sheen: rgb(0 90 64 / 0.1);
   }
 
   .btn-outline-light {
@@ -236,13 +261,75 @@
     --btn-fg: var(--abe-white);
     --btn-border: var(--abe-white);
     --btn-hover: rgb(255 255 255 / 0.12);
-    --btn-sweep: var(--abe-gold);
   }
 
   /* §5.2-4: lift, deeper shadow and accent glow, fading a pseudo-element so only opacity animates */
   .lift-card {
     position: relative;
     transition: transform var(--dur-base) var(--ease-out);
+  }
+
+  /* The light that follows the cursor. CardSpotlight supplies its position. */
+  .lift-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    background: radial-gradient(
+      260px circle at var(--spot-x, 50%) var(--spot-y, 0%),
+      var(--spot-colour, color-mix(in srgb, var(--cat) 20%, transparent)),
+      transparent 70%
+    );
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--dur-base) var(--ease-out);
+  }
+
+  /* Machine and guide cards: white easing into the category's own tint. */
+  .gradient-card {
+    border: 1px solid color-mix(in srgb, var(--cat) 16%, var(--border));
+    background: linear-gradient(165deg, var(--abe-white) 45%, var(--cat-tint) 130%);
+    box-shadow: var(--shadow-rest);
+  }
+
+  /* Shop by task: the tile is the category's colour. */
+  .task-tile {
+    --spot-colour: rgb(255 255 255 / 0.2);
+    color: var(--tile-fg, var(--abe-white));
+    background: linear-gradient(
+      150deg,
+      var(--tile-from, var(--cat-ink)),
+      var(--tile-to, color-mix(in srgb, var(--cat-ink) 58%, var(--abe-forest-900)))
+    );
+    box-shadow: var(--shadow-raised);
+  }
+
+  /* Dark panels: Canopy lit from one corner. */
+  .canopy-panel {
+    background:
+      radial-gradient(90% 120% at 90% 0%, rgb(0 112 79 / 0.55), transparent 60%),
+      var(--abe-forest-900);
+  }
+
+  .gold-panel {
+    background: linear-gradient(
+      120deg,
+      var(--abe-gold-300),
+      var(--abe-gold) 55%,
+      var(--abe-gold-600)
+    );
+  }
+
+  .glass-card {
+    border: 1px solid rgb(255 255 255 / 0.18);
+    background: linear-gradient(150deg, rgb(255 255 255 / 0.16), rgb(255 255 255 / 0.04));
+    box-shadow: 0 24px 60px rgb(0 0 0 / 0.28);
+  }
+
+  .page-backdrop {
+    background: radial-gradient(70% 100% at 85% 0%, rgb(0 112 79 / 0.1), transparent 70%);
+    mask-image: linear-gradient(to bottom, black 45%, transparent);
   }
 
   .lift-card::after {
@@ -260,18 +347,20 @@
   }
 
   .lift-card[data-preview="hover"] {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
   }
 
+  .lift-card[data-preview="hover"]::before,
   .lift-card[data-preview="hover"]::after {
     opacity: 1;
   }
 
   @media (hover: hover) {
     .lift-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px);
     }
 
+    .lift-card:hover::before,
     .lift-card:hover::after {
       opacity: 1;
     }
@@ -342,7 +431,6 @@
     --btn-bg: transparent;
     --btn-fg: var(--abe-white);
     --btn-hover: rgb(255 255 255 / 0.12);
-    --btn-sweep: var(--abe-gold);
   }
 
   /* §5.3: on mobile the hero is a static composition, so only larger screens idle-spin the gear */
@@ -462,6 +550,20 @@
   }
 }
 
+@keyframes page-out {
+  to {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
 @keyframes icon-bounce {
   30% {
     transform: translateY(-5px);
@@ -528,6 +630,7 @@
 /* Long-form text: solution guides and legal pages */
 .prose-abe {
   max-width: 65ch;
+  line-height: 1.75;
 }
 
 .prose-abe h2 {
@@ -559,4 +662,10 @@
   color: var(--abe-forest);
   font-weight: 600;
   text-decoration: underline;
+}
+
+/* On a task tile the icon sits on a pane of the tile's own colour. */
+.task-tile .icon-tile {
+  background: var(--tile-pane, rgb(255 255 255 / 0.16));
+  color: var(--tile-fg, var(--abe-white));
 }

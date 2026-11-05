@@ -81,9 +81,9 @@ export function MachineCard({
       data-cat={category}
       data-preview={preview}
       data-fly-root
-      className="group lift-card flex h-full flex-col rounded-lg border-t-[3px] border-cat bg-card shadow-sm"
+      className="group lift-card gradient-card flex h-full flex-col rounded-lg"
     >
-      <Link href={href} tabIndex={-1} className="block">
+      <Link href={href} tabIndex={-1} className="block overflow-hidden rounded-t-[inherit]">
         {slug ? (
           <ViewTransition name={`product-${slug}`} share="morph" default="none">
             {stage}

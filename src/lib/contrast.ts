@@ -16,6 +16,8 @@ export const CONTRAST_PAIRS: ContrastPair[] = [
   { label: "Muted text on muted", fg: "--muted-foreground", bg: "--muted", kind: "text" },
   { label: "Primary button", fg: "--abe-white", bg: "--abe-forest", kind: "text" },
   { label: "Primary button, hover", fg: "--abe-white", bg: "--abe-forest-900", kind: "text" },
+  { label: "Primary button, light end", fg: "--abe-white", bg: "--abe-forest-700", kind: "text" },
+  { label: "Gold button, light end", fg: "--abe-charcoal", bg: "--abe-gold-300", kind: "text" },
   { label: "Gold button", fg: "--abe-charcoal", bg: "--abe-gold", kind: "text" },
   { label: "Gold button, hover", fg: "--abe-charcoal", bg: "--abe-gold-600", kind: "text" },
   { label: "Outline button", fg: "--abe-forest", bg: "--background", kind: "text" },

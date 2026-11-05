@@ -19,13 +19,13 @@ const STATS = [
 
 export function TrustStrip() {
   return (
-    <section aria-label="Why buy from ABE Agro Hub" className="border-b border-border bg-card">
-      <div className="page-container grid gap-6 py-6 lg:grid-cols-[auto_1fr] lg:items-center lg:gap-12">
+    <section aria-label="Why buy from ABE Agro Hub" className="relative z-10 page-container -mt-12">
+      <div className="grid gap-6 rounded-xl border border-black/5 bg-card p-6 shadow-lg lg:grid-cols-[auto_1fr] lg:items-center lg:gap-12 lg:px-10">
         <dl className="grid grid-cols-3 gap-3 lg:flex lg:gap-10">
           {STATS.map((stat) => (
             <div key={stat.label} className="flex flex-col-reverse">
               <dt className="text-sm leading-tight text-muted-foreground">{stat.label}</dt>
-              <dd className="font-display text-4xl font-extrabold text-forest [font-stretch:87.5%]">
+              <dd className="text-4xl font-extrabold tracking-tight text-forest tabular-nums">
                 <CountUp value={stat.value} />
               </dd>
             </div>

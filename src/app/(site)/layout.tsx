@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { FloatingButtons } from "@/components/layout/floating-buttons";
+import { PageBackdrop } from "@/components/layout/page-backdrop";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { PageTransition } from "@/components/layout/page-transition";
@@ -7,6 +8,7 @@ import { RouteProgress } from "@/components/layout/route-progress";
 import { SiteToaster } from "@/components/layout/site-toaster";
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
 import { StoreHydrator } from "@/components/layout/store-hydrator";
+import { CardSpotlight } from "@/components/motion/card-spotlight";
 import { allProducts } from "@/lib/products";
 
 const megaFeature = allProducts.find((product) => product.slug === "sb10-rice-huller-mill");
@@ -31,12 +33,14 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
           }
         }
       />
-      <main id="main" tabIndex={-1} className="outline-none">
+      <main id="main" tabIndex={-1} className="relative isolate outline-none">
+        <PageBackdrop />
         <PageTransition>{children}</PageTransition>
       </main>
       <Footer />
       <FloatingButtons />
       <StoreHydrator />
+      <CardSpotlight />
       <SmoothScroll />
       <SiteToaster />
     </>

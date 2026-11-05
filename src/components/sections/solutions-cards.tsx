@@ -9,7 +9,7 @@ export function SolutionCard({ solution }: { solution: (typeof solutions)[number
     <Link
       href={`/solutions/${solution.slug}`}
       data-cat={solution.category}
-      className="group lift-card flex h-full overflow-hidden rounded-lg border-l-[3px] border-cat bg-card shadow-sm"
+      className="group lift-card gradient-card flex h-full overflow-hidden rounded-lg"
     >
       <div className="machine-stage aspect-square w-28 shrink-0 sm:w-32">
         <Image

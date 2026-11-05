@@ -72,7 +72,7 @@ export function SpecPlate({
       )}
     >
       <span className="text-xs text-muted-foreground">{label}</span>
-      <span className="truncate font-display text-sm font-bold [font-stretch:87.5%]">{value}</span>
+      <span className="line-clamp-2 text-sm font-semibold tracking-tight">{value}</span>
     </span>
   );
 }

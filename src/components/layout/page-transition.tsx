@@ -14,7 +14,7 @@ import { ViewTransition, type ReactNode } from "react";
 export function PageTransition({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   return (
-    <ViewTransition key={pathname} update="none">
+    <ViewTransition key={pathname} enter="page-in" exit="page-out" update="none">
       {children}
     </ViewTransition>
   );

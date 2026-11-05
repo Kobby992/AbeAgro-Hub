@@ -1,4 +1,5 @@
 import { KobbyPromptButton } from "@/components/kobby/kobby-prompt-button";
+import { Furrows } from "@/components/motion/furrows";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -11,7 +12,8 @@ const PROMPTS = [
 export function KobbyBand() {
   return (
     <section className="page-container py-12 md:py-20">
-      <div className="grain overflow-hidden rounded-xl bg-forest-900 p-6 text-white md:p-10">
+      <div className="canopy-panel relative isolate overflow-hidden rounded-xl p-6 text-white md:p-12">
+        <Furrows tone="dark" className="absolute inset-0 -z-10 size-full" />
         <h2 className="max-w-2xl text-3xl md:text-4xl">Not sure which machine fits your farm?</h2>
         <p className="mt-2 max-w-prose text-lg">
           Tell Kobby what you grow or process. Start with one of these:

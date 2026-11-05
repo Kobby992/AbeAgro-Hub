@@ -15,7 +15,7 @@ describe("design tokens", () => {
   it("keeps the brand palette from the spec", () => {
     expect(tokens["--abe-forest"]).toBe("#005a40");
     expect(tokens["--abe-gold"]).toBe("#f8c424");
-    expect(tokens["--abe-cream"]).toBe("#fbf8ef");
+    expect(tokens["--abe-mist"]).toBe("#f2f6f3");
   });
 
   it.each(CONTRAST_PAIRS)("$label passes AA", ({ fg, bg, kind }) => {

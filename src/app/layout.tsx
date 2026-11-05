@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { site } from "@/config/site";
-import { fontBody, fontDisplay } from "@/lib/fonts";
+import { fontSans } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${fontBody.variable} ${fontDisplay.variable}`}>
+    <html lang="en" className={fontSans.variable}>
       <body className="antialiased">
         {/* Scroll reveals start hidden, so without JavaScript they must simply be shown. */}
         <noscript>

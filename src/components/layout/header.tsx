@@ -69,7 +69,7 @@ export function Header({ feature }: { feature?: Feature }) {
     <header className="fixed inset-x-0 top-0 z-40" data-over-dark={overDark}>
       <div
         className={cn(
-          "absolute inset-0 bg-cream shadow-md transition-opacity duration-250",
+          "absolute inset-0 border-b border-black/5 bg-white/85 shadow-sm backdrop-blur-md transition-opacity duration-250",
           overDark ? "opacity-0" : "opacity-100",
         )}
       />
@@ -186,9 +186,7 @@ export function Header({ feature }: { feature?: Feature }) {
                           />
                         </div>
                         <div className="p-3">
-                          <p className="font-display font-bold [font-stretch:87.5%]">
-                            {feature.name}
-                          </p>
+                          <p className="font-display font-bold">{feature.name}</p>
                           <p className="line-clamp-2 text-sm text-muted-foreground">
                             {feature.summary}
                           </p>

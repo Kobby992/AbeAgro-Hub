@@ -61,10 +61,10 @@ export function HeroSearch() {
           type="search"
           autoComplete="off"
           placeholder="Search machinery"
-          className="min-h-13 w-full rounded-md bg-card pr-3 pl-10 text-base text-charcoal placeholder:text-muted-foreground"
+          className="min-h-14 w-full rounded-md bg-card pr-3 pl-10 text-base text-charcoal shadow-lg placeholder:text-muted-foreground"
         />
       </div>
-      <Button type="submit" variant="gold" className="min-h-13">
+      <Button type="submit" variant="gold" className="min-h-14">
         Search
       </Button>
     </Form>

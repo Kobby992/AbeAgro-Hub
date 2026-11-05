@@ -63,7 +63,7 @@ export default function AboutPage() {
       <h2 className="mt-10 mb-4 text-3xl">Why buy from ABE</h2>
       <ul className="grid max-w-4xl gap-4 sm:grid-cols-2">
         {REASONS.map(({ Icon, title, text }) => (
-          <li key={title} className="rounded-lg bg-card p-5 shadow-sm">
+          <li key={title} className="gradient-card rounded-lg p-5">
             <Icon aria-hidden className="size-6 text-forest" />
             <h3 className="mt-2 text-xl">{title}</h3>
             <p className="mt-1 text-muted-foreground">{text}</p>
