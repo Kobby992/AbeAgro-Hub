@@ -1,0 +1,14 @@
+/* Brand palette from BUILD_SPEC §4.2. The full design system (type, spacing, motion) comes in Phase 1. */
+:root {
+  --abe-forest: #005a40;
+  --abe-forest-900: #003a2a;
+  --abe-leaf: #1e8a3c;
+  --abe-gold: #f8c424;
+  --abe-gold-600: #d9a400;
+  --abe-cream: #fbf8ef;
+  --abe-soil: #7a4e2d;
+  --abe-water: #1f7fc1;
+  --abe-pepper: #d9472b;
+  --abe-teal: #0f8c84;
+  --abe-charcoal: #1e2422;
+}

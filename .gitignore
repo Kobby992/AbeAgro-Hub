@@ -9,3 +9,7 @@ dist/
 coverage/
 playwright-report/
 test-results/
+
+# Next.js and TypeScript generated files
+next-env.d.ts
+*.tsbuildinfo

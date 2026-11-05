@@ -1,0 +1,16 @@
+# Generated output
+.next/
+out/
+coverage/
+playwright-report/
+test-results/
+next-env.d.ts
+package-lock.json
+
+# Starter pack: owner-supplied, keep byte-for-byte
+BUILD_SPEC.md
+CLAUDE.md
+README.md
+content/products.json
+public/
+reference/
