@@ -10,6 +10,9 @@ export function GET() {
     allProducts.map((product) => ({
       slug: product.slug,
       name: product.name,
+      shortName: product.shortName,
+      image: product.image,
+      categorySlug: product.category,
       category: categoryName(product.category as CategorySlug),
       summary: product.summary,
       uses: product.typicalUses,

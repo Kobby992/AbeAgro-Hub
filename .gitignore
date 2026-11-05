@@ -13,3 +13,6 @@ test-results/
 # Next.js and TypeScript generated files
 next-env.d.ts
 *.tsbuildinfo
+
+# Records written by browser tests
+.e2e/

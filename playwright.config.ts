@@ -29,6 +29,7 @@ export default defineConfig({
   webServer: {
     command: `npx next start -p ${port}`,
     url: baseURL,
+    env: { QUOTE_TEST_SINK: ".e2e/quote-sink.jsonl" },
     reuseExistingServer: false,
     timeout: 60_000,
   },

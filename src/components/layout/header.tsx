@@ -6,9 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { QuoteCount, QuoteListLink } from "@/components/quote/quote-list-link";
 import { CategoryIconTile } from "@/components/product/category-tile";
 import { Button } from "@/components/ui/button";
-import { CountBadge } from "@/components/ui/tags";
 import { categories } from "@/config/categories";
 import { primaryNav } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -229,15 +229,11 @@ export function Header({ feature }: { feature?: Feature }) {
             size="sm"
             className="relative px-2.5 lg:px-3.5"
           >
-            <Link
-              href="/quote"
-              data-quote-target
-              aria-label={`Quote list, ${count} ${count === 1 ? "item" : "items"}`}
-            >
+            <QuoteListLink data-quote-target>
               <ClipboardList aria-hidden />
-              <span className="hidden lg:inline">Quote list</span>
-              {count > 0 && <CountBadge count={count} />}
-            </Link>
+              <span className="sr-only lg:not-sr-only">Quote list</span>
+              <QuoteCount count={count} />
+            </QuoteListLink>
           </Button>
 
           <Button asChild variant={iconVariant} size="icon" className="hidden lg:inline-flex">

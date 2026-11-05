@@ -4,6 +4,7 @@ import { Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { ViewTransition, type ReactNode } from "react";
+import { QuickQuoteLink } from "@/components/quote/quick-quote-link";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/field";
 import { CategoryBadge, ConfirmHint, SpecPlate } from "@/components/ui/tags";
@@ -119,14 +120,24 @@ export function MachineCard({
               previewing && "[@media(hover:hover)]:translate-y-0",
             )}
           >
-            <a
-              href={quoteHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Get quote for ${name} on WhatsApp`}
-            >
-              Get quote
-            </a>
+            {slug ? (
+              <QuickQuoteLink
+                slug={slug}
+                href={quoteHref}
+                aria-label={`Get quote for ${name} on WhatsApp`}
+              >
+                Get quote
+              </QuickQuoteLink>
+            ) : (
+              <a
+                href={quoteHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Get quote for ${name} on WhatsApp`}
+              >
+                Get quote
+              </a>
+            )}
           </Button>
           <div className="flex gap-2">
             <Button asChild variant="outline" size="sm" className="flex-1">

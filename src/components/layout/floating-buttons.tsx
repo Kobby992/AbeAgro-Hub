@@ -2,20 +2,22 @@
 
 import { ClipboardList, MessageSquareText } from "lucide-react";
 import dynamic from "next/dynamic";
-import Link from "next/link";
+import { QuoteCount, QuoteListLink } from "@/components/quote/quote-list-link";
 import { Button } from "@/components/ui/button";
-import { CountBadge } from "@/components/ui/tags";
 import { cn } from "@/lib/utils";
 import { useKobbyStore } from "@/store/kobby";
-import { selectQuoteCount, useQuoteStore } from "@/store/quote";
+import { selectQuoteCount, useQuoteDrawer, useQuoteStore } from "@/store/quote";
 
 // Only the launcher ships with the page; the panel loads on first open (BUILD_SPEC §7.6).
 const KobbyPanel = dynamic(() => import("@/components/kobby/kobby-panel"), { ssr: false });
+
+const QuoteDrawer = dynamic(() => import("@/components/quote/quote-drawer"), { ssr: false });
 
 const SAFE_BOTTOM = "bottom-(--floating-bottom)";
 
 export function FloatingButtons() {
   const count = useQuoteStore(selectQuoteCount);
+  const drawerMounted = useQuoteDrawer((state) => state.mounted);
   const hasOpened = useKobbyStore((state) => state.hasOpened);
   const openKobby = useKobbyStore((state) => state.openKobby);
 
@@ -43,14 +45,15 @@ export function FloatingButtons() {
           count === 0 && "hidden lg:inline-flex",
         )}
       >
-        <Link href="/quote" aria-label={`Quote list, ${count} ${count === 1 ? "item" : "items"}`}>
+        <QuoteListLink>
           <ClipboardList aria-hidden />
-          Quote list
-          {count > 0 && <CountBadge count={count} />}
-        </Link>
+          <span>Quote list</span>
+          <QuoteCount count={count} />
+        </QuoteListLink>
       </Button>
 
       {hasOpened && <KobbyPanel />}
+      {drawerMounted && <QuoteDrawer />}
     </>
   );
 }

@@ -108,7 +108,7 @@ test("compare holds three machines, then shows them side by side", async ({ page
 
   await page.getByRole("button", { name: "Add all to quote" }).click();
   await expect(page.getByRole("banner").locator("[data-quote-target]")).toHaveAccessibleName(
-    "Quote list, 3 items",
+    "Quote list 3 items",
   );
 });
 
@@ -163,7 +163,7 @@ test("product page: quote link carries the quantity, and quantity adds to the li
 
   await page.getByRole("button", { name: "Add to quote list" }).click();
   await expect(page.getByRole("banner").locator("[data-quote-target]")).toHaveAccessibleName(
-    "Quote list, 1 item",
+    "Quote list 1 item",
   );
   const saved = await page.evaluate(() => localStorage.getItem("abe-quote-list"));
   expect(JSON.parse(saved ?? "{}").state.items).toEqual([

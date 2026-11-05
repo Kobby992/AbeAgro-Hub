@@ -1,13 +1,10 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { notify } from "@/lib/notify";
-import { useQuoteStore } from "@/store/quote";
+import { useQuoteDrawer, useQuoteStore } from "@/store/quote";
 
 export function AddAllToQuote({ items }: { items: { slug: string; name: string }[] }) {
-  const router = useRouter();
-
   return (
     <Button
       size="lg"
@@ -19,7 +16,7 @@ export function AddAllToQuote({ items }: { items: { slug: string; name: string }
           `Added ${items.length} ${items.length === 1 ? "machine" : "machines"} to your quote list`,
           {
             label: "View list",
-            onClick: () => router.push("/quote"),
+            onClick: () => useQuoteDrawer.getState().setOpen(true),
           },
         );
       }}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { QuickQuoteLink } from "@/components/quote/quick-quote-link";
 import { AddAllToQuote } from "@/components/product/add-all-to-quote";
 import { Button } from "@/components/ui/button";
 import { ConfirmHint } from "@/components/ui/tags";
@@ -71,14 +72,13 @@ export default async function ComparePage({
                           {product.name}
                         </Link>
                         <Button asChild size="sm" className="mt-2 w-full">
-                          <a
+                          <QuickQuoteLink
+                            slug={product.slug}
                             href={productQuoteHref(product)}
-                            target="_blank"
-                            rel="noopener noreferrer"
                             aria-label={`Get quote for ${product.name} on WhatsApp`}
                           >
                             Get quote
-                          </a>
+                          </QuickQuoteLink>
                         </Button>
                       </th>
                     ))}

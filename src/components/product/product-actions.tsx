@@ -1,14 +1,13 @@
 "use client";
 
-import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 import { KobbyPromptButton } from "@/components/kobby/kobby-prompt-button";
+import { QuickQuoteLink } from "@/components/quote/quick-quote-link";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { QuantityStepper } from "@/components/ui/quantity-stepper";
 import { useAddToQuote } from "@/hooks/use-add-to-quote";
 import { cn } from "@/lib/utils";
 import { productQuoteLink } from "@/lib/whatsapp";
-
-const MAX_QTY = 999;
 
 /** The buying controls and the sticky phone bar, which share one quantity (BUILD_SPEC §6.5). */
 export function ProductActions({
@@ -25,15 +24,13 @@ export function ProductActions({
   const [qty, setQty] = useState(1);
   const addToQuote = useAddToQuote();
   const quoteHref = productQuoteLink({ name, category, slug, qty });
-  const setClamped = (value: number) =>
-    setQty(Math.min(Math.max(Number.isFinite(value) ? Math.round(value) : 1, 1), MAX_QTY));
 
   return (
     <div className="mt-5 flex max-w-lg flex-col gap-3">
       <Button asChild size="lg" className="w-full text-xl">
-        <a href={quoteHref} target="_blank" rel="noopener noreferrer">
+        <QuickQuoteLink slug={slug} qty={qty} href={quoteHref}>
           Get quote on WhatsApp
-        </a>
+        </QuickQuoteLink>
       </Button>
       <p className="text-sm text-muted-foreground">
         Our sales team replies on WhatsApp with pricing, availability and delivery.
@@ -44,36 +41,7 @@ export function ProductActions({
           <label htmlFor="product-qty" className="mb-1 block font-semibold">
             Quantity
           </label>
-          <div className="flex items-center gap-1">
-            <Button
-              variant="outline"
-              size="icon"
-              aria-label="Reduce quantity"
-              disabled={qty <= 1}
-              onClick={() => setClamped(qty - 1)}
-            >
-              <Minus aria-hidden />
-            </Button>
-            <input
-              id="product-qty"
-              type="number"
-              inputMode="numeric"
-              min={1}
-              max={MAX_QTY}
-              value={qty}
-              onChange={(event) => setClamped(event.target.valueAsNumber)}
-              className="h-11 w-16 rounded-md border border-input bg-card text-center text-base"
-            />
-            <Button
-              variant="outline"
-              size="icon"
-              aria-label="Increase quantity"
-              disabled={qty >= MAX_QTY}
-              onClick={() => setClamped(qty + 1)}
-            >
-              <Plus aria-hidden />
-            </Button>
-          </div>
+          <QuantityStepper id="product-qty" value={qty} onChange={setQty} />
         </div>
         <Button
           variant="outline"
@@ -104,9 +72,9 @@ export function ProductActions({
           Add to quote
         </Button>
         <Button asChild className="flex-1 px-2">
-          <a href={quoteHref} target="_blank" rel="noopener noreferrer">
+          <QuickQuoteLink slug={slug} qty={qty} href={quoteHref}>
             WhatsApp
-          </a>
+          </QuickQuoteLink>
         </Button>
       </div>
     </div>

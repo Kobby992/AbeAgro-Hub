@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { captureUtm } from "@/lib/quote-client";
 import { useCompareStore } from "@/store/compare";
 import { useQuoteStore } from "@/store/quote";
 
@@ -9,6 +10,7 @@ export function StoreHydrator() {
   useEffect(() => {
     void useQuoteStore.persist.rehydrate();
     void useCompareStore.persist.rehydrate();
+    captureUtm();
   }, []);
   return null;
 }

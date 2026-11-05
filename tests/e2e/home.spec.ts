@@ -86,15 +86,15 @@ test("adding a machine raises the header count, confirms it and survives a reloa
   const add = page.getByRole("button", { name: "Add Corn Mill to quote list" });
   const headerList = page.getByRole("banner").locator("[data-quote-target]");
   await add.click();
-  await expect(headerList).toHaveAccessibleName("Quote list, 1 item");
+  await expect(headerList).toHaveAccessibleName("Quote list 1 item");
   await expect(page.getByText("Added to your quote list")).toBeVisible();
 
   await add.click();
   await expect(page.getByText("Quantity is now 2")).toBeVisible();
-  await expect(headerList).toHaveAccessibleName("Quote list, 1 item");
+  await expect(headerList).toHaveAccessibleName("Quote list 1 item");
 
   await page.reload();
-  await expect(headerList).toHaveAccessibleName("Quote list, 1 item");
+  await expect(headerList).toHaveAccessibleName("Quote list 1 item");
 });
 
 test("search palette tolerates typos and goes to the product", async ({ page }) => {

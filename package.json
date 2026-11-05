@@ -4,18 +4,25 @@
   "private": true,
   "description": "ABE Agro Hub website: agricultural machinery and food-processing equipment, Kasoa, Ghana.",
   "dependencies": {
+    "@hookform/resolvers": "7.0.3",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
+    "drizzle-orm": "0.45.4",
     "fuse.js": "7.5.0",
     "lenis": "1.3.27",
+    "libphonenumber-js": "1.13.15",
     "lucide-react": "1.69.0",
     "motion": "14.9.1",
+    "mysql2": "3.24.6",
     "next": "16.4.5",
+    "nodemailer": "10.3.1",
     "radix-ui": "1.8.1",
     "react": "19.3.1",
     "react-dom": "19.3.1",
+    "react-hook-form": "7.91.0",
     "sonner": "2.0.8",
     "tailwind-merge": "3.7.0",
+    "zod": "4.6.7",
     "zustand": "5.0.16"
   },
   "devDependencies": {
@@ -26,9 +33,11 @@
     "@testing-library/jest-dom": "7.0.1",
     "@testing-library/react": "16.3.3",
     "@types/node": "26.6.6",
+    "@types/nodemailer": "8.0.2",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "6.2.1",
+    "drizzle-kit": "0.31.11",
     "eslint": "9.39.5",
     "eslint-config-next": "16.4.5",
     "eslint-config-prettier": "10.1.8",
@@ -57,7 +66,9 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "ci": "npm run format:check && npm run lint && npm run typecheck && npm run test && npm run build && npm run test:e2e",
-    "prepare": "husky || true"
+    "prepare": "husky || true",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
   },
   "lint-staged": {
     "*.{js,mjs,ts,tsx}": [
@@ -65,5 +76,16 @@
       "prettier --write"
     ],
     "*.{json,css,md,yml,yaml}": "prettier --write"
+  },
+  "overrides": {
+    "@esbuild-kit/core-utils": {
+      "esbuild": "0.28.2"
+    },
+    "drizzle-kit": {
+      "esbuild": "0.28.2"
+    },
+    "tsx": {
+      "esbuild": "0.28.2"
+    }
   }
 }

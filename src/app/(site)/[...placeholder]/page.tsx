@@ -7,7 +7,6 @@ import { GENERAL_QUOTE_LINK } from "@/lib/whatsapp";
 // Pages later build phases will add. A real route at any of these paths takes priority over this
 // catch-all automatically, so each phase just adds its page. Delete this file after Phase 5.
 const COMING_SOON = new Set([
-  "quote",
   "solutions",
   "how-it-works",
   "about",
