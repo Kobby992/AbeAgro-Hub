@@ -93,21 +93,10 @@ test("filter chips expose their state to assistive technology", async ({ page })
   await expect(chip).toHaveAttribute("aria-pressed", "true");
 });
 
-test("spec plates show without hover on touch, and on hover with a mouse", async ({
-  page,
-}, testInfo) => {
+test("spec plates are readable without hovering", async ({ page }) => {
   await page.goto("/styleguide");
-  const card = page.locator("article").nth(1);
-  const plates = card.locator("div.flex-wrap");
-  await card.scrollIntoViewIfNeeded();
-  const opacity = () => plates.evaluate((element) => getComputedStyle(element).opacity);
-
-  if (testInfo.project.name === "mobile-390") {
-    expect(await page.evaluate(() => matchMedia("(hover: hover)").matches)).toBe(false);
-    await expect.poll(opacity).toBe("1");
-  } else {
-    await expect.poll(opacity).toBe("0");
-    await card.hover();
-    await expect.poll(opacity).toBe("1");
-  }
+  const plates = page.locator("article").nth(1).locator("div.flex-wrap");
+  await plates.scrollIntoViewIfNeeded();
+  await expect(plates).toBeVisible();
+  await expect(plates).toHaveCSS("opacity", "1");
 });

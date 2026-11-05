@@ -1,9 +1,7 @@
 "use client";
 
-import { motion, useMotionValue, useReducedMotion, useSpring } from "motion/react";
 import type { PointerEvent, ReactNode } from "react";
-
-const SPRING = { stiffness: 220, damping: 22 };
+import { cn } from "@/lib/utils";
 
 /** Leans gently toward a mouse pointer (BUILD_SPEC §5.2-3). Touch and reduced motion stay flat. */
 export function TiltCard({
@@ -15,32 +13,26 @@ export function TiltCard({
   className?: string;
   maxTilt?: number;
 }) {
-  const reduced = useReducedMotion();
-  const rotateX = useSpring(useMotionValue(0), SPRING);
-  const rotateY = useSpring(useMotionValue(0), SPRING);
-
   function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
-    if (reduced || event.pointerType !== "mouse") return;
+    if (event.pointerType !== "mouse") return;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const box = event.currentTarget.getBoundingClientRect();
-    const fromCentreX = (event.clientX - box.left) / box.width - 0.5;
-    const fromCentreY = (event.clientY - box.top) / box.height - 0.5;
-    rotateY.set(fromCentreX * 2 * maxTilt);
-    rotateX.set(-fromCentreY * 2 * maxTilt);
+    const rotateY = ((event.clientX - box.left) / box.width - 0.5) * 2 * maxTilt;
+    const rotateX = -((event.clientY - box.top) / box.height - 0.5) * 2 * maxTilt;
+    event.currentTarget.style.transform = `perspective(800px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
   }
 
-  function handlePointerLeave() {
-    rotateX.set(0);
-    rotateY.set(0);
+  function handlePointerLeave(event: PointerEvent<HTMLDivElement>) {
+    event.currentTarget.style.transform = "";
   }
 
   return (
-    <motion.div
-      className={className}
-      style={{ rotateX, rotateY, transformPerspective: 800 }}
+    <div
+      className={cn("transition-transform duration-150 ease-out", className)}
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

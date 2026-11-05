@@ -1,0 +1,22 @@
+[
+  {
+    "group": "Buying & quotes",
+    "question": "How do I get a price?",
+    "answer": "Tap Get quote on any product. WhatsApp opens with the details, and our sales team replies with current pricing and availability."
+  },
+  {
+    "group": "Delivery",
+    "question": "Do you deliver?",
+    "answer": "Yes, nationwide across Ghana, from our base in Kasoa."
+  },
+  {
+    "group": "Payment & warranty",
+    "question": "What payment methods do you accept, and what warranty do I get?",
+    "answer": "Payment methods and warranty terms are discussed and agreed with you when your quote is prepared."
+  },
+  {
+    "group": "Buying & quotes",
+    "question": "Where are you located, and when are you open?",
+    "answer": "Kasoa, Ghana. We are open 9:00am – 5:00pm."
+  }
+]

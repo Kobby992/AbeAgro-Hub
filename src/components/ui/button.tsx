@@ -14,6 +14,7 @@ const buttonVariants = cva(
         outline: "btn-outline",
         ghost: "btn-ghost",
         "outline-light": "btn-outline-light",
+        "ghost-light": "btn-ghost-light",
       },
       // Every size keeps a 44px minimum touch target (BUILD_SPEC §11).
       size: {

@@ -1,0 +1,26 @@
+import { FaqTeaser } from "@/components/sections/faq-teaser";
+import { FeaturedMachinery } from "@/components/sections/featured-machinery";
+import { FinalCta } from "@/components/sections/final-cta";
+import { Hero } from "@/components/sections/hero";
+import { HowItWorks } from "@/components/sections/how-it-works";
+import { KobbyBand } from "@/components/sections/kobby-band";
+import { ShopByTask } from "@/components/sections/shop-by-task";
+import { SolutionsCards } from "@/components/sections/solutions-cards";
+import { TrustStrip } from "@/components/sections/trust-strip";
+
+// Section order from BUILD_SPEC §6.2.
+export default function HomePage() {
+  return (
+    <>
+      <Hero />
+      <TrustStrip />
+      <ShopByTask />
+      <FeaturedMachinery />
+      <SolutionsCards />
+      <HowItWorks />
+      <KobbyBand />
+      <FaqTeaser />
+      <FinalCta />
+    </>
+  );
+}

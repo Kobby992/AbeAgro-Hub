@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/field";
-import { CategoryBadge, SpecPlate } from "@/components/ui/tags";
+import { CategoryBadge, ConfirmHint, SpecPlate } from "@/components/ui/tags";
 import { categoryName, type CategorySlug } from "@/config/categories";
 import { cn } from "@/lib/utils";
 
@@ -17,6 +17,8 @@ export type MachineCardProps = {
   href: string;
   quoteHref: string;
   specs: { label: string; value: string }[];
+  /** The catalogue says some of this product's specs still need confirming (BUILD_SPEC §3.2). */
+  needsConfirmation?: boolean;
   /** Receives the pressed button, so the caller can run FlyToQuote from it. */
   onAdd?: (trigger: HTMLButtonElement) => void;
   compared?: boolean;
@@ -27,8 +29,8 @@ export type MachineCardProps = {
 
 /**
  * Catalogue card (BUILD_SPEC §5.2-4, §6.3). All actions stay visible and usable without hover.
- * Hover only adds the lift, the image zoom, the Get quote slide and the spec plates fading in;
- * on touch screens the plates are simply always shown.
+ * Hover only adds the lift, the image zoom and the Get quote slide. Spec plates stay visible:
+ * they help buyers compare, and hiding them left a large gap in every card on desktop.
  */
 export function MachineCard({
   name,
@@ -38,6 +40,7 @@ export function MachineCard({
   href,
   quoteHref,
   specs,
+  needsConfirmation = false,
   onAdd,
   compared = false,
   onCompareChange,
@@ -79,16 +82,11 @@ export function MachineCard({
         </h3>
         <p className="line-clamp-2 text-sm text-muted-foreground">{summary}</p>
 
-        <div
-          className={cn(
-            "flex flex-wrap gap-1.5 pt-1 transition-opacity duration-250",
-            "[@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-focus-within:opacity-100 [@media(hover:hover)]:group-hover:opacity-100",
-            previewing && "[@media(hover:hover)]:opacity-100",
-          )}
-        >
+        <div className={cn("flex flex-wrap gap-1.5 pt-1")}>
           {specs.slice(0, 2).map((spec) => (
             <SpecPlate key={spec.label} label={spec.label} value={spec.value} />
           ))}
+          {needsConfirmation && <ConfirmHint />}
         </div>
 
         <div className="mt-auto flex flex-col gap-2 pt-2">

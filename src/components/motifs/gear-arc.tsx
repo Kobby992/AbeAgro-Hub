@@ -1,7 +1,9 @@
 "use client";
 
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
+
+const DEGREES_PER_PIXEL = 120 / 2000;
 
 const CENTRE = 200;
 const HOLE = 150;
@@ -36,37 +38,52 @@ const GEAR_PATH = (() => {
 export function GearArc({
   color = "var(--abe-forest)",
   spin = false,
+  arcClassName,
   className,
 }: {
   color?: string;
   spin?: boolean;
+  /** Lets a page hide the gold arc where it would run behind text or icons. */
+  arcClassName?: string;
   className?: string;
 }) {
-  const reduced = useReducedMotion();
-  const { scrollY } = useScroll();
-  const scrollRotation = useTransform(scrollY, [0, 2000], [0, 120]);
+  const turning = useRef<SVGGElement>(null);
+
+  useEffect(() => {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      if (turning.current) {
+        turning.current.style.transform = `rotate(${window.scrollY * DEGREES_PER_PIXEL}deg)`;
+      }
+    };
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(frame);
+    };
+  }, []);
 
   return (
     <svg viewBox="0 0 400 400" fill="none" aria-hidden="true" className={className}>
-      <motion.g
-        style={{
-          rotate: reduced ? 0 : scrollRotation,
-          transformBox: "fill-box",
-          transformOrigin: "center",
-        }}
-      >
+      <g ref={turning} style={{ transformBox: "fill-box", transformOrigin: "center" }}>
         <g
           className={cn(spin && "gear-spin")}
           style={{ transformBox: "fill-box", transformOrigin: "center" }}
         >
           <path d={GEAR_PATH} fill={color} fillRule="evenodd" />
         </g>
-      </motion.g>
+      </g>
       <path
         d="M 76 200 A 124 124 0 0 1 280 106"
         stroke="var(--abe-gold)"
         strokeWidth="13"
         strokeLinecap="round"
+        className={arcClassName}
       />
     </svg>
   );

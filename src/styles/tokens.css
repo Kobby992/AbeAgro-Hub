@@ -63,6 +63,7 @@
   /* Layout */
   --content-max: 1240px;
   --gutter: 1rem;
+  --header-h: 5rem;
 
   /* Radius hierarchy: plate (tags), control (buttons, inputs), card, panel */
   --radius-plate: 3px;

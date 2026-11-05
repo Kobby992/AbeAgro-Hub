@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { MotionProvider } from "@/components/motion/motion-provider";
 import { site } from "@/config/site";
 import { fontBody, fontDisplay } from "@/lib/fonts";
 import "./globals.css";
@@ -17,7 +16,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${fontBody.variable} ${fontDisplay.variable}`}>
       <body className="antialiased">
-        <MotionProvider>{children}</MotionProvider>
+        {/* Scroll reveals start hidden, so without JavaScript they must simply be shown. */}
+        <noscript>
+          <style>{`.reveal,.stagger>*{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
+        {children}
       </body>
     </html>
   );

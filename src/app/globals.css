@@ -290,7 +290,9 @@
     position: absolute;
     inset: 0;
     z-index: -1;
-    opacity: 0.16;
+    /* Soft light adds texture without lifting the colour, so grain sections match plain ones. */
+    mix-blend-mode: soft-light;
+    opacity: 0.22;
     pointer-events: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
@@ -310,8 +312,123 @@
     }
   }
 
-  .gear-spin {
-    animation: icon-spin 90s linear infinite;
+  .btn-ghost-light {
+    --btn-bg: transparent;
+    --btn-fg: var(--abe-white);
+    --btn-hover: rgb(255 255 255 / 0.12);
+    --btn-sweep: var(--abe-gold);
+  }
+
+  /* §5.3: on mobile the hero is a static composition, so only larger screens idle-spin the gear */
+  @media (min-width: 1024px) {
+    .gear-spin {
+      animation: icon-spin 90s linear infinite;
+    }
+  }
+
+  /* §5.2-1: runs in CSS so the headline and stripes do not wait for JavaScript */
+  .rise-word {
+    display: inline-block;
+    animation: rise-word 600ms var(--ease-out) both;
+    animation-delay: var(--rise-delay, 0ms);
+  }
+
+  .stripe-draw {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: stripe-draw 1200ms ease-in-out forwards;
+  }
+
+  /* §5.1: scroll reveals. data-shown is set once by Reveal and Stagger. */
+  .reveal,
+  .stagger > * {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity var(--dur-reveal) var(--ease-out),
+      transform var(--dur-reveal) var(--ease-out);
+  }
+
+  .reveal[data-shown],
+  .stagger[data-shown] > * {
+    opacity: 1;
+    transform: none;
+  }
+
+  .stagger > :nth-child(2) {
+    transition-delay: 70ms;
+  }
+
+  .stagger > :nth-child(3) {
+    transition-delay: 140ms;
+  }
+
+  .stagger > :nth-child(4) {
+    transition-delay: 210ms;
+  }
+
+  .stagger > :nth-child(5) {
+    transition-delay: 280ms;
+  }
+
+  .stagger > :nth-child(6) {
+    transition-delay: 350ms;
+  }
+
+  .stagger > :nth-child(7) {
+    transition-delay: 420ms;
+  }
+
+  .stagger > :nth-child(n + 8) {
+    transition-delay: 490ms;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .stagger > * {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* §5.2-6: idle pulse on the Kobby launcher */
+  .kobby-breathe {
+    animation: kobby-breathe 8s ease-in-out infinite;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* For pages with no dark hero: clears the fixed header */
+  .page-top {
+    padding-top: var(--header-h);
+  }
+
+  /* Route progress bar, §5.1 */
+  .route-progress {
+    transform: scaleX(0);
+    transform-origin: left;
+    opacity: 0;
+  }
+
+  .route-progress[data-state="loading"] {
+    opacity: 1;
+    transform: scaleX(0.85);
+    transition: transform 6s var(--ease-out);
+  }
+
+  .route-progress[data-state="done"] {
+    opacity: 0;
+    transform: scaleX(1);
+    transition:
+      transform 150ms var(--ease-out),
+      opacity 250ms 150ms linear;
   }
 
   .spinner {
@@ -345,11 +462,37 @@
   }
 }
 
+@keyframes rise-word {
+  from {
+    opacity: 0;
+    transform: translateY(0.4em);
+  }
+}
+
+@keyframes stripe-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes kobby-breathe {
+  0%,
+  88%,
+  100% {
+    transform: scale(1);
+  }
+
+  94% {
+    transform: scale(1.06);
+  }
+}
+
 /* §5.1: every animation has a no-motion path */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
+    animation-delay: 0ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

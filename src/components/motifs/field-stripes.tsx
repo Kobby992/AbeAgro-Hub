@@ -1,7 +1,3 @@
-"use client";
-
-import { motion, useReducedMotion } from "motion/react";
-
 // The logo's curved field rows, running toward a horizon on the right.
 const ROWS = [
   { d: "M-60 470 C 300 345, 720 250, 1260 226", width: 54, tone: "base" },
@@ -26,8 +22,6 @@ export function FieldStripes({
   draw?: boolean;
   className?: string;
 }) {
-  const reduced = useReducedMotion();
-
   return (
     <svg
       viewBox="0 0 1200 420"
@@ -38,18 +32,14 @@ export function FieldStripes({
       className={className}
     >
       {ROWS.map((row, index) => (
-        <motion.path
+        <path
           key={row.d}
           d={row.d}
           stroke={TONES[tone][row.tone]}
           strokeWidth={row.width}
-          initial={draw ? { pathLength: 0 } : false}
-          animate={{ pathLength: 1 }}
-          transition={{
-            duration: reduced ? 0 : 1.2,
-            delay: reduced ? 0 : index * 0.12,
-            ease: "easeInOut",
-          }}
+          pathLength={1}
+          className={draw ? "stripe-draw" : undefined}
+          style={draw ? { animationDelay: `${index * 120}ms` } : undefined}
         />
       ))}
     </svg>
