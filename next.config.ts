@@ -1,3 +1,4 @@
+import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -6,4 +7,4 @@ const nextConfig: NextConfig = {
   agentRules: false,
 };
 
-export default nextConfig;
+export default createMDX()(nextConfig);

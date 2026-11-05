@@ -5,6 +5,10 @@
   "description": "ABE Agro Hub website: agricultural machinery and food-processing equipment, Kasoa, Ghana.",
   "dependencies": {
     "@hookform/resolvers": "7.0.3",
+    "@mdx-js/loader": "3.1.1",
+    "@mdx-js/react": "3.1.1",
+    "@next/mdx": "16.4.5",
+    "@types/mdx": "2.0.14",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "drizzle-orm": "0.45.4",

@@ -4,7 +4,13 @@ import { Button } from "@/components/ui/button";
 import { notify } from "@/lib/notify";
 import { useQuoteDrawer, useQuoteStore } from "@/store/quote";
 
-export function AddAllToQuote({ items }: { items: { slug: string; name: string }[] }) {
+export function AddAllToQuote({
+  items,
+  label = "Add all to quote",
+}: {
+  items: { slug: string; name: string }[];
+  label?: string;
+}) {
   return (
     <Button
       size="lg"
@@ -21,7 +27,7 @@ export function AddAllToQuote({ items }: { items: { slug: string; name: string }
         );
       }}
     >
-      Add all to quote
+      {label}
     </Button>
   );
 }

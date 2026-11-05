@@ -16,7 +16,9 @@ const sink = (): SinkRecord[] =>
     : [];
 
 const records = (type: string, reference: string) =>
-  sink().filter((record) => record.type === type && record.data.reference === reference);
+  sink().filter(
+    (record) => record.type === type && JSON.stringify(record.data).includes(reference),
+  );
 
 /** Catches WhatsApp opening, in a new tab or this one, without leaving for the real site. */
 async function watchWhatsApp(page: Page) {

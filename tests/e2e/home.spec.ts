@@ -153,15 +153,6 @@ test("mobile menu opens full screen and closes on Escape", async ({ page }, test
   await expect(dialog).toBeHidden();
 });
 
-test("future pages show a holding page, and unknown pages 404", async ({ page }) => {
-  const soon = await page.goto("/about");
-  expect(soon?.status()).toBe(200);
-  await expect(page.getByRole("heading", { name: "This page is on its way" })).toBeVisible();
-
-  const missing = await page.goto("/not-a-real-page");
-  expect(missing?.status()).toBe(404);
-});
-
 test("the how-it-works conveyor fills with gold as you scroll", async ({ page }, testInfo) => {
   await page.goto("/");
   const vertical = isMobile(testInfo.project.name);

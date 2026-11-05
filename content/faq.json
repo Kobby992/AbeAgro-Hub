@@ -18,5 +18,49 @@
     "group": "Buying & quotes",
     "question": "Where are you located, and when are you open?",
     "answer": "Kasoa, Ghana. We are open 9:00am – 5:00pm."
+  },
+  {
+    "group": "Buying & quotes",
+    "question": "Why are prices not on the website?",
+    "answer": "Our sales team confirms the current price and availability with each quote, so what you hear is up to date."
+  },
+  {
+    "group": "Buying & quotes",
+    "question": "Can I ask about several machines at once?",
+    "answer": "Yes. Add them to your quote list, then send the whole list to our sales team on WhatsApp."
+  },
+  {
+    "group": "Buying & quotes",
+    "question": "Do I need an account to get a quote?",
+    "answer": "No. There is no account to create, and you do not pay on this website."
+  },
+  {
+    "group": "Delivery",
+    "question": "How much is delivery, and how long does it take?",
+    "answer": "Our sales team confirms delivery for your location when they prepare your quote."
+  },
+  {
+    "group": "Installation & training",
+    "question": "Do you help with installation and training?",
+    "answer": "",
+    "needsOwner": "Confirm which installation, training and spare-parts services to describe."
+  },
+  {
+    "group": "Using Kobby",
+    "question": "Who is Kobby?",
+    "answer": "Kobby is ABE Agro Hub's AI machinery advisor. Tell Kobby what you grow or process, and Kobby helps you find a suitable machine and send a quote request.",
+    "hiddenUntilKobby": true
+  },
+  {
+    "group": "Using Kobby",
+    "question": "Can Kobby tell me the price?",
+    "answer": "No. Our sales team confirms prices and availability. Kobby can send them your request on WhatsApp.",
+    "hiddenUntilKobby": true
+  },
+  {
+    "group": "Using Kobby",
+    "question": "Are my chats with Kobby saved?",
+    "answer": "Yes, chats are saved to improve our service. Please do not share payment details.",
+    "hiddenUntilKobby": true
   }
 ]

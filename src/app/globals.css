@@ -524,3 +524,39 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Long-form text: solution guides and legal pages */
+.prose-abe {
+  max-width: 65ch;
+}
+
+.prose-abe h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: var(--text-3xl);
+  line-height: 1.2;
+}
+
+.prose-abe > :first-child {
+  margin-top: 0;
+}
+
+.prose-abe p {
+  margin-bottom: 0.75rem;
+}
+
+.prose-abe ul {
+  margin-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.prose-abe li {
+  margin-bottom: 0.375rem;
+}
+
+.prose-abe a {
+  color: var(--abe-forest);
+  font-weight: 600;
+  text-decoration: underline;
+}

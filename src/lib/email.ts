@@ -29,15 +29,14 @@ export function buildQuoteEmail(lead: Lead) {
   return { subject: `Quote request ${lead.reference}`, text: lines.join("\n") };
 }
 
-/** Backup notification for every request (BUILD_SPEC §8.3). Failures are logged, never thrown. */
-export async function sendQuoteEmail(lead: Lead): Promise<boolean> {
-  const email = buildQuoteEmail(lead);
+/** Sends a notification to the sales mailbox. Failures are logged, never thrown (§8.3). */
+export async function sendNotificationEmail(subject: string, text: string): Promise<boolean> {
   try {
-    if (await writeToTestSink("email", { reference: lead.reference, ...email })) return true;
+    if (await writeToTestSink("email", { subject, text })) return true;
 
     const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, QUOTE_NOTIFY_EMAIL } = process.env;
     if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS || !QUOTE_NOTIFY_EMAIL) {
-      console.error(`Email for ${lead.reference} not sent: SMTP settings are missing`);
+      console.error(`Email "${subject}" not sent: SMTP settings are missing`);
       return false;
     }
     const port = Number(SMTP_PORT ?? 465);
@@ -47,10 +46,16 @@ export async function sendQuoteEmail(lead: Lead): Promise<boolean> {
       secure: port === 465,
       auth: { user: SMTP_USER, pass: SMTP_PASS },
     });
-    await transport.sendMail({ from: SMTP_USER, to: QUOTE_NOTIFY_EMAIL, ...email });
+    await transport.sendMail({ from: SMTP_USER, to: QUOTE_NOTIFY_EMAIL, subject, text });
     return true;
   } catch (error) {
-    console.error(`Email for ${lead.reference} not sent:`, (error as Error).message);
+    console.error(`Email "${subject}" not sent:`, (error as Error).message);
     return false;
   }
+}
+
+/** Backup notification for every quote request (BUILD_SPEC §8.3). */
+export async function sendQuoteEmail(lead: Lead): Promise<boolean> {
+  const { subject, text } = buildQuoteEmail(lead);
+  return sendNotificationEmail(subject, text);
 }
