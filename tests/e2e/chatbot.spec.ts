@@ -44,3 +44,54 @@ test("a page still works if Jotform cannot be reached", async ({ page }) => {
   await page.getByRole("button", { name: "Search", exact: true }).click();
   await expect(page).toHaveURL(/\/machinery\?q=water/);
 });
+
+// Stands in for Jotform's widget: a container holding the button our page presses.
+const FAKE_WIDGET = `
+  const box = document.createElement("div");
+  box.className = "embedded-agent-container";
+  const toggle = document.createElement("button");
+  toggle.className = "ai-agent-chat-avatar";
+  toggle.addEventListener("click", () => box.classList.add("opened"));
+  box.append(toggle);
+  document.body.append(box);
+`;
+
+test("an Ask Kobby button opens the chatbot, not the panel", async ({ page }) => {
+  await page.route(EMBED, (route) =>
+    route.fulfill({ contentType: "text/javascript", body: FAKE_WIDGET }),
+  );
+  await page.goto("/");
+  await expect(page.locator(".ai-agent-chat-avatar")).toBeAttached();
+  await page.getByRole("button", { name: "Ask Kobby what you need" }).click();
+  await expect(page.locator(".embedded-agent-container.opened")).toBeAttached();
+  await expect(page.getByRole("dialog")).toHaveCount(0);
+});
+
+test("pressing a second Ask Kobby button does not close the open chatbot", async ({ page }) => {
+  await page.route(EMBED, (route) =>
+    route.fulfill({ contentType: "text/javascript", body: FAKE_WIDGET }),
+  );
+  await page.goto("/");
+  await expect(page.locator(".ai-agent-chat-avatar")).toBeAttached();
+  const clicks = page.evaluate(
+    () =>
+      new Promise<number>((resolve) => {
+        let count = 0;
+        document
+          .querySelector(".ai-agent-chat-avatar")
+          ?.addEventListener("click", () => (count += 1));
+        setTimeout(() => resolve(count), 1_000);
+      }),
+  );
+  const button = page.getByRole("button", { name: "Ask Kobby what you need" });
+  await button.click();
+  await button.click();
+  expect(await clicks).toBe(1);
+});
+
+test("if Jotform cannot be reached, an Ask Kobby button opens the panel", async ({ page }) => {
+  await page.route(EMBED, (route) => route.abort());
+  await page.goto("/");
+  await page.getByRole("button", { name: "Ask Kobby what you need" }).click();
+  await expect(page.getByRole("dialog")).toBeVisible({ timeout: 6_000 });
+});

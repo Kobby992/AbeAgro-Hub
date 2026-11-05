@@ -1,9 +1,13 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { openChatbot } from "@/lib/open-chatbot";
 import { useKobbyStore } from "@/store/kobby";
 
-/** Opens Kobby, optionally with a question already filled in. */
+/**
+ * Opens the Jotform chatbot. If it cannot be reached, opens the built-in panel with the question
+ * filled in, so the button always gets the customer to help.
+ */
 export function KobbyPromptButton({
   prompt,
   className,
@@ -15,7 +19,15 @@ export function KobbyPromptButton({
 }) {
   const openKobby = useKobbyStore((state) => state.openKobby);
   return (
-    <button type="button" className={className} onClick={() => openKobby(prompt)}>
+    <button
+      type="button"
+      className={className}
+      onClick={() => {
+        void openChatbot().then((opened) => {
+          if (!opened) openKobby(prompt);
+        });
+      }}
+    >
       {children}
     </button>
   );
