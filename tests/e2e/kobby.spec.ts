@@ -7,7 +7,7 @@ import { expect, test, type Page } from "@playwright/test";
 
 async function openKobby(page: Page, url = "/") {
   await page.goto(url);
-  await page.getByRole("button", { name: "Ask Kobby", exact: true }).click();
+  await page.getByRole("button", { name: /Ask Kobby (what you need|about this machine)/ }).click();
   const dialog = page.getByRole("dialog");
   await expect(dialog.getByRole("heading", { name: "Kobby" })).toBeVisible();
   return dialog;
@@ -136,8 +136,8 @@ test("the chat survives moving to another page, and reset clears it", async ({ p
   await expect(dialog.getByRole("button", { name: "Get a quote" })).toBeVisible();
 
   await page.keyboard.press("Escape");
-  await page.goto("/about");
-  await page.getByRole("button", { name: "Ask Kobby", exact: true }).click();
+  await page.goto("/");
+  await page.getByRole("button", { name: "Ask Kobby what you need" }).click();
   await expect(reply).toBeVisible();
 
   await dialog.getByRole("button", { name: "Start a new chat" }).click();
@@ -153,10 +153,11 @@ test("Escape closes the panel and returns focus; Tab stays inside", async ({ pag
   ).toBe(true);
   await page.keyboard.press("Escape");
   await expect(dialog).toBeHidden();
-  await expect(page.getByRole("button", { name: "Ask Kobby", exact: true })).toBeFocused();
+  await expect(page.getByRole("button", { name: "Ask Kobby what you need" })).toBeFocused();
 });
 
-test("the teaser shows once after 20 seconds on a product page", async ({ page }) => {
+// The teaser pointed at the corner launcher, which is off until the owner asks for it back.
+test.skip("the teaser shows once after 20 seconds on a product page", async ({ page }) => {
   await page.clock.install();
   await page.goto("/machinery/corn-mill");
   const teaser = page.getByRole("button", { name: /Need help choosing a Corn Mill/ });
