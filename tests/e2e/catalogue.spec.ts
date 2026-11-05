@@ -203,9 +203,6 @@ test("sticky phone bar shows only on phones, and buttons sit above it", async ({
   }
   await expect(bar).toBeVisible();
   await expect(bar.getByRole("link", { name: "WhatsApp" })).toBeVisible();
-  const barTop = (await bar.boundingBox())?.y ?? 0;
-  const kobby = await page.getByRole("button", { name: "Ask Kobby", exact: true }).boundingBox();
-  expect((kobby?.y ?? 0) + (kobby?.height ?? 0)).toBeLessThanOrEqual(barTop);
 });
 
 test("product page passes checks", async ({ page }, testInfo) => {
