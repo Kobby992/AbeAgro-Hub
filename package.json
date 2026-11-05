@@ -62,14 +62,14 @@
     "yaml": "2.9.1"
   },
   "engines": {
-    "node": ">=20.9.0"
+    "node": ">=22"
   },
   "scripts": {
     "dev": "next dev",
     "kobby:knowledge": "tsx scripts/build-kobby-knowledge.ts",
     "kobby:evals": "tsx scripts/run-kobby-evals.ts",
     "prebuild": "npm run kobby:knowledge",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint . --max-warnings 0",
     "typecheck": "next typegen && tsc --noEmit",
