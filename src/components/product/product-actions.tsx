@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { KobbyPromptButton } from "@/components/kobby/kobby-prompt-button";
 import { QuickQuoteLink } from "@/components/quote/quick-quote-link";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -8,6 +8,7 @@ import { QuantityStepper } from "@/components/ui/quantity-stepper";
 import { useAddToQuote } from "@/hooks/use-add-to-quote";
 import { cn } from "@/lib/utils";
 import { productQuoteLink } from "@/lib/whatsapp";
+import { useKobbyStore } from "@/store/kobby";
 
 /** The buying controls and the sticky phone bar, which share one quantity (BUILD_SPEC §6.5). */
 export function ProductActions({
@@ -24,6 +25,12 @@ export function ProductActions({
   const [qty, setQty] = useState(1);
   const addToQuote = useAddToQuote();
   const quoteHref = productQuoteLink({ name, category, slug, qty });
+
+  const setKobbyProduct = useKobbyStore((state) => state.setProduct);
+  useEffect(() => {
+    setKobbyProduct({ name: shortName });
+    return () => setKobbyProduct(null);
+  }, [setKobbyProduct, shortName]);
 
   return (
     <div className="mt-5 flex max-w-lg flex-col gap-3">

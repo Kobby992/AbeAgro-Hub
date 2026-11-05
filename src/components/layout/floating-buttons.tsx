@@ -2,6 +2,7 @@
 
 import { ClipboardList, MessageSquareText } from "lucide-react";
 import dynamic from "next/dynamic";
+import { KobbyTeaser } from "@/components/kobby/kobby-teaser";
 import { QuoteCount, QuoteListLink } from "@/components/quote/quote-list-link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -52,6 +53,7 @@ export function FloatingButtons() {
         </QuoteListLink>
       </Button>
 
+      <KobbyTeaser />
       {hasOpened && <KobbyPanel />}
       {drawerMounted && <QuoteDrawer />}
     </>

@@ -29,7 +29,12 @@ export default defineConfig({
   webServer: {
     command: `npx next start -p ${port}`,
     url: baseURL,
-    env: { QUOTE_TEST_SINK: ".e2e/quote-sink.jsonl" },
+    env: {
+      QUOTE_TEST_SINK: ".e2e/quote-sink.jsonl",
+      // Kobby runs on a scripted model in browser tests: no API key and no cost.
+      KOBBY_TEST_MODEL: "1",
+      KOBBY_IP_LIMIT: "1000",
+    },
     reuseExistingServer: false,
     timeout: 60_000,
   },

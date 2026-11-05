@@ -203,6 +203,10 @@ export function Header({ feature }: { feature?: Feature }) {
               <li key={link.href}>
                 <Link
                   href={link.href}
+                  // These two pages carry the form code, which the home page budget can't absorb.
+                  prefetch={
+                    link.href === "/contact" || link.href === "/partners" ? false : undefined
+                  }
                   aria-current={pathname === link.href ? "page" : undefined}
                   className="inline-flex min-h-11 items-center px-3 font-semibold hover:underline aria-[current=page]:underline"
                 >

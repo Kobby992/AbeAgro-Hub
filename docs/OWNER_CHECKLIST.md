@@ -6,7 +6,9 @@ These are the things only you can answer. Nothing here is invented on the websit
 
 - [ ] **Hostinger plan:** confirm it is Business or Cloud, which the site needs to run as a Node.js app.
 - [ ] **Sales mailbox password:** for sales@abeagrohub.com, so the site can email you every request. Set it only as a server setting, never in chat.
-- [ ] **Anthropic API key and monthly budget:** needed for Kobby.
+- [ ] **Anthropic API key and monthly budget:** needed for Kobby. Set the key only as a server setting, never in chat. Until it is set, Kobby shows a WhatsApp button instead of answering. Also set a spending limit in your Anthropic account: `KOBBY_DAILY_MESSAGE_CAP` limits messages (3,000 a day by default), not money.
+- [ ] **Kobby's first real test:** with the key set, run `npm run kobby:evals` and read a sample of chats before launch. Kobby's answers have not yet been tested against the real model.
+- [ ] **Saved chats:** Kobby's chats are kept for 180 days and can include a customer's name and phone number. The privacy policy says so; please include this in the legal review.
 - [ ] **Analytics choice:** GA4 or Plausible.
 - [ ] **Privacy policy and terms:** the drafts at `/privacy` and `/terms` were written without a lawyer. Please have them reviewed.
 

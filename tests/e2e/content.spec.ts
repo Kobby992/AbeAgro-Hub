@@ -102,7 +102,7 @@ test("FAQ shows confirmed answers and hides ones still waiting", async ({ page }
   await page.getByText("How do I get a price?").click();
   await expect(page.getByText("Tap Get quote on any product.")).toBeVisible();
   await expect(page.getByText("Do you help with installation")).toHaveCount(0);
-  await expect(page.getByRole("heading", { name: "Using Kobby" })).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "Using Kobby" })).toBeVisible();
 });
 
 test("unknown pages get the branded 404 with search and Kobby", async ({ page }) => {

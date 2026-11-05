@@ -52,11 +52,21 @@ export const kobbyConversations = mysqlTable(
     messages: json("messages").$type<unknown[]>().notNull(),
     tokensIn: int("tokens_in").notNull().default(0),
     tokensOut: int("tokens_out").notNull().default(0),
+    tokensCached: int("tokens_cached").notNull().default(0),
     quoteReference: varchar("quote_reference", { length: 20 }),
     pageContext: varchar("page_context", { length: 500 }),
   },
-  (table) => [index("kobby_conversations_started_at").on(table.startedAt)],
+  (table) => [
+    index("kobby_conversations_started_at").on(table.startedAt),
+    index("kobby_conversations_session_id").on(table.sessionId),
+  ],
 );
+
+/** One row per day, counting messages against KOBBY_DAILY_MESSAGE_CAP (BUILD_SPEC §7.7). */
+export const kobbyDailyUsage = mysqlTable("kobby_daily_usage", {
+  day: varchar("day", { length: 10 }).primaryKey(),
+  messages: int("messages").notNull().default(0),
+});
 
 export const partnerEnquiries = mysqlTable("partner_enquiries", {
   id: int("id").autoincrement().primaryKey(),
