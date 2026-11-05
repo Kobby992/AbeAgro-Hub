@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
+import { CHATBOT_SCRIPT_ID } from "@/lib/open-chatbot";
 
-const SCRIPT_ID = "jotform-agent";
 const SCRIPT_SRC =
   "https://cdn.jotfor.ms/agent/embedjs/01a1ad995a9870008e58eaf7e2e8f461e4ce/embed.js";
 
@@ -17,9 +17,9 @@ export function JotformAgent() {
 
     function load() {
       // The script declares page-wide constants, so it must only ever run once.
-      if (document.getElementById(SCRIPT_ID)) return;
+      if (document.getElementById(CHATBOT_SCRIPT_ID)) return;
       const script = document.createElement("script");
-      script.id = SCRIPT_ID;
+      script.id = CHATBOT_SCRIPT_ID;
       script.src = SCRIPT_SRC;
       script.async = true;
       document.body.append(script);
