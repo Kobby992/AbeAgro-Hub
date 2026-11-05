@@ -29,6 +29,12 @@ describe("hosting", () => {
       expect(version).toMatch(/^16\.2\.\d+$/);
     }
   });
+
+  // Turbopack runs PostCSS and MDX loaders in child Node processes, which crash on Hostinger's
+  // build servers with no output. Webpack builds there without them.
+  it("builds with webpack", () => {
+    expect(packageJson.scripts.build).toBe("next build --webpack");
+  });
 });
 
 describe("starter content", () => {
