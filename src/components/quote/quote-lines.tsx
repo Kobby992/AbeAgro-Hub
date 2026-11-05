@@ -40,7 +40,7 @@ export function QuoteLines({
               <Link
                 href={`/machinery/${item.slug}`}
                 onClick={onNavigate}
-                className="font-display leading-tight font-bold [font-stretch:87.5%] hover:underline"
+                className="font-display leading-tight font-bold hover:underline"
               >
                 {product.shortName}
               </Link>

@@ -5,16 +5,18 @@
 :root {
   /* Brand palette, §4.2 */
   --abe-forest: #005a40;
-  --abe-forest-900: #003a2a;
+  --abe-forest-700: #00704f;
+  --abe-forest-900: #06281f;
   --abe-leaf: #1e8a3c;
   --abe-gold: #f8c424;
-  --abe-gold-600: #d9a400;
-  --abe-cream: #fbf8ef;
+  --abe-gold-300: #ffd95c;
+  --abe-gold-600: #e0ad00;
+  --abe-mist: #f2f6f3;
   --abe-soil: #7a4e2d;
   --abe-water: #1f7fc1;
   --abe-pepper: #d9472b;
   --abe-teal: #0f8c84;
-  --abe-charcoal: #1e2422;
+  --abe-charcoal: #12211c;
   --abe-white: #ffffff;
 
   /* Ink: darker accents that pass AA as text. The palette accents above are for fills and rules. */
@@ -35,7 +37,7 @@
   --abe-charcoal-tint: #e7e9e8;
 
   /* Semantic colours (shadcn/ui names) */
-  --background: var(--abe-cream);
+  --background: var(--abe-mist);
   --foreground: var(--abe-charcoal);
   --card: var(--abe-white);
   --card-foreground: var(--abe-charcoal);
@@ -45,13 +47,13 @@
   --primary-foreground: var(--abe-white);
   --secondary: var(--abe-gold);
   --secondary-foreground: var(--abe-charcoal);
-  --muted: #efeadb;
-  --muted-foreground: #4f5753;
-  --accent: #e4efe5;
+  --muted: #e6eeea;
+  --muted-foreground: #47574f;
+  --accent: #e0efe8;
   --accent-foreground: var(--abe-forest-900);
   --destructive: var(--abe-pepper-ink);
-  --border: #ddd6c3;
-  --input: #7d7c6e;
+  --border: #d3dfd9;
+  --input: #74857d;
   --ring: var(--abe-forest);
 
   /* Category accent: defaults to forest, set per category with data-cat below */
@@ -66,15 +68,15 @@
   --header-h: 5rem;
 
   /* Radius hierarchy: plate (tags), control (buttons, inputs), card, panel */
-  --radius-plate: 3px;
-  --radius-control: 6px;
-  --radius-card: 10px;
-  --radius-panel: 18px;
+  --radius-plate: 6px;
+  --radius-control: 10px;
+  --radius-card: 18px;
+  --radius-panel: 28px;
 
   /* Elevation, tinted with forest rather than grey */
-  --shadow-rest: 0 1px 2px rgb(0 58 42 / 0.1);
-  --shadow-raised: 0 4px 12px rgb(0 58 42 / 0.12);
-  --shadow-lifted: 0 14px 32px rgb(0 58 42 / 0.2);
+  --shadow-rest: 0 1px 2px rgb(6 40 31 / 0.06), 0 2px 8px rgb(6 40 31 / 0.05);
+  --shadow-raised: 0 2px 4px rgb(6 40 31 / 0.06), 0 10px 24px rgb(6 40 31 / 0.1);
+  --shadow-lifted: 0 4px 8px rgb(6 40 31 / 0.06), 0 22px 48px rgb(6 40 31 / 0.18);
 
   /* Motion, §5 */
   --dur-fast: 150ms;
@@ -116,6 +118,10 @@
   --cat-ink: var(--abe-gold-ink);
   --cat-tint: var(--abe-gold-tint);
   --cat-on: var(--abe-charcoal);
+  --tile-from: var(--abe-gold-300);
+  --tile-to: var(--abe-gold-600);
+  --tile-fg: var(--abe-charcoal);
+  --tile-pane: rgb(18 33 28 / 0.1);
 }
 
 [data-cat="grain-milling"],

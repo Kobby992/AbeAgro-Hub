@@ -46,7 +46,7 @@ export function CategoryIconTile({
   const tile = (
     <span
       data-cat={category}
-      className="flex size-12 items-center justify-center rounded-md bg-cat text-cat-on"
+      className="icon-tile flex size-12 items-center justify-center rounded-md bg-cat text-cat-on"
     >
       <Icon aria-hidden className={`size-6 ${motion}`} />
     </span>
@@ -76,10 +76,10 @@ export function CategoryTile({
         href={href}
         data-cat={category}
         data-preview={preview}
-        className="group lift-card flex h-full min-h-32 flex-col justify-between gap-4 rounded-lg border-t-[3px] border-cat bg-card p-4 shadow-sm"
+        className="group lift-card task-tile flex h-full min-h-40 flex-col justify-between gap-6 rounded-lg p-5"
       >
         <CategoryIconTile category={category} morph />
-        <span className="font-display text-lg leading-tight font-bold [font-stretch:87.5%]">
+        <span className="text-lg leading-snug font-bold tracking-tight">
           {categoryName(category)}
         </span>
       </Link>

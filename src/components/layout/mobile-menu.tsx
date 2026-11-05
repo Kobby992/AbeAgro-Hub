@@ -9,7 +9,7 @@ import { primaryNav } from "@/config/site";
 import { GENERAL_QUOTE_LINK } from "@/lib/whatsapp";
 
 const linkClasses =
-  "flex min-h-12 items-center border-b border-white/15 font-display text-2xl font-bold [font-stretch:87.5%]";
+  "flex min-h-12 items-center border-b border-white/15 font-display text-2xl font-bold";
 
 export default function MobileMenu({
   open,

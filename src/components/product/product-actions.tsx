@@ -69,7 +69,7 @@ export function ProductActions({
       {/* Thumb-reachable actions on phones (BUILD_SPEC §4.5). */}
       <div
         data-sticky-bar
-        className="fixed inset-x-0 bottom-0 z-30 flex gap-2 border-t border-border bg-cream p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-lg lg:hidden"
+        className="fixed inset-x-0 bottom-0 z-30 flex gap-2 border-t border-border bg-background p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-lg lg:hidden"
       >
         <Button
           variant="outline"

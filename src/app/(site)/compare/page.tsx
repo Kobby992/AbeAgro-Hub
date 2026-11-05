@@ -67,7 +67,7 @@ export default async function ComparePage({
                         </div>
                         <Link
                           href={`/machinery/${product.slug}`}
-                          className="mt-2 block font-display text-lg leading-tight font-bold [font-stretch:87.5%] hover:underline"
+                          className="mt-2 block font-display text-lg leading-tight font-bold hover:underline"
                         >
                           {product.name}
                         </Link>

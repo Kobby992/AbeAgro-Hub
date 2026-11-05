@@ -5,7 +5,7 @@ import { GearIcon } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "btn inline-flex shrink-0 items-center justify-center gap-2 rounded-md whitespace-nowrap select-none [&_svg]:shrink-0",
+  "btn inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-center select-none [&_svg]:shrink-0",
   {
     variants: {
       variant: {

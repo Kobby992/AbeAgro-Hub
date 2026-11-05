@@ -92,7 +92,7 @@ export function HowItWorks() {
           </div>
           {STEPS.map((step, index) => (
             <li key={step.title} className="relative flex gap-4 md:flex-col md:gap-3">
-              <span className="relative flex size-11 shrink-0 items-center justify-center rounded-full bg-forest font-display text-xl font-extrabold text-white">
+              <span className="relative flex size-11 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-forest-700 to-forest-900 text-lg font-bold text-white tabular-nums shadow-md">
                 {index + 1}
               </span>
               <div>

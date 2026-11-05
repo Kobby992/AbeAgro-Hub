@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { StripeDivider } from "@/components/motifs/stripe-divider";
 import { categories } from "@/config/categories";
 import { footerLinks, site } from "@/config/site";
 import { GENERAL_QUOTE_LINK } from "@/lib/whatsapp";
@@ -10,8 +9,7 @@ const linkClasses = "inline-flex min-h-11 items-center hover:underline lg:min-h-
 export function Footer() {
   return (
     <footer>
-      <StripeDivider className="-mb-px" />
-      <div className="grain bg-forest-900 text-white">
+      <div className="canopy-panel text-white">
         {/* Bottom padding keeps links clear of the floating buttons (BUILD_SPEC §6.1). */}
         <div className="page-container grid gap-10 pt-10 pb-28 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1.6fr_1.2fr]">
           <div>

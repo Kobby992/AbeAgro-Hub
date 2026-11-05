@@ -182,17 +182,13 @@ export default function StyleguidePage() {
 
         <Section
           title="Type"
-          note="Archivo at a semi-condensed width for headings and buttons. Source Sans 3 for reading."
+          note="Montserrat for everything: 800 for the hero, 700 for headings, 600 for buttons, 450 for reading."
         >
           <div className="space-y-3">
             {TYPE_SCALE.map(([size, pixels]) => (
               <p key={size} className="flex items-baseline gap-3 overflow-hidden">
                 <span className="w-12 shrink-0 text-xs text-muted-foreground">{pixels}</span>
-                <span
-                  className={`${size} truncate font-display font-extrabold [font-stretch:87.5%]`}
-                >
-                  Rice mill
-                </span>
+                <span className={`${size} truncate font-display font-extrabold`}>Rice mill</span>
               </p>
             ))}
           </div>
@@ -378,7 +374,7 @@ export default function StyleguidePage() {
               <GearArc className="size-48" />
             </div>
             <div className="overflow-hidden rounded-xl">
-              <div className="h-24 bg-cream" />
+              <div className="h-24 bg-background" />
               <StripeDivider className="-mb-px" />
               <div className="h-20 bg-forest-900" />
             </div>

@@ -39,7 +39,7 @@ export default function PartnersPage() {
     >
       <ul className="grid gap-4 md:grid-cols-3">
         {OFFERS.map(({ Icon, title, text }) => (
-          <li key={title} className="rounded-lg bg-card p-5 shadow-sm">
+          <li key={title} className="gradient-card rounded-lg p-5">
             <Icon aria-hidden className="size-6 text-forest" />
             <h2 className="mt-2 text-xl">{title}</h2>
             <p className="mt-1 text-muted-foreground">{text}</p>
