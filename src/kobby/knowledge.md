@@ -1343,6 +1343,7 @@ This policy explains what information ABE Agro Hub collects through this website
 - One-tap quotes: the machine you asked about. Your name and number reach us only if you send the WhatsApp message.
 - Contact and partner forms: your name, contact details, company if you give it, and your message.
 - Chats with Kobby: what you type to Kobby, our AI machinery advisor, and its replies. We keep these for up to 180 days to improve our service. Please do not share payment details in a chat.
+- Chatbot: what you type into the chat assistant on this website. The assistant is provided by Jotform, so your messages are processed by Jotform. Please do not share payment details in a chat.
 - Technical details: the page you were on, campaign tags in the link you followed, and your browser type.
 
 #### Why we use it

@@ -35,6 +35,11 @@ export default function PrivacyPage() {
             share payment details in a chat.
           </li>
           <li>
+            <strong>Chatbot:</strong> what you type into the chat assistant on this website. The
+            assistant is provided by Jotform, so your messages are processed by Jotform. Please do
+            not share payment details in a chat.
+          </li>
+          <li>
             <strong>Technical details:</strong> the page you were on, campaign tags in the link you
             followed, and your browser type.
           </li>

@@ -3,6 +3,7 @@ import { FloatingButtons } from "@/components/layout/floating-buttons";
 import { PageBackdrop } from "@/components/layout/page-backdrop";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
+import { JotformAgent } from "@/components/layout/jotform-agent";
 import { PageTransition } from "@/components/layout/page-transition";
 import { RouteProgress } from "@/components/layout/route-progress";
 import { SiteToaster } from "@/components/layout/site-toaster";
@@ -43,6 +44,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
       <CardSpotlight />
       <SmoothScroll />
       <SiteToaster />
+      <JotformAgent />
     </>
   );
 }

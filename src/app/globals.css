@@ -627,6 +627,13 @@
   }
 }
 
+/* The Jotform chatbot would otherwise sit on top of the sticky product bar on phones. */
+@media (max-width: 1023px) {
+  body:has([data-sticky-bar]) .embedded-agent-container {
+    bottom: var(--floating-bottom) !important;
+  }
+}
+
 /* Long-form text: solution guides and legal pages */
 .prose-abe {
   max-width: 65ch;
