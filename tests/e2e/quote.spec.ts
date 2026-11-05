@@ -33,9 +33,20 @@ async function watchWhatsApp(page: Page) {
 const messageIn = (url: string) => new URL(url).searchParams.get("text") ?? "";
 const referenceIn = (text: string) => /ABE-Q-\d{6}-[0-9A-Z]{4}/.exec(text)?.[0] ?? "";
 
+/** A click before React takes over the page does nothing. */
+async function waitForHydration(page: Page) {
+  await expect
+    .poll(() =>
+      page.evaluate(() =>
+        Object.keys(document.querySelector("main") ?? {}).some((key) => key.startsWith("__react")),
+      ),
+    )
+    .toBe(true);
+}
+
 async function addThreeMachines(page: Page) {
   await page.goto("/machinery?cat=rice-processing");
-  await page.waitForLoadState("networkidle"); // A click before hydration does nothing.
+  await waitForHydration(page);
   const names = ["SB10 Rice Mill", "JLX Rice Destoner", "CHP150 Rice Mill"];
   for (const [index, name] of names.entries()) {
     await page.getByRole("button", { name: `Add ${name} to quote list` }).click();
@@ -76,7 +87,7 @@ test("view transitions run only when the page changes", async ({ page }) => {
     page.evaluate(() => (window as unknown as { viewTransitions: number }).viewTransitions);
 
   await page.goto("/machinery?cat=rice-processing");
-  await page.waitForLoadState("networkidle");
+  await waitForHydration(page);
   await page.getByRole("button", { name: "Add SB10 Rice Mill to quote list" }).click();
   await expect(page.getByRole("banner").locator("[data-quote-target]")).toContainText("1");
   await page.waitForTimeout(1_000);
