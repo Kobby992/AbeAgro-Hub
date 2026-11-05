@@ -2,30 +2,8 @@
 @import "tw-animate-css";
 @import "../styles/tokens.css";
 
-/* shadcn/ui semantic colours, mapped onto the ABE palette. */
-:root {
-  --radius: 0.5rem;
-  --background: var(--abe-cream);
-  --foreground: var(--abe-charcoal);
-  --card: #ffffff;
-  --card-foreground: var(--abe-charcoal);
-  --popover: #ffffff;
-  --popover-foreground: var(--abe-charcoal);
-  --primary: var(--abe-forest);
-  --primary-foreground: #ffffff;
-  --secondary: var(--abe-gold);
-  --secondary-foreground: var(--abe-charcoal);
-  --muted: #efeadb;
-  --muted-foreground: #4f5753;
-  --accent: #e4efe5;
-  --accent-foreground: var(--abe-forest-900);
-  --destructive: #b5301a;
-  --border: #ddd6c3;
-  --input: #ddd6c3;
-  --ring: var(--abe-forest);
-}
-
 @theme inline {
+  /* Colours */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -44,18 +22,336 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --radius-sm: calc(var(--radius) - 2px);
-  --radius-md: var(--radius);
-  --radius-lg: calc(var(--radius) + 2px);
-  --radius-xl: calc(var(--radius) + 6px);
+  --color-forest: var(--abe-forest);
+  --color-forest-900: var(--abe-forest-900);
+  --color-leaf: var(--abe-leaf);
+  --color-gold: var(--abe-gold);
+  --color-gold-600: var(--abe-gold-600);
+  --color-cream: var(--abe-cream);
+  --color-soil: var(--abe-soil);
+  --color-water: var(--abe-water);
+  --color-pepper: var(--abe-pepper);
+  --color-teal: var(--abe-teal);
+  --color-charcoal: var(--abe-charcoal);
+  --color-cat: var(--cat);
+  --color-cat-ink: var(--cat-ink);
+  --color-cat-tint: var(--cat-tint);
+  --color-cat-on: var(--cat-on);
+
+  /* Type */
+  --font-display: var(--font-archivo), "Arial Narrow", Arial, sans-serif;
+  --font-sans: var(--font-source-sans), "Segoe UI", Roboto, Arial, sans-serif;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.6;
+  --text-xl: 1.3125rem;
+  --text-xl--line-height: 1.45;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 1.3;
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 1.2;
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: 1.15;
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 1.08;
+  --text-6xl: 3.75rem;
+  --text-6xl--line-height: 1.04;
+  --text-7xl: 4.5rem;
+  --text-7xl--line-height: 1;
+
+  /* Radius: sm = plate, md = control, lg = card, xl = panel */
+  --radius-sm: var(--radius-plate);
+  --radius-md: var(--radius-control);
+  --radius-lg: var(--radius-card);
+  --radius-xl: var(--radius-panel);
+
+  /* Elevation */
+  --shadow-sm: var(--shadow-rest);
+  --shadow-md: var(--shadow-raised);
+  --shadow-lg: var(--shadow-lifted);
+
+  /* Motion */
+  --ease-out: var(--ease-out);
+  --ease-mech: var(--ease-mech);
+}
+
+@utility page-container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@utility text-hero {
+  font-size: clamp(2.5rem, 7.5vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-stretch: 87.5%;
+    font-weight: 800;
+    text-wrap: balance;
+  }
+
+  /* §5.2-9: 2px gold ring over a 2px forest offset, visible on both light and dark sections */
+  :focus-visible,
+  [data-preview="focus"] {
+    outline: 2px solid var(--abe-gold);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--abe-forest);
+  }
+}
+
+@layer components {
+  .btn {
+    position: relative;
+    overflow: hidden;
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    border: 2px solid var(--btn-border, transparent);
+    font-family: var(--font-display);
+    font-stretch: 87.5%;
+    font-weight: 700;
+    transition: transform var(--dur-fast) var(--ease-out);
+  }
+
+  /* §5.2-9: underline sweep. Colour changes are instant so only transforms animate (§5.3). */
+  .btn::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 3px;
+    background: var(--btn-sweep);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--dur-base) var(--ease-out);
+  }
+
+  .btn[data-preview="hover"] {
+    background: var(--btn-hover);
+  }
+
+  .btn[data-preview="hover"]::after {
+    transform: scaleX(1);
+  }
+
+  @media (hover: hover) {
+    .btn:hover:not(:disabled) {
+      background: var(--btn-hover);
+    }
+
+    .btn:hover:not(:disabled)::after {
+      transform: scaleX(1);
+    }
+  }
+
+  .btn:active:not(:disabled),
+  .btn[data-preview="active"] {
+    transform: scale(0.98);
+  }
+
+  .btn:disabled,
+  .btn[aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn-primary {
+    --btn-bg: var(--abe-forest);
+    --btn-fg: var(--abe-white);
+    --btn-hover: var(--abe-forest-900);
+    --btn-sweep: var(--abe-gold);
+  }
+
+  .btn-gold {
+    --btn-bg: var(--abe-gold);
+    --btn-fg: var(--abe-charcoal);
+    --btn-hover: var(--abe-gold-600);
+    --btn-sweep: var(--abe-forest-900);
+  }
+
+  .btn-outline {
+    --btn-bg: transparent;
+    --btn-fg: var(--abe-forest);
+    --btn-border: var(--abe-forest);
+    --btn-hover: var(--accent);
+    --btn-sweep: var(--abe-gold);
+  }
+
+  .btn-ghost {
+    --btn-bg: transparent;
+    --btn-fg: var(--abe-forest);
+    --btn-hover: var(--accent);
+    --btn-sweep: var(--abe-leaf);
+  }
+
+  .btn-outline-light {
+    --btn-bg: transparent;
+    --btn-fg: var(--abe-white);
+    --btn-border: var(--abe-white);
+    --btn-hover: rgb(255 255 255 / 0.12);
+    --btn-sweep: var(--abe-gold);
+  }
+
+  /* §5.2-4: lift, deeper shadow and accent glow, fading a pseudo-element so only opacity animates */
+  .lift-card {
+    position: relative;
+    transition: transform var(--dur-base) var(--ease-out);
+  }
+
+  .lift-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow:
+      var(--shadow-lifted),
+      0 0 0 1px var(--cat),
+      0 8px 28px color-mix(in srgb, var(--cat) 30%, transparent);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--dur-base) var(--ease-out);
+  }
+
+  .lift-card[data-preview="hover"] {
+    transform: translateY(-4px);
+  }
+
+  .lift-card[data-preview="hover"]::after {
+    opacity: 1;
+  }
+
+  @media (hover: hover) {
+    .lift-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .lift-card:hover::after {
+      opacity: 1;
+    }
+  }
+
+  /* §4.4: photos sit on a stage. Multiply drops their white backgrounds into the tint. */
+  .machine-stage {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: radial-gradient(
+      ellipse 80% 75% at 50% 42%,
+      var(--abe-white) 0%,
+      var(--cat-tint) 100%
+    );
+  }
+
+  .machine-stage::before {
+    content: "";
+    position: absolute;
+    left: 18%;
+    right: 18%;
+    bottom: 7%;
+    height: 9%;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgb(0 58 42 / 0.28), transparent);
+  }
+
+  .machine-stage img {
+    mix-blend-mode: multiply;
+    transition: transform var(--dur-base) var(--ease-out);
+  }
+
+  /* §4.4: warm grain for dark sections */
+  .grain {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.16;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* §5.2-3: category icons respond to hover and keyboard focus */
+  @media (hover: hover) {
+    .group:hover .icon-bounce {
+      animation: icon-bounce 600ms var(--ease-out);
+    }
+
+    .group:hover .icon-sway {
+      animation: icon-sway 800ms ease-in-out;
+    }
+
+    .group:hover .icon-spin {
+      animation: icon-spin 900ms var(--ease-out);
+    }
+  }
+
+  .gear-spin {
+    animation: icon-spin 90s linear infinite;
+  }
+
+  .spinner {
+    animation: icon-spin 900ms linear infinite;
+  }
+}
+
+@keyframes icon-bounce {
+  30% {
+    transform: translateY(-5px);
+  }
+
+  60% {
+    transform: translateY(1px);
+  }
+}
+
+@keyframes icon-sway {
+  25% {
+    transform: rotate(-9deg);
+  }
+
+  70% {
+    transform: rotate(7deg);
+  }
+}
+
+@keyframes icon-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* §5.1: every animation has a no-motion path */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

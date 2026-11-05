@@ -13,7 +13,13 @@ export default defineConfig({
   projects: [
     {
       name: "mobile-390",
-      use: { ...devices["Desktop Chrome"], viewport: { width: 390, height: 844 } },
+      // A real touch phone: isMobile makes (hover: hover) false, as on the Android phones we target.
+      use: {
+        ...devices["Desktop Chrome"],
+        viewport: { width: 390, height: 844 },
+        isMobile: true,
+        hasTouch: true,
+      },
     },
     {
       name: "desktop-1440",
