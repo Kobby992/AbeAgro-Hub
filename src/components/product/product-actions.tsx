@@ -22,7 +22,7 @@ export function ProductActions({
   category: string;
 }) {
   const [qty, setQty] = useState(1);
-  const addToQuote = useAddToQuote();
+  const addToQuote = useAddToQuote("pdp");
   const quoteHref = productQuoteLink({ name, category, slug, qty });
 
   return (

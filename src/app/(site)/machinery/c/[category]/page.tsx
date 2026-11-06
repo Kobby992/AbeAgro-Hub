@@ -8,6 +8,8 @@ import { Disclosure, DisclosureGroup } from "@/components/ui/disclosure";
 import { categories, categoryName, type CategorySlug } from "@/config/categories";
 import { solutions } from "@/config/solutions";
 import { getCategoryContent, productsInCategory, toCardProduct } from "@/lib/products";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbJsonLd, faqJsonLd, pageMeta } from "@/lib/seo";
 
 type Props = { params: Promise<{ category: string }> };
 
@@ -20,10 +22,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category } = await params;
   const slug = category as CategorySlug;
-  return {
+  return pageMeta(`/machinery/c/${slug}`, {
     title: `${categoryName(slug)} Machinery in Ghana | ABE Agro Hub`,
-    description: getCategoryContent(slug).intro.slice(0, 155),
-  };
+    description: getCategoryContent(slug).intro,
+  });
 }
 
 export default async function CategoryPage({ params }: Props) {
@@ -36,6 +38,13 @@ export default async function CategoryPage({ params }: Props) {
 
   return (
     <div className="page-top">
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { label: "Machinery", href: "/machinery" },
+          { label: name, href: `/machinery/c/${slug}` },
+        ])}
+      />
+      <JsonLd data={faqJsonLd(content.faqs)} />
       <header data-cat={slug} className="border-t-4 border-cat bg-cat-tint">
         <div className="page-container pt-2 pb-8 md:pb-10">
           <Breadcrumbs trail={[{ label: "Machinery", href: "/machinery" }, { label: name }]} />

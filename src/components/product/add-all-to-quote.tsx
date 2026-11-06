@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { notify } from "@/lib/notify";
 import { useQuoteDrawer, useQuoteStore } from "@/store/quote";
+import { track } from "@/lib/analytics";
 
 export function AddAllToQuote({
   items,
@@ -17,7 +18,10 @@ export function AddAllToQuote({
       className="mt-6"
       onClick={() => {
         const { add } = useQuoteStore.getState();
-        items.forEach((item) => add(item.slug));
+        items.forEach((item) => {
+          add(item.slug);
+          track("quote_item_added", { slug: item.slug, qty: 1, source: "solution" });
+        });
         void notify(
           `Added ${items.length} ${items.length === 1 ? "machine" : "machines"} to your quote list`,
           {

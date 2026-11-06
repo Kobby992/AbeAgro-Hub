@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { CatalogueView } from "@/components/product/catalogue-view";
 import { allProducts, toCatalogueItem } from "@/lib/products";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta("/machinery", {
   title: "Agricultural Machinery in Ghana | ABE Agro Hub",
   description:
     "Browse water pumps, rice mills, corn mills, threshers, sprayers and food-processing machines. Get a quote on WhatsApp, with delivery across Ghana.",
-};
+});
 
 export default function MachineryPage() {
   return (

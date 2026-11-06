@@ -3,12 +3,13 @@ import Link from "next/link";
 import { ContentPage } from "@/components/layout/content-page";
 import { Button } from "@/components/ui/button";
 import { GENERAL_QUOTE_LINK } from "@/lib/whatsapp";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta("/how-it-works", {
   title: "How It Works | ABE Agro Hub",
   description:
     "Find a machine, tap Get quote and talk to our sales team on WhatsApp. We confirm price, availability and terms, then arrange delivery across Ghana.",
-};
+});
 
 const STEPS = [
   {

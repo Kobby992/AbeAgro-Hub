@@ -17,6 +17,9 @@ import {
   toCardProduct,
 } from "@/lib/products";
 import { whatsappLink } from "@/lib/whatsapp";
+import { TrackOnMount } from "@/components/analytics/track-on-mount";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbJsonLd, pageMeta, productJsonLd } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -30,10 +33,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const product = getProduct(slug);
   if (!product) return {};
-  return {
+  return pageMeta(`/machinery/${product.slug}`, {
     title: `${product.name} in Ghana | ABE Agro Hub`,
     description: product.summary,
-  };
+    image: product.image,
+  });
 }
 
 const SECTIONS = [
@@ -66,6 +70,15 @@ export default async function ProductPage({ params }: Props) {
   return (
     <div className="page-top">
       <div className="page-container pt-2 pb-16">
+        <TrackOnMount name="product_viewed" props={{ slug: product.slug, category }} />
+        <JsonLd data={productJsonLd(product)} />
+        <JsonLd
+          data={breadcrumbJsonLd([
+            { label: "Machinery", href: "/machinery" },
+            { label: categoryLabel, href: `/machinery/c/${category}` },
+            { label: product.shortName, href: `/machinery/${product.slug}` },
+          ])}
+        />
         <Breadcrumbs
           trail={[
             { label: "Machinery", href: "/machinery" },

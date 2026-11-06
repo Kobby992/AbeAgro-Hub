@@ -7,12 +7,14 @@ import { Button } from "@/components/ui/button";
 import { ConfirmHint } from "@/components/ui/tags";
 import { compareRows, getProduct, needsConfirmingValue, productQuoteHref } from "@/lib/products";
 import { MAX_COMPARE } from "@/store/compare";
+import { pageMeta } from "@/lib/seo";
+import { TrackOnMount } from "@/components/analytics/track-on-mount";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta("/compare", {
   title: "Compare Machines | ABE Agro Hub",
   description: "Compare up to three agricultural machines side by side.",
   robots: { index: false, follow: true },
-};
+});
 
 export default async function ComparePage({
   searchParams,
@@ -27,6 +29,12 @@ export default async function ComparePage({
     <div className="page-top">
       <div className="page-container py-8 pb-16 md:py-12">
         <h1 className="text-4xl md:text-5xl">Compare machines</h1>
+        {products.length > 1 && (
+          <TrackOnMount
+            name="compare_used"
+            props={{ slugs: products.map((product) => product.slug).join(",") }}
+          />
+        )}
 
         {products.length === 0 ? (
           <div className="mt-6 rounded-lg border border-border bg-card p-6">

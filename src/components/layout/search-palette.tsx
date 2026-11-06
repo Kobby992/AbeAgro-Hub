@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Dialog } from "radix-ui";
 import { useEffect, useMemo, useState } from "react";
 import { createProductSearch, type SearchEntry } from "@/lib/search";
+import { noteSearchOrigin } from "@/lib/analytics";
 
 type Entry = SearchEntry & { category: string };
 
@@ -55,7 +56,14 @@ export default function SearchPalette({
           className="fixed inset-x-0 top-0 z-50 mx-auto max-h-dvh w-full max-w-2xl overflow-y-auto bg-card p-4 text-charcoal shadow-lg sm:top-16 sm:rounded-lg"
         >
           <Dialog.Title className="text-xl">Search machinery</Dialog.Title>
-          <Form action="/machinery" onSubmit={close} className="relative mt-3">
+          <Form
+            action="/machinery"
+            onSubmit={() => {
+              noteSearchOrigin("palette");
+              close();
+            }}
+            className="relative mt-3"
+          >
             <Search
               aria-hidden
               className="pointer-events-none absolute top-1/2 left-3 size-5 -translate-y-1/2 text-muted-foreground"

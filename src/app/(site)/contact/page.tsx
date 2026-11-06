@@ -5,11 +5,12 @@ import { ContentPage } from "@/components/layout/content-page";
 import { Button } from "@/components/ui/button";
 import { site, WHATSAPP_NUMBER } from "@/config/site";
 import { whatsappLink } from "@/lib/whatsapp";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta("/contact", {
   title: "Contact ABE Agro Hub | Kasoa, Ghana",
   description: `WhatsApp or call ${site.phoneDisplay}, or email ${site.email}. Based in Kasoa, open ${site.hours}, delivering nationwide.`,
-};
+});
 
 const WHATSAPP_INTRO = "Hello ABE Agro Hub 👋";
 

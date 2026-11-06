@@ -11,6 +11,9 @@ import { SmoothScroll } from "@/components/layout/smooth-scroll";
 import { StoreHydrator } from "@/components/layout/store-hydrator";
 import { CardSpotlight } from "@/components/motion/card-spotlight";
 import { allProducts } from "@/lib/products";
+import { AnalyticsScript } from "@/components/analytics/analytics-script";
+import { JsonLd } from "@/components/seo/json-ld";
+import { businessJsonLd } from "@/lib/seo";
 
 const megaFeature = allProducts.find((product) => product.slug === "sb10-rice-huller-mill");
 
@@ -43,6 +46,8 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
       <StoreHydrator />
       <CardSpotlight />
       <SmoothScroll />
+      <JsonLd data={businessJsonLd()} />
+      <AnalyticsScript />
       <SiteToaster />
       <JotformAgent />
     </>

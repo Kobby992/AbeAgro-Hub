@@ -4,6 +4,7 @@ import { Search } from "lucide-react";
 import Form from "next/form";
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
+import { noteSearchOrigin } from "@/lib/analytics";
 
 const PHRASES = ["rice mill…", "water pump for 2 acres…", "gari processing…"];
 const TYPE_MS = 70;
@@ -45,7 +46,12 @@ export function HeroSearch() {
   }, []);
 
   return (
-    <Form action="/machinery" role="search" className="mt-6 flex max-w-xl gap-2">
+    <Form
+      action="/machinery"
+      role="search"
+      onSubmit={() => noteSearchOrigin("hero")}
+      className="mt-6 flex max-w-xl gap-2"
+    >
       <div className="relative min-w-0 flex-1">
         <label htmlFor="hero-search" className="sr-only">
           Search machinery

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { QuotePageView } from "@/components/quote/quote-page-view";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta("/quote", {
   title: "Your Quote List | ABE Agro Hub",
   description: "Review your machines and send a quote request to our sales team on WhatsApp.",
   robots: { index: false, follow: true },
-};
+});
 
 export default function QuotePage() {
   return (

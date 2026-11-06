@@ -4,12 +4,14 @@ import { ContentPage } from "@/components/layout/content-page";
 import { Button } from "@/components/ui/button";
 import { Disclosure, DisclosureGroup } from "@/components/ui/disclosure";
 import faqs from "../../../../content/faq.json";
+import { faqJsonLd, pageMeta } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta("/faq", {
   title: "Frequently Asked Questions | ABE Agro Hub",
   description:
     "How to get a price, delivery across Ghana, payment and warranty, and where to find ABE Agro Hub.",
-};
+});
 
 // Answers waiting on the owner or on Kobby's launch stay out of the page (BUILD_SPEC §6.9).
 const published = faqs.filter(
@@ -20,6 +22,7 @@ const groups = [...new Set(published.map((faq) => faq.group))];
 export default function FaqPage() {
   return (
     <ContentPage title="Frequently asked questions">
+      <JsonLd data={faqJsonLd(published)} />
       <div className="space-y-8">
         {groups.map((group) => (
           <section key={group}>
