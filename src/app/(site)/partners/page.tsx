@@ -4,12 +4,13 @@ import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { ContentPage } from "@/components/layout/content-page";
 import { Button } from "@/components/ui/button";
 import { whatsappLink } from "@/lib/whatsapp";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta("/partners", {
   title: "Partner with ABE Agro Hub | Manufacturers and Distributors",
   description:
     "Equipment manufacturers and distributors: talk to us about reaching agricultural buyers in Ghana through ABE Agro Hub.",
-};
+});
 
 const WHATSAPP_INTRO = "Hello ABE Agro Hub 👋\nI'd like to discuss a partnership.";
 

@@ -34,6 +34,7 @@ import { useFlip } from "@/hooks/use-flip";
 import type { CatalogueItem } from "@/lib/products";
 import type { SearchEntry, SearchHit } from "@/lib/search";
 import { cn } from "@/lib/utils";
+import { takeSearchOrigin, track } from "@/lib/analytics";
 
 type RunSearch = (query: string) => SearchHit<SearchEntry>[] | null;
 
@@ -50,6 +51,12 @@ function subscribeToUrl(onChange: () => void) {
 }
 
 function updateUrl(patch: Partial<Filters>) {
+  for (const [filter, value] of Object.entries(patch)) {
+    const text = Array.isArray(value) ? value.join(",") : String(value);
+    if (filter !== "q" && filter !== "sort" && text) {
+      track("filter_applied", { filter, value: text });
+    }
+  }
   const next = { ...parseFilters(location.search), ...patch };
   history.replaceState(null, "", `${location.pathname}${serializeFilters(next)}`);
   window.dispatchEvent(new Event(URL_CHANGED));
@@ -115,6 +122,14 @@ export function CatalogueView({ items }: { items: CatalogueItem[] }) {
   }, [wantsSearch, runSearch, items]);
 
   const hits = useMemo(() => runSearch?.(filters.q) ?? null, [runSearch, filters.q]);
+  useEffect(() => {
+    if (!filters.q || !hits) return;
+    track("search_performed", {
+      query: filters.q,
+      results_count: hits.length,
+      location: takeSearchOrigin(),
+    });
+  }, [hits, filters.q]);
   const searched = useMemo(
     () => hits?.flatMap((hit) => bySlug.get(hit.item.slug) ?? []) ?? null,
     [hits, bySlug],

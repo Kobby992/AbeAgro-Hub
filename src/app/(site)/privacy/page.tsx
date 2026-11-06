@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { ContentPage } from "@/components/layout/content-page";
 import { site } from "@/config/site";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta("/privacy", {
   title: "Privacy Policy | ABE Agro Hub",
   description: "What information ABE Agro Hub collects, why, and how to ask about it.",
-};
+});
 
 export default function PrivacyPage() {
   return (

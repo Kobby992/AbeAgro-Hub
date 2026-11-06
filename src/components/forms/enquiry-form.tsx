@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Field, Input, Textarea } from "@/components/ui/field";
 import { enquirySchema, type EnquiryFields } from "@/lib/enquiry-schema";
 import { whatsappLink } from "@/lib/whatsapp";
+import { track } from "@/lib/analytics";
 
 const msSince = (start: number) => Date.now() - start;
 
@@ -71,7 +72,12 @@ export function EnquiryForm({
             : "Please send it on WhatsApp instead, and it will reach the same team."}
         </p>
         <Button asChild className="mt-3">
-          <a href={handoff} target="_blank" rel="noopener noreferrer">
+          <a
+            href={handoff}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => track("whatsapp_opened", { type: kind })}
+          >
             Send on WhatsApp
           </a>
         </Button>

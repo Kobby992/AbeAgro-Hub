@@ -4,6 +4,7 @@ import type { ComponentProps, MouseEvent } from "react";
 import { openWhatsApp, postQuote, reportWhatsAppOpened } from "@/lib/quote-client";
 import { createReference } from "@/lib/reference";
 import { addReferenceToLink } from "@/lib/whatsapp";
+import { track } from "@/lib/analytics";
 
 const QUICK_TIMEOUT_MS = 1_500;
 
@@ -37,6 +38,10 @@ export function QuickQuoteLink({
     );
 
     void openWhatsApp(link).then((opened) => {
+      track("whatsapp_opened", {
+        type: "quick",
+        ...(serverReference ? { reference: serverReference } : {}),
+      });
       if (opened && serverReference) reportWhatsAppOpened(serverReference);
       // A popup blocker stopped the new tab, so go there in this one instead.
       if (!opened) void link.then((url) => (location.href = url));

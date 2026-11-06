@@ -6,12 +6,13 @@ import { Button } from "@/components/ui/button";
 import { categories } from "@/config/categories";
 import { site } from "@/config/site";
 import { allProducts } from "@/lib/products";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta("/about", {
   title: "About ABE Agro Hub | Agricultural Machinery, Kasoa, Ghana",
   description:
     "ABE Agro Hub supplies agricultural machinery and food-processing equipment from Kasoa, delivering across Ghana.",
-};
+});
 
 // Only confirmed facts appear here. Founding year, team and services are on the owner checklist.
 const REASONS = [

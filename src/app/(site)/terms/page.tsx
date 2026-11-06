@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { ContentPage } from "@/components/layout/content-page";
 import { site } from "@/config/site";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta("/terms", {
   title: "Terms of Use | ABE Agro Hub",
   description: "The terms for using the ABE Agro Hub website and requesting a quote.",
-};
+});
 
 export default function TermsPage() {
   return (

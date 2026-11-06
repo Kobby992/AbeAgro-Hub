@@ -7,11 +7,20 @@ import { KobbyBand } from "@/components/sections/kobby-band";
 import { ShopByTask } from "@/components/sections/shop-by-task";
 import { SolutionsCards } from "@/components/sections/solutions-cards";
 import { TrustStrip } from "@/components/sections/trust-strip";
+import { JsonLd } from "@/components/seo/json-ld";
+import { pageMeta, websiteJsonLd } from "@/lib/seo";
+
+export const metadata = pageMeta("/", {
+  title: "Agricultural Machinery & Food-Processing Equipment in Ghana | ABE Agro Hub",
+  description:
+    "Water pumps, rice mills, corn mills, sprayers and food-processing machines, delivered across Ghana from Kasoa. Get a quote on WhatsApp.",
+});
 
 // Section order from BUILD_SPEC §6.2.
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={websiteJsonLd()} />
       <Hero />
       <TrustStrip />
       <ShopByTask />

@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { ContentPage } from "@/components/layout/content-page";
 import { SolutionCard } from "@/components/sections/solutions-cards";
 import { solutions } from "@/config/solutions";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta("/solutions", {
   title: "Start or Grow an Agri-Business in Ghana | ABE Agro Hub",
   description:
     "Guides to starting a rice mill, corn-mill kiosk, gari processing, vegetable irrigation, poultry feed production and cocoa spraying, with the machines each one needs.",
-};
+});
 
 export default function SolutionsPage() {
   return (

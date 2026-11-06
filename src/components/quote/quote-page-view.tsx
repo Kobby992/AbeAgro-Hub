@@ -23,6 +23,7 @@ import {
 import { createReference } from "@/lib/reference";
 import { quoteRequestMessage, whatsappLink } from "@/lib/whatsapp";
 import { useQuoteStore } from "@/store/quote";
+import { track } from "@/lib/analytics";
 
 const SEND_TIMEOUT_MS = 4_000;
 
@@ -140,6 +141,8 @@ export function QuotePageView() {
 
     const opened = await openWhatsApp(link);
     const { reference } = await response;
+    track("quote_form_submitted", { items_count: items.length, source: "site", reference });
+    track("whatsapp_opened", { type: "quote", reference });
     if (opened && saved) reportWhatsAppOpened(reference);
   }
 

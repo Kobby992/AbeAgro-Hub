@@ -9,12 +9,14 @@ These are the things only you can answer. Nothing here is invented on the websit
 - [ ] **Anthropic API key and monthly budget:** needed for Kobby. Set the key only as a server setting, never in chat. Until it is set, Kobby shows a WhatsApp button instead of answering. Also set a spending limit in your Anthropic account: `KOBBY_DAILY_MESSAGE_CAP` limits messages (3,000 a day by default), not money.
 - [ ] **Kobby's first real test:** with the key set, run `npm run kobby:evals` and read a sample of chats before launch. Kobby's answers have not yet been tested against the real model.
 - [ ] **Saved chats:** Kobby's chats are kept for 180 days and can include a customer's name and phone number. The privacy policy says so; please include this in the legal review.
-- [ ] **Analytics choice:** GA4 or Plausible.
+- [ ] **Analytics choice:** the site is ready for Plausible, which needs no cookie notice. It is a paid service: sign up, then set `NEXT_PUBLIC_PLAUSIBLE_DOMAIN=abeagrohub.com` on Hostinger and redeploy. Until then no statistics are collected. GA4 is free, but needs a cookie notice building first.
+- [ ] **Google Search Console:** add the site and submit `https://www.abeagrohub.com/sitemap.xml`.
+- [ ] **Google Business Profile:** set one up for Kasoa, which matters most for local searches.
 - [ ] **Privacy policy and terms:** the drafts at `/privacy` and `/terms` were written without a lawyer. Please have them reviewed.
 
 ## Business facts to confirm
 
-- [ ] **Opening days:** the site says 9:00am – 5:00pm without days. Monday to Friday? Saturdays?
+- [ ] **Opening days:** the site says 9:00am – 5:00pm without days. Monday to Friday? Saturdays? Search engines get no opening hours until you confirm.
 - [ ] **Street address and map pin:** the contact page map shows Kasoa in general.
 - [ ] **Phone calls:** the contact page offers "Call +233 55 704 2005". Does that number take normal calls?
 - [ ] **Services:** do you offer installation, training, spare parts or after-sales support? The site makes no claim until you confirm. One FAQ answer is waiting on this.

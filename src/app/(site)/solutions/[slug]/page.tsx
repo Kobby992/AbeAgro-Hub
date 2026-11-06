@@ -11,6 +11,8 @@ import { solutions } from "@/config/solutions";
 import { guides } from "@/lib/guides";
 import { getProduct, toCardProduct } from "@/lib/products";
 import { cn } from "@/lib/utils";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -24,7 +26,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const solution = solutions.find((item) => item.slug === slug);
   if (!solution) return {};
-  return { title: `${solution.title} in Ghana | ABE Agro Hub`, description: solution.blurb };
+  return pageMeta(`/solutions/${solution.slug}`, {
+    title: `${solution.title} in Ghana | ABE Agro Hub`,
+    description: solution.blurb,
+    image: solution.image,
+  });
 }
 
 export default async function SolutionPage({ params }: Props) {
@@ -38,6 +44,12 @@ export default async function SolutionPage({ params }: Props) {
 
   return (
     <div className="page-top">
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { label: "Solutions", href: "/solutions" },
+          { label: solution.title, href: `/solutions/${solution.slug}` },
+        ])}
+      />
       <header data-cat={solution.category} className="border-t-4 border-cat bg-cat-tint">
         <div className="page-container pt-2 pb-8">
           <Breadcrumbs
