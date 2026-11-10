@@ -48,18 +48,18 @@ describe("quote store", () => {
   const add = (slug: string, qty?: number) => useQuoteStore.getState().add(slug, qty);
 
   it("adds a new line", () => {
-    expect(add("corn-mill")).toBe(1);
+    expect(add("disk-mill")).toBe(1);
     expect(selectQuoteCount(useQuoteStore.getState())).toBe(1);
   });
 
   it("raises the quantity instead of adding a duplicate line", () => {
-    add("corn-mill");
-    expect(add("corn-mill", 2)).toBe(3);
+    add("disk-mill");
+    expect(add("disk-mill", 2)).toBe(3);
     expect(selectQuoteCount(useQuoteStore.getState())).toBe(1);
   });
 
   it("caps quantity at 999", () => {
-    expect(add("corn-mill", 5000)).toBe(999);
+    expect(add("disk-mill", 5000)).toBe(999);
   });
 
   it("refuses a 51st line but still updates an existing one", () => {

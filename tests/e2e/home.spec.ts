@@ -71,19 +71,19 @@ test("no price appears anywhere on the home page", async ({ page }) => {
 
 test("Get quote on a card opens WhatsApp with that product filled in", async ({ page }) => {
   await page.goto("/");
-  const link = page.getByRole("link", { name: "Get quote for Corn Mill on WhatsApp" });
+  const link = page.getByRole("link", { name: "Get quote for Disk Mill on WhatsApp" });
   const href = await link.getAttribute("href");
   const url = new URL(href ?? "");
   expect(url.origin + url.pathname).toBe("https://wa.me/233557042005");
-  expect(url.searchParams.get("text")).toContain("*Corn Mill* × 1");
-  expect(url.searchParams.get("text")).toContain("https://www.abeagrohub.com/machinery/corn-mill");
+  expect(url.searchParams.get("text")).toContain("*Disk Mill* × 1");
+  expect(url.searchParams.get("text")).toContain("https://www.abeagrohub.com/machinery/disk-mill");
 });
 
 test("adding a machine raises the header count, confirms it and survives a reload", async ({
   page,
 }) => {
   await page.goto("/");
-  const add = page.getByRole("button", { name: "Add Corn Mill to quote list" });
+  const add = page.getByRole("button", { name: "Add Disk Mill to quote list" });
   const headerList = page.getByRole("banner").locator("[data-quote-target]");
   await add.click();
   await expect(headerList).toHaveAccessibleName("Quote list 1 item");

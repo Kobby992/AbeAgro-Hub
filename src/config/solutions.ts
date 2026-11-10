@@ -19,7 +19,7 @@ export const solutions: {
     slug: "corn-mill-kiosk",
     title: "Run a corn-mill kiosk",
     blurb: "Grind maize and other grains for the people around you.",
-    image: "/products/corn-mill.jpg",
+    image: "/products/disk-mill.jpg",
     category: "grain-milling",
   },
   {

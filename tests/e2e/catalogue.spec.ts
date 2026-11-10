@@ -40,10 +40,10 @@ async function checkPage(page: Page, name: string, projectName: string) {
   });
 }
 
-test("catalogue shows all 45 machines and passes checks", async ({ page }, testInfo) => {
+test("catalogue shows all 42 machines and passes checks", async ({ page }, testInfo) => {
   await page.goto("/machinery");
-  await expect(cards(page)).toHaveCount(45);
-  await expect(status(page)).toHaveText("45 machines");
+  await expect(cards(page)).toHaveCount(42);
+  await expect(status(page)).toHaveText("42 machines");
   await checkPage(page, "catalogue", testInfo.project.name);
 });
 
@@ -78,7 +78,7 @@ test("filters narrow results, write to the URL and clear", async ({ page }) => {
 
   await page.getByRole("button", { name: "Clear filters" }).click();
   await expect(page).toHaveURL(/\/machinery$/);
-  await expect(status(page)).toHaveText("45 machines");
+  await expect(status(page)).toHaveText("42 machines");
 });
 
 test("a search with no results offers Kobby with the query", async ({ page }) => {
@@ -115,7 +115,7 @@ test("compare holds three machines, then shows them side by side", async ({ page
 test("compare page passes checks, and explains itself when empty", async ({ page }, testInfo) => {
   await page.goto("/compare");
   await expect(page.getByText("No machines to compare yet.")).toBeVisible();
-  await page.goto("/compare?ids=sb10-rice-huller-mill,corn-mill,commercial-fufu-machine");
+  await page.goto("/compare?ids=sb10-rice-huller-mill,disk-mill,commercial-fufu-machine");
   await checkPage(page, "compare", testInfo.project.name);
 });
 
@@ -137,7 +137,7 @@ test("category page passes checks", async ({ page }, testInfo) => {
   await checkPage(page, "category", testInfo.project.name);
 });
 
-test("all 45 product pages render with accurate content and no price", async ({ request }) => {
+test("all 42 product pages render with accurate content and no price", async ({ request }) => {
   for (const product of products) {
     const response = await request.get(`/machinery/${product.slug}`);
     expect(response.status(), product.slug).toBe(200);
@@ -184,7 +184,7 @@ test("the PLUS.HONDAY page keeps its not-a-Honda note", async ({ page }) => {
 });
 
 test("product photo opens full screen", async ({ page }) => {
-  await page.goto("/machinery/corn-mill");
+  await page.goto("/machinery/disk-mill");
   await page.getByRole("button", { name: /Zoom in on photo/ }).click();
   const dialog = page.getByRole("dialog");
   await expect(dialog.getByRole("img")).toBeVisible();
@@ -195,7 +195,7 @@ test("product photo opens full screen", async ({ page }) => {
 test("sticky phone bar shows only on phones, and buttons sit above it", async ({
   page,
 }, testInfo) => {
-  await page.goto("/machinery/corn-mill");
+  await page.goto("/machinery/disk-mill");
   const bar = page.locator("[data-sticky-bar]");
   if (!isMobile(testInfo.project.name)) {
     await expect(bar).toBeHidden();
@@ -227,12 +227,12 @@ test("a product card's photo morphs into the product page", async ({ page }) => 
   });
 
   await page.goto("/machinery");
-  await page.getByRole("link", { name: "Details for Corn Mill" }).click();
-  await expect(page).toHaveURL(/\/machinery\/corn-mill$/);
-  await expect(page.getByRole("heading", { level: 1, name: "Corn Mill" })).toBeVisible();
+  await page.getByRole("link", { name: "Details for Disk Mill" }).click();
+  await expect(page).toHaveURL(/\/machinery\/disk-mill$/);
+  await expect(page.getByRole("heading", { level: 1, name: "Disk Mill" })).toBeVisible();
 
   const morphs = await page.evaluate(() => (window as unknown as { morphs: string[] }).morphs);
-  expect(morphs).toContain("product-corn-mill");
+  expect(morphs).toContain("product-disk-mill");
 });
 
 test("cards glide when filters change, unless motion is reduced", async ({ page }) => {
@@ -253,12 +253,12 @@ test("cards glide when filters change, unless motion is reduced", async ({ page 
     });
 
   await page.goto("/machinery");
-  await expect(cards(page)).toHaveCount(45);
+  await expect(cards(page)).toHaveCount(42);
   expect(await animatedCards()).toBeGreaterThan(0);
 
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/machinery");
-  await expect(cards(page)).toHaveCount(45);
+  await expect(cards(page)).toHaveCount(42);
   expect(await animatedCards()).toBe(0);
 });
 

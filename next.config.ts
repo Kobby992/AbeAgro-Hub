@@ -25,6 +25,17 @@ const nextConfig: NextConfig = {
         permanent: true,
       })),
       // Removed products and the guide that depended on one send visitors to the closest page.
+      { source: "/machinery/corn-mill", destination: "/machinery/disk-mill", permanent: true },
+      {
+        source: "/machinery/pepper-mill",
+        destination: "/machinery/c/food-processing",
+        permanent: true,
+      },
+      {
+        source: "/machinery/4x4-water-pump-with-diesel-engine",
+        destination: "/machinery/c/irrigation",
+        permanent: true,
+      },
       {
         source: "/machinery/groundnut-huller",
         destination: "/machinery/c/groundnut-processing",

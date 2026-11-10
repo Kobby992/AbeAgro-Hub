@@ -36,9 +36,9 @@ const search = createProductSearch(
 const slugsFor = (query: string) => (search(query) ?? []).map((hit) => hit.item.slug);
 
 describe("product data", () => {
-  it("has 45 products with unique slugs and existing photos", () => {
-    expect(allProducts).toHaveLength(45);
-    expect(new Set(allProducts.map((product) => product.slug)).size).toBe(45);
+  it("has 42 products with unique slugs and existing photos", () => {
+    expect(allProducts).toHaveLength(42);
+    expect(new Set(allProducts.map((product) => product.slug)).size).toBe(42);
     for (const product of allProducts) {
       expect(existsSync(`public${product.image}`), product.image).toBe(true);
     }
@@ -154,13 +154,10 @@ describe("product helpers", () => {
   });
 
   it("lines up differently named specs when comparing", () => {
-    const rows = compareRows([getProduct("sb10-rice-huller-mill")!, getProduct("corn-mill")!]);
+    const rows = compareRows([getProduct("sb10-rice-huller-mill")!, getProduct("disk-mill")!]);
     const row = (label: string) => rows.find((item) => item.label === label)?.values;
-    expect(row("Capacity")).toEqual([
-      "900–1,200 kg/h",
-      "Approx. 100–300 kg/h, depending on grain and fineness",
-    ]);
-    expect(row("Power")).toEqual(["11 kW", "Typically 5.5–11 kW motor or 10–15 hp diesel engine"]);
+    expect(row("Capacity")).toEqual(["900–1,200 kg/h", "Approx. 150–600 kg/h"]);
+    expect(row("Power")).toEqual(["11 kW", "11–22.5 kW"]);
     expect(row("Weight")).toEqual(["Approx. 230 kg", ""]);
   });
 });

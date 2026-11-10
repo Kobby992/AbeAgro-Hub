@@ -221,12 +221,12 @@ test("the form explains what is missing and does not send", async ({ page }) => 
 test("one-tap Get quote logs a lead and opens WhatsApp with a reference", async ({ page }) => {
   const opened = await watchWhatsApp(page);
   await page.goto("/machinery?cat=grain-milling");
-  await page.getByRole("link", { name: "Get quote for Corn Mill on WhatsApp" }).click();
+  await page.getByRole("link", { name: "Get quote for Disk Mill on WhatsApp" }).click();
 
   await expect.poll(() => opened.length).toBeGreaterThan(0);
   const text = messageIn(opened[0] ?? "");
-  expect(text).toContain("*Corn Mill* × 1");
-  expect(text).toContain("Product link: https://www.abeagrohub.com/machinery/corn-mill");
+  expect(text).toContain("*Disk Mill* × 1");
+  expect(text).toContain("Product link: https://www.abeagrohub.com/machinery/disk-mill");
   const reference = referenceIn(text);
   expect(reference).not.toBe("");
 
@@ -249,17 +249,17 @@ test("one-tap on a product page carries the quantity", async ({ page }) => {
 test("one-tap still works, with a reference, if the API is down", async ({ page }) => {
   const opened = await watchWhatsApp(page);
   await page.route("**/api/quote", (route) => route.abort());
-  await page.goto("/machinery/corn-mill");
+  await page.goto("/machinery/disk-mill");
   await page.getByRole("link", { name: "Get quote on WhatsApp" }).click();
   await expect.poll(() => opened.length).toBeGreaterThan(0);
   const text = messageIn(opened[0] ?? "");
-  expect(text).toContain("*Corn Mill* × 1");
+  expect(text).toContain("*Disk Mill* × 1");
   expect(referenceIn(text)).not.toBe("");
 });
 
 test("the API rejects bad input and quietly ignores spam", async ({ request }) => {
   const send = (data: object) => request.post("/api/quote", { data });
-  const items = [{ slug: "corn-mill", qty: 1 }];
+  const items = [{ slug: "disk-mill", qty: 1 }];
   const customer = {
     name: "Bot",
     phone: "0241234567",

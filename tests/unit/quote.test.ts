@@ -89,18 +89,18 @@ describe("customer form rules", () => {
 
 describe("API request rules", () => {
   it("lets a quick quote through with no customer details", () => {
-    const quick = { source: "product-quick", items: [{ slug: "corn-mill", qty: 1 }] };
+    const quick = { source: "product-quick", items: [{ slug: "disk-mill", qty: 1 }] };
     expect(quoteRequestSchema.safeParse(quick).success).toBe(true);
   });
 
   it("holds a full request to the customer rules and item limits", () => {
-    const items = [{ slug: "corn-mill", qty: 1 }];
+    const items = [{ slug: "disk-mill", qty: 1 }];
     const full = { source: "site", items, customer: CUSTOMER };
     expect(quoteRequestSchema.safeParse(full).success).toBe(true);
     expect(quoteRequestSchema.safeParse({ source: "site", items }).success).toBe(false);
     expect(quoteRequestSchema.safeParse({ ...full, items: [] }).success).toBe(false);
     expect(
-      quoteRequestSchema.safeParse({ ...full, items: [{ slug: "corn-mill", qty: 1000 }] }).success,
+      quoteRequestSchema.safeParse({ ...full, items: [{ slug: "disk-mill", qty: 1000 }] }).success,
     ).toBe(false);
   });
 });
@@ -153,7 +153,7 @@ describe("quoteRequestMessage", () => {
 
 describe("addReferenceToLink", () => {
   it("puts the reference where the server would", () => {
-    const quote = { name: "Corn Mill", category: "Grain Milling", slug: "corn-mill" };
+    const quote = { name: "Disk Mill", category: "Grain Milling", slug: "disk-mill" };
     expect(addReferenceToLink(productQuoteLink(quote), "ABE-Q-251105-7K3M")).toBe(
       productQuoteLink({ ...quote, reference: "ABE-Q-251105-7K3M" }),
     );
@@ -180,10 +180,10 @@ describe("email", () => {
       phoneE164: "+233241234567",
       location: "Tamale, Northern Region",
       message: "Please include delivery.",
-      items: [{ slug: "corn-mill", name: "Corn Mill", qty: 2, note: "diesel" }],
+      items: [{ slug: "disk-mill", name: "Disk Mill", qty: 2, note: "diesel" }],
     });
     expect(subject).toBe("Quote request ABE-Q-251105-7K3M");
-    for (const part of ["Kwame Mensah", "+233241234567", "Corn Mill × 2", "Note: diesel"]) {
+    for (const part of ["Kwame Mensah", "+233241234567", "Disk Mill × 2", "Note: diesel"]) {
       expect(text).toContain(part);
     }
   });
@@ -197,7 +197,7 @@ describe("database insert", () => {
       .values({
         reference: "ABE-Q-251105-7K3M",
         source: "site",
-        items: [{ slug: "corn-mill", name: "Corn Mill", qty: 1 }],
+        items: [{ slug: "disk-mill", name: "Disk Mill", qty: 1 }],
       })
       .toSQL();
     expect(sql).toContain("insert into `quote_requests`");
@@ -211,19 +211,19 @@ describe("quote store", () => {
   const store = () => useQuoteStore.getState();
 
   it("changes quantity within limits, and keeps notes", () => {
-    store().add("corn-mill");
-    store().setQty("corn-mill", 5000);
+    store().add("disk-mill");
+    store().setQty("disk-mill", 5000);
     expect(store().items[0]?.qty).toBe(999);
-    store().setQty("corn-mill", 0);
+    store().setQty("disk-mill", 0);
     expect(store().items[0]?.qty).toBe(1);
-    store().setNote("corn-mill", "diesel");
+    store().setNote("disk-mill", "diesel");
     expect(store().items[0]?.note).toBe("diesel");
   });
 
   it("removes one line, or replaces them all", () => {
-    store().add("corn-mill");
+    store().add("disk-mill");
     store().add("hammer-mill");
-    store().remove("corn-mill");
+    store().remove("disk-mill");
     expect(store().items.map((item) => item.slug)).toEqual(["hammer-mill"]);
     store().replaceAll([]);
     expect(store().items).toEqual([]);
