@@ -12,7 +12,7 @@ export type GuideData = {
   machines: string[];
   /** The process diagram, in order. */
   steps: string[];
-  /** Questions that open Kobby. */
+  /** Questions that open Kamal. */
   prompts: string[];
 };
 

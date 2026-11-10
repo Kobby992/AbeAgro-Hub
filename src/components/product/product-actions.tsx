@@ -56,7 +56,7 @@ export function ProductActions({
         prompt={`I have a question about the ${name}.`}
         className={cn(buttonVariants({ variant: "ghost" }), "w-full")}
       >
-        Ask Kobby about this machine
+        Ask Kamal about this machine
       </KobbyPromptButton>
 
       {/* Thumb-reachable actions on phones (BUILD_SPEC §4.5). */}

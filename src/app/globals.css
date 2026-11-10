@@ -506,7 +506,7 @@
     }
   }
 
-  /* §5.2-6: idle pulse on the Kobby launcher */
+  /* §5.2-6: idle pulse on the Kamal launcher */
   .kobby-breathe {
     animation: kobby-breathe 8s ease-in-out infinite;
   }

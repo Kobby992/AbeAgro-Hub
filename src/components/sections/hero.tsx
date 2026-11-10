@@ -66,7 +66,7 @@ export function Hero() {
           </div>
 
           <KobbyPromptButton className="mt-2 inline-flex min-h-11 items-center gap-2 font-semibold text-gold underline-offset-4 hover:underline">
-            Ask Kobby what you need
+            Ask Kamal what you need
             <ArrowRight aria-hidden className="size-5" />
           </KobbyPromptButton>
         </div>

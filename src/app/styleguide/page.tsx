@@ -219,7 +219,7 @@ export default function StyleguidePage() {
         >
           <Row label="Variants">
             <Button>Get quote</Button>
-            <Button variant="gold">Ask Kobby</Button>
+            <Button variant="gold">Ask Kamal</Button>
             <Button variant="outline">View details</Button>
             <Button variant="ghost">Clear list</Button>
           </Row>

@@ -114,7 +114,7 @@ test("hero search goes to the catalogue with the query", async ({ page }) => {
   await expect(page).toHaveURL(/\/machinery\?q=water(\+|%20)pump/);
 });
 
-test("a Kobby prompt opens the panel with the question filled in", async ({ page }) => {
+test("a Kamal prompt opens the panel with the question filled in", async ({ page }) => {
   await page.goto("/");
   await page.getByRole("button", { name: "Which engine should drive my corn mill?" }).click();
   const dialog = page.getByRole("dialog");

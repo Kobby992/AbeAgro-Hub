@@ -81,10 +81,10 @@ test("filters narrow results, write to the URL and clear", async ({ page }) => {
   await expect(status(page)).toHaveText("42 machines");
 });
 
-test("a search with no results offers Kobby with the query", async ({ page }) => {
+test("a search with no results offers Kamal with the query", async ({ page }) => {
   await page.goto("/machinery?q=zzzzqqqq");
   await expect(page.getByText("No machines match that.")).toBeVisible();
-  await page.getByRole("main").getByRole("button", { name: "Ask Kobby" }).click();
+  await page.getByRole("main").getByRole("button", { name: "Ask Kamal" }).click();
   await expect(page.getByRole("dialog").getByRole("textbox")).toHaveValue(/zzzzqqqq/);
 });
 

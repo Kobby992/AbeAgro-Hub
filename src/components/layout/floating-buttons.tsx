@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { useKobbyStore } from "@/store/kobby";
 import { selectQuoteCount, useQuoteDrawer, useQuoteStore } from "@/store/quote";
 
-// The corner launcher is off at the owner's request, until they ask for it back. Kobby's buttons
+// The corner launcher is off at the owner's request, until they ask for it back. Kamal's buttons
 // inside pages still open the panel, which loads on first open (BUILD_SPEC §7.6).
 const KobbyPanel = dynamic(() => import("@/components/kobby/kobby-panel"), { ssr: false });
 

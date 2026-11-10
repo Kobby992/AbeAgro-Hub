@@ -9,7 +9,7 @@ import { whatsappLink } from "@/lib/whatsapp";
 import { useKobbyStore } from "@/store/kobby";
 
 /**
- * Stand-in until the real Kobby assistant arrives in Phase 6. It never answers questions itself,
+ * Stand-in until the real Kamal assistant arrives in Phase 6. It never answers questions itself,
  * so every entry point already works by handing the question to the sales team on WhatsApp.
  */
 export default function KobbyPanel() {
@@ -33,7 +33,7 @@ export default function KobbyPanel() {
             </Dialog.Close>
           </div>
           <Dialog.Description className="mt-1">
-            Kobby, our machinery advisor, is coming soon. For now, send your question to our sales
+            Kamal, our machinery advisor, is coming soon. For now, send your question to our sales
             team on WhatsApp.
           </Dialog.Description>
           {/* Keyed so a new prompt from another button replaces what was typed before. */}

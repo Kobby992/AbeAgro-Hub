@@ -8,7 +8,7 @@ import { SectionHeading } from "./section-heading";
 const STEPS = [
   {
     title: "Find your machine",
-    text: "Search the catalogue, or ask Kobby what fits your farm or business.",
+    text: "Search the catalogue, or ask Kamal what fits your farm or business.",
   },
   {
     title: "Tap Get quote",

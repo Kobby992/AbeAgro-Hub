@@ -102,17 +102,17 @@ test("FAQ shows confirmed answers and hides ones still waiting", async ({ page }
   await page.getByText("How do I get a price?").click();
   await expect(page.getByText("Tap Get quote on any product.")).toBeVisible();
   await expect(page.getByText("Do you help with installation")).toHaveCount(0);
-  await expect(page.getByRole("heading", { name: "Using Kobby" })).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "Using Kamal" })).toHaveCount(0);
 });
 
-test("unknown pages get the branded 404 with search and Kobby", async ({ page }) => {
+test("unknown pages get the branded 404 with search and Kamal", async ({ page }) => {
   for (const path of ["/not-a-real-page", "/solutions/not-a-guide"]) {
     const response = await page.goto(path);
     expect(response?.status(), path).toBe(404);
     await expect(page.getByRole("heading", { name: "We could not find that page" })).toBeVisible();
   }
   await expect(page.getByRole("banner")).toBeVisible();
-  await expect(page.getByRole("button", { name: "Ask Kobby what you need" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Ask Kamal what you need" })).toBeVisible();
   await page.getByRole("main").getByRole("searchbox").fill("corn mill");
   await page.getByRole("main").getByRole("button", { name: "Search" }).click();
   await expect(page).toHaveURL(/\/machinery\?q=corn/);
