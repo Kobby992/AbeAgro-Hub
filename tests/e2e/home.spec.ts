@@ -116,9 +116,9 @@ test("hero search goes to the catalogue with the query", async ({ page }) => {
 
 test("a Kobby prompt opens the panel with the question filled in", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: "What do I need to start a gari business?" }).click();
+  await page.getByRole("button", { name: "Which engine should drive my corn mill?" }).click();
   const dialog = page.getByRole("dialog");
-  await expect(dialog.getByRole("textbox")).toHaveValue("What do I need to start a gari business?");
+  await expect(dialog.getByRole("textbox")).toHaveValue("Which engine should drive my corn mill?");
   await page.keyboard.press("Escape");
   await expect(dialog).toBeHidden();
 });

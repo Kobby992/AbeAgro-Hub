@@ -1,5 +1,5 @@
 import { categories } from "@/config/categories";
-import { branches, branchTowns, site } from "@/config/site";
+import { branches, site } from "@/config/site";
 import { solutions } from "@/config/solutions";
 import { allProducts } from "@/lib/products";
 
@@ -10,7 +10,7 @@ export function GET() {
   const text = [
     `# ${site.name}`,
     "",
-    `> Agricultural machinery and food-processing equipment supplier, established in ${site.founded} as ${site.formerName}. Head office in Accra, with branches in ${branchTowns}. Serving ${site.countriesServed.join(", ")}, with nationwide delivery across Ghana.`,
+    `> Agricultural machinery and food-processing equipment supplier, established in ${site.founded} as ${site.formerName}. Head office in Accra, with branches in Accra Central, Kumasi, Ashaiman and Kasoa. Serving ${site.countriesServed.join(", ")}, with nationwide delivery across Ghana.`,
     "",
     "Prices are not published. Customers request a quote and the sales team replies on WhatsApp with price, availability and delivery. Payment and warranty terms are agreed with each quote.",
     "",

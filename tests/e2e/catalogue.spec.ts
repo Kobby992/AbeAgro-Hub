@@ -70,11 +70,11 @@ test("filters narrow results, write to the URL and clear", async ({ page }) => {
   await page.goto("/machinery");
   await page.getByRole("button", { name: "Rice Processing" }).click();
   await expect(page).toHaveURL(/cat=rice-processing/);
-  await expect(status(page)).toHaveText("6 machines");
+  await expect(status(page)).toHaveText("7 machines");
 
   await page.getByLabel("Power source").selectOption("diesel");
   await expect(page).toHaveURL(/power=diesel/);
-  await expect(status(page)).toHaveText("3 machines");
+  await expect(status(page)).toHaveText("4 machines");
 
   await page.getByRole("button", { name: "Clear filters" }).click();
   await expect(page).toHaveURL(/\/machinery$/);
