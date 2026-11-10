@@ -29,7 +29,7 @@ These are the things only you can answer. Nothing here is invented on the websit
 - [ ] **Review the derived fields:** see `content/DERIVED_FIELDS_REVIEW.md`, especially the items listed first.
 - [ ] **Unconfirmed specs:** 8 products show "To be confirmed by sales" beside values the catalogue marks as unconfirmed. Send the correct values to remove the hint.
 
-- [ ] **New products from November 2026:** the eight new machines (Irrigation Water Pump, Rice Huller, Concrete Vibrator, Plate Compactor, High Pressure Pump, Ex Motor for Gas, Diesel Car Wash Machine, Kirloskar Diesel Engine) were described from your photos and typical figures for machines of that type found online. Their cards say "To be confirmed by sales" until you send the exact model specs. The Electric Car Washing Machine's specs were also rewritten for an electric washer.
+- [ ] **New products from November 2026:** the eight new machines (Irrigation Water Pump, Rice Huller, Concrete Vibrator, Plate Compactor, High Pressure Pump, Ex Motor for Gas, Diesel Car Wash Machine, Kirloskar Diesel Engine) were described from your photos and typical figures for machines of that type found online. Their cards say "To be confirmed by sales" until you send the exact model specs. The Electric Car Washing Machine's specs were also rewritten for an electric washer. The same applies to Corn Mill (Blue) and Corn Mill (Green), added on 10 November 2026: send their motor/engine size and capacity.
 - [ ] **Jotform chatbot:** Kamal on the live site is a Jotform AI agent, trained inside Jotform. Update its knowledge with the new products, branches and About text, for example by adding `https://www.abeagrohub.com/llms.txt` as a knowledge source once this update is live.
 
 ## Photos

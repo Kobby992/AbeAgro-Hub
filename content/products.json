@@ -813,7 +813,9 @@
       "diesel-engine-for-agricultural-machinery",
       "electric-motors-for-agricultural-machinery",
       "hammer-mill",
-      "electric-maize-thresher"
+      "electric-maize-thresher",
+      "corn-mill-blue",
+      "corn-mill-green"
     ],
     "featured": true
   },
@@ -862,7 +864,9 @@
       "electric-feed-pelletizing-machine",
       "multi-purpose-chaff-cutter",
       "electric-motors-for-agricultural-machinery",
-      "diesel-engine-for-agricultural-machinery"
+      "diesel-engine-for-agricultural-machinery",
+      "corn-mill-blue",
+      "corn-mill-green"
     ],
     "featured": true
   },
@@ -2097,6 +2101,128 @@
       "irrigation-water-pump",
       "rice-huller",
       "centrifugal-pump",
+      "disk-mill",
+      "corn-mill-blue",
+      "corn-mill-green"
+    ],
+    "featured": false
+  },
+  {
+    "id": 49,
+    "slug": "corn-mill-blue",
+    "name": "Corn Mill (Blue)",
+    "catalogueLabel": "Grain Milling",
+    "category": "grain-milling",
+    "summary": "A plate-type corn mill that grinds maize and other grains between two grinding plates, for corn-mill kiosks and village milling services.",
+    "description": "A plate-type corn mill that grinds maize and other grains between two grinding plates, for corn-mill kiosks and village milling services. Grain goes into the top funnel and is fed by a screw into the grinding chamber, where a turning plate grinds it against a fixed plate. The hand wheel at the front sets the gap between the plates, so the same mill makes coarse grits, fine flour or smooth wet dough from soaked maize. A flywheel pulley at the back takes a belt from an electric motor or a diesel engine.",
+    "features": [
+      "Feed funnel with screw feed into the grinding chamber",
+      "Replaceable grinding plates",
+      "Front hand wheel to adjust fineness",
+      "Flywheel pulley for belt drive from a motor or diesel engine",
+      "Grinds dry grain, and soaked maize for dough",
+      "Heavy steel stand with bolted feet"
+    ],
+    "specs": [
+      {
+        "label": "Power",
+        "value": "Typically 7.5–15 kW motor or 10–20 hp diesel engine"
+      },
+      {
+        "label": "Typical capacity",
+        "value": "Approx. 100–300 kg/h, depending on grain and fineness"
+      },
+      {
+        "label": "Type",
+        "value": "Plate (burr) mill"
+      },
+      {
+        "label": "Fineness",
+        "value": "Adjustable with the hand wheel"
+      },
+      {
+        "label": "Drive",
+        "value": "Belt to flywheel pulley"
+      }
+    ],
+    "typicalUses": "Community corn-mill services and kiosks; grinding dry maize into flour or grits; wet-milling soaked maize for kenkey, banku and koko dough; millet and sorghum flour.",
+    "image": "/products/corn-mill-blue.jpg",
+    "needsConfirmation": true,
+    "shortName": "Corn Mill (Blue)",
+    "powerSource": [
+      "electric",
+      "diesel"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "maize",
+      "millet",
+      "sorghum"
+    ],
+    "relatedSlugs": [
+      "corn-mill-green",
+      "kirloskar-diesel-engine",
+      "electric-motors-for-agricultural-machinery",
+      "disk-mill"
+    ],
+    "featured": false
+  },
+  {
+    "id": 50,
+    "slug": "corn-mill-green",
+    "name": "Corn Mill (Green)",
+    "catalogueLabel": "Grain Milling",
+    "category": "grain-milling",
+    "summary": "A heavy cast plate-type corn mill with a large funnel, for busy corn-mill kiosks grinding dry maize into flour and soaked maize into dough.",
+    "description": "A heavy cast plate-type corn mill with a large funnel, for busy corn-mill kiosks grinding dry maize into flour and soaked maize into dough. Grain is fed from the funnel into the grinding head, where a turning plate grinds it against a fixed plate. A screw adjuster on the grinding head sets the gap between the plates, from coarse grits to fine flour. A large flywheel pulley takes a belt from an electric motor or a diesel engine, and the solid cast frame keeps the mill steady through long working days.",
+    "features": [
+      "Large feed funnel",
+      "Replaceable grinding plates",
+      "Screw adjuster to set fineness",
+      "Large flywheel pulley for belt drive from a motor or diesel engine",
+      "Grinds dry grain, and soaked maize for dough",
+      "Heavy cast frame for steady running"
+    ],
+    "specs": [
+      {
+        "label": "Power",
+        "value": "Typically 7.5–15 kW motor or 10–20 hp diesel engine"
+      },
+      {
+        "label": "Typical capacity",
+        "value": "Approx. 100–300 kg/h, depending on grain and fineness"
+      },
+      {
+        "label": "Type",
+        "value": "Plate (burr) mill"
+      },
+      {
+        "label": "Fineness",
+        "value": "Adjustable with the screw adjuster"
+      },
+      {
+        "label": "Drive",
+        "value": "Belt to flywheel pulley"
+      }
+    ],
+    "typicalUses": "Community corn-mill services and kiosks; grinding dry maize into flour or grits; wet-milling soaked maize for kenkey, banku and koko dough; millet and sorghum flour.",
+    "image": "/products/corn-mill-green.jpg",
+    "needsConfirmation": true,
+    "shortName": "Corn Mill (Green)",
+    "powerSource": [
+      "electric",
+      "diesel"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "maize",
+      "millet",
+      "sorghum"
+    ],
+    "relatedSlugs": [
+      "corn-mill-blue",
+      "kirloskar-diesel-engine",
+      "electric-motors-for-agricultural-machinery",
       "disk-mill"
     ],
     "featured": false
