@@ -38,11 +38,11 @@ describe("hosting", () => {
 });
 
 describe("starter content", () => {
-  it("still holds all 39 catalogue products", () => {
+  it("still holds all 45 catalogue products", () => {
     const list = Array.isArray(products)
       ? products
       : (products as { products: unknown[] }).products;
-    expect(list).toHaveLength(39);
+    expect(list).toHaveLength(45);
   });
 });
 

@@ -1,7 +1,8 @@
-import { MapPin, MessageCircle, Tractor, Truck } from "lucide-react";
+import { Globe2, History, MessageCircle, Tractor } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ContentPage } from "@/components/layout/content-page";
+import { BranchList } from "@/components/sections/branch-list";
 import { Button } from "@/components/ui/button";
 import { categories } from "@/config/categories";
 import { site } from "@/config/site";
@@ -9,32 +10,32 @@ import { allProducts } from "@/lib/products";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta("/about", {
-  title: "About ABE Agro Hub | Agricultural Machinery, Kasoa, Ghana",
+  title: "About ABE Agro Hub | Agricultural Machinery Since 1978",
   description:
-    "ABE Agro Hub supplies agricultural machinery and food-processing equipment from Kasoa, delivering across Ghana.",
+    "Established in 1978 as Abdul Baai Enterprise, ABE Agro Hub supplies agricultural machinery to farmers and agribusinesses across Ghana, Togo, Burkina Faso and Côte d'Ivoire.",
 });
 
-// Only confirmed facts appear here. Founding year, team and services are on the owner checklist.
+// The story and vision are the owner's own words (November 2026). Team details are on the owner checklist.
 const REASONS = [
+  {
+    Icon: History,
+    title: "Nearly five decades of experience",
+    text: `Established in ${site.founded} as ${site.formerName}.`,
+  },
+  {
+    Icon: Globe2,
+    title: "Serving four countries",
+    text: "Farmers and agribusinesses in Ghana, Togo, Burkina Faso and Côte d'Ivoire, with delivery across Ghana.",
+  },
   {
     Icon: Tractor,
     title: "A range built around the work",
-    text: `${allProducts.length} machines across ${categories.length} categories, from land clearing and irrigation to milling and food processing.`,
+    text: `${allProducts.length} machines across ${categories.length} categories, from land clearing and irrigation to milling, food processing and construction.`,
   },
   {
     Icon: MessageCircle,
     title: "Real people on WhatsApp",
     text: "Ask questions and get your quote from our sales team on the app you already use.",
-  },
-  {
-    Icon: Truck,
-    title: "Delivery across Ghana",
-    text: "Wherever your farm or business is, we deliver nationwide from our base.",
-  },
-  {
-    Icon: MapPin,
-    title: "Based in Kasoa",
-    text: `We are in the Central Region and open ${site.hours}.`,
   },
 ];
 
@@ -43,16 +44,16 @@ export default function AboutPage() {
     <ContentPage title="About ABE Agro Hub" intro={site.tagline}>
       <div className="prose-abe">
         <p>
-          ABE Agro Hub supplies agricultural machinery and food-processing equipment to farmers,
-          millers, agro-processors, food businesses, cooperatives and institutions across Ghana.
+          ABE Agro Hub, established in 1978 as Abdul Baai Enterprise, is a trusted agricultural
+          machinery supplier serving farmers and agribusinesses across Ghana, Togo, Burkina Faso and
+          Côte d&apos;Ivoire. Building on nearly five decades of experience, we are evolving into a
+          technology-driven agricultural marketplace, combining quality machinery, AI-powered
+          solutions and reliable after-sales support to make mechanization more accessible and
+          affordable.
         </p>
-        <h2>What we are here to do</h2>
-        <p>
-          The right machine can change what a farm or small business is able to do. It can turn a
-          harvest into clean rice, flour or gari, keep vegetables watered through the dry season,
-          and take the hardest work off people&apos;s hands. We want farmers and processors to find
-          the right machine, and to feel sure about it before they buy.
-        </p>
+        <h2>Our vision</h2>
+        <p>{site.vision.replace(/^To/, "Our vision is to")}</p>
+        <p className="font-semibold">ABE Agro Hub — Mechanizing Agriculture. Empowering Nations.</p>
         <h2>How we work</h2>
         <p>
           We do not publish prices or take payment online. Tell us what you need, and our sales team
@@ -71,6 +72,12 @@ export default function AboutPage() {
           </li>
         ))}
       </ul>
+
+      <h2 className="mt-10 mb-4 text-3xl">Our branches</h2>
+      <p className="mb-4 max-w-prose text-muted-foreground">
+        Visit or call any of our branches. We are open {site.hours}.
+      </p>
+      <BranchList />
 
       <div className="mt-8 flex flex-wrap gap-3">
         <Button asChild size="lg">

@@ -40,10 +40,10 @@ async function checkPage(page: Page, name: string, projectName: string) {
   });
 }
 
-test("catalogue shows all 39 machines and passes checks", async ({ page }, testInfo) => {
+test("catalogue shows all 45 machines and passes checks", async ({ page }, testInfo) => {
   await page.goto("/machinery");
-  await expect(cards(page)).toHaveCount(39);
-  await expect(status(page)).toHaveText("39 machines");
+  await expect(cards(page)).toHaveCount(45);
+  await expect(status(page)).toHaveText("45 machines");
   await checkPage(page, "catalogue", testInfo.project.name);
 });
 
@@ -78,7 +78,7 @@ test("filters narrow results, write to the URL and clear", async ({ page }) => {
 
   await page.getByRole("button", { name: "Clear filters" }).click();
   await expect(page).toHaveURL(/\/machinery$/);
-  await expect(status(page)).toHaveText("39 machines");
+  await expect(status(page)).toHaveText("45 machines");
 });
 
 test("a search with no results offers Kobby with the query", async ({ page }) => {
@@ -137,7 +137,7 @@ test("category page passes checks", async ({ page }, testInfo) => {
   await checkPage(page, "category", testInfo.project.name);
 });
 
-test("all 39 product pages render with accurate content and no price", async ({ request }) => {
+test("all 45 product pages render with accurate content and no price", async ({ request }) => {
   for (const product of products) {
     const response = await request.get(`/machinery/${product.slug}`);
     expect(response.status(), product.slug).toBe(200);
@@ -253,21 +253,21 @@ test("cards glide when filters change, unless motion is reduced", async ({ page 
     });
 
   await page.goto("/machinery");
-  await expect(cards(page)).toHaveCount(39);
+  await expect(cards(page)).toHaveCount(45);
   expect(await animatedCards()).toBeGreaterThan(0);
 
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/machinery");
-  await expect(cards(page)).toHaveCount(39);
+  await expect(cards(page)).toHaveCount(45);
   expect(await animatedCards()).toBe(0);
 });
 
 test("header search on the catalogue page updates the results", async ({ page }) => {
   await page.goto("/machinery");
   await page.getByRole("banner").getByRole("button", { name: "Search machinery" }).click();
-  await page.getByRole("searchbox", { name: "Machine, crop or job" }).fill("cassava");
+  await page.getByRole("searchbox", { name: "Machine, crop or job" }).fill("fufu");
   await page.keyboard.press("Enter");
-  await expect(page).toHaveURL(/q=cassava/);
-  await expect(page.locator("#catalogue-search")).toHaveValue("cassava");
-  await expect(cards(page).first()).toContainText(/Cassava|Fufu/);
+  await expect(page).toHaveURL(/q=fufu/);
+  await expect(page.locator("#catalogue-search")).toHaveValue("fufu");
+  await expect(cards(page).first()).toContainText(/Fufu/);
 });

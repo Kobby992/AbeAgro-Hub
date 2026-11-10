@@ -229,7 +229,7 @@
     "relatedSlugs": [
       "diesel-engine-for-agricultural-machinery",
       "electric-motors-for-agricultural-machinery",
-      "corn-mill",
+      "disk-mill",
       "hammer-mill"
     ],
     "featured": false
@@ -340,14 +340,15 @@
       "sb10-rice-huller-mill",
       "sb30-rice-huller-mill",
       "satake-bucket-elevator",
-      "chp150-rice-milling-machine"
+      "chp150-rice-milling-machine",
+      "rice-huller"
     ],
     "featured": false
   },
   {
     "id": 7,
-    "slug": "belt-driven-centrifugal-water-pump",
-    "name": "Belt-Driven Centrifugal Water Pump",
+    "slug": "centrifugal-pump",
+    "name": "Centrifugal Pump",
     "catalogueLabel": "Irrigation",
     "category": "irrigation",
     "summary": "A cast-iron, end-suction centrifugal pump driven by a V-belt pulley, so it can be powered by a diesel engine, electric motor or tractor.",
@@ -382,9 +383,9 @@
       }
     ],
     "typicalUses": "Field irrigation from rivers, dams and canals; fish ponds; drainage and dewatering.",
-    "image": "/products/belt-driven-centrifugal-water-pump.jpg",
+    "image": "/products/centrifugal-pump.jpg",
     "needsConfirmation": false,
-    "shortName": "Belt-Driven Water Pump",
+    "shortName": "Centrifugal Pump",
     "powerSource": [
       "diesel",
       "electric",
@@ -397,7 +398,8 @@
     "relatedSlugs": [
       "pvc-lay-flat-irrigation-hose",
       "diesel-engine-for-agricultural-machinery",
-      "electric-motors-for-agricultural-machinery"
+      "electric-motors-for-agricultural-machinery",
+      "kirloskar-diesel-engine"
     ],
     "featured": false
   },
@@ -447,9 +449,9 @@
       "groundnut"
     ],
     "relatedSlugs": [
-      "groundnut-huller",
       "groundnut-paste-machine",
-      "diesel-engine-for-agricultural-machinery"
+      "diesel-engine-for-agricultural-machinery",
+      "electric-motors-for-agricultural-machinery"
     ],
     "featured": true
   },
@@ -502,7 +504,8 @@
     "relatedSlugs": [
       "petrol-water-pump-3-inch-wp30",
       "wet-dry-mini-grinding-mill",
-      "cassava-grater"
+      "concrete-vibrator",
+      "plate-compactor"
     ],
     "featured": false
   },
@@ -551,7 +554,7 @@
       "pepper"
     ],
     "relatedSlugs": [
-      "corn-mill",
+      "disk-mill",
       "pepper-mill",
       "petrol-engine-for-agricultural-machinery",
       "plus-honday-gx200-gasoline-engine"
@@ -707,7 +710,7 @@
       "maize"
     ],
     "relatedSlugs": [
-      "corn-mill",
+      "disk-mill",
       "hammer-mill",
       "model-900-multi-functional-thresher"
     ],
@@ -764,64 +767,13 @@
     "featured": false
   },
   {
-    "id": 15,
-    "slug": "groundnut-huller",
-    "name": "Groundnut Huller (Peeler)",
-    "catalogueLabel": "Groundnut Processing",
-    "category": "groundnut-processing",
-    "summary": "A machine for removing the red skin (testa) from groundnut kernels, usually after roasting, to produce clean white nuts for paste, snacks and confectionery.",
-    "description": "A machine for removing the red skin (testa) from groundnut kernels, usually after roasting, to produce clean white nuts for paste, snacks and confectionery. Rubber rollers or brushes rub off the skins while a fan carries them away.",
-    "features": [
-      "Twin feed hoppers",
-      "Rubber roller / friction peeling section",
-      "Fan for skin removal",
-      "Stainless-steel contact parts",
-      "Electric motor drive"
-    ],
-    "specs": [
-      {
-        "label": "Type",
-        "value": "Roasted groundnut red-skin peeler"
-      },
-      {
-        "label": "Power",
-        "value": "Typically 0.75–1.5 kW"
-      },
-      {
-        "label": "Typical capacity",
-        "value": "Approx. 100–300 kg/h"
-      },
-      {
-        "label": "Peeling rate",
-        "value": "Typically ≥ 95%"
-      }
-    ],
-    "typicalUses": "Peanut paste, snack and confectionery production.",
-    "image": "/products/groundnut-huller.jpg",
-    "needsConfirmation": false,
-    "shortName": "Groundnut Huller",
-    "powerSource": [
-      "electric"
-    ],
-    "scale": "small-business",
-    "crops": [
-      "groundnut"
-    ],
-    "relatedSlugs": [
-      "groundnut-sheller",
-      "groundnut-paste-machine",
-      "electric-motors-for-agricultural-machinery"
-    ],
-    "featured": false
-  },
-  {
     "id": 16,
-    "slug": "corn-mill",
-    "name": "Corn Mill",
+    "slug": "disk-mill",
+    "name": "Disk Mill",
     "catalogueLabel": "Grain Milling",
     "category": "grain-milling",
-    "summary": "A grain mill for grinding maize into flour or meal (and also for millet, sorghum and rice).",
-    "description": "A grain mill for grinding maize into flour or meal (and also for millet, sorghum and rice). This type has a feed hopper over a steel-toothed grinding chamber and a cyclone and blower that collect the flour, and is driven by an electric motor or diesel engine.",
+    "summary": "A heavy-duty disk mill for grinding maize into flour or meal, and also millet, sorghum and rice.",
+    "description": "A heavy-duty disk mill for grinding maize into flour or meal, and also millet, sorghum and rice. It has a feed hopper over a steel grinding chamber, with a cyclone and blower that collect the flour, and is driven by an electric motor or a diesel engine. Its 11–22.5 kW power range suits busy community milling services and commercial flour production.",
     "features": [
       "Feed hopper",
       "Grinding chamber with replaceable screen",
@@ -831,7 +783,7 @@
     "specs": [
       {
         "label": "Power",
-        "value": "Typically 5.5–15 kW or 10–20 hp engine"
+        "value": "11–22.5 kW"
       },
       {
         "label": "Typical capacity",
@@ -843,9 +795,9 @@
       }
     ],
     "typicalUses": "Community corn-milling services, maize flour and feed production.",
-    "image": "/products/corn-mill.jpg",
+    "image": "/products/disk-mill.jpg",
     "needsConfirmation": false,
-    "shortName": "Corn Mill",
+    "shortName": "Disk Mill",
     "powerSource": [
       "electric",
       "diesel"
@@ -864,58 +816,6 @@
       "electric-maize-thresher"
     ],
     "featured": true
-  },
-  {
-    "id": 17,
-    "slug": "disc-mill",
-    "name": "Disc Mill",
-    "catalogueLabel": "Grain Milling",
-    "category": "grain-milling",
-    "summary": "A disc (plate) mill grinds grain between a rotating and a fixed toothed disc.",
-    "description": "A disc (plate) mill grinds grain between a rotating and a fixed toothed disc. It produces fine flour from dry grain and spices; stainless-steel versions like this are used for food products and include a dust-collecting cabinet.",
-    "features": [
-      "Rotating toothed disc and fixed disc",
-      "Funnel hopper",
-      "Fineness set by screen/disc gap",
-      "Stainless-steel construction (this version)",
-      "Optional dust collector cabinet"
-    ],
-    "specs": [
-      {
-        "label": "Type",
-        "value": "Disc / pin (universal) mill"
-      },
-      {
-        "label": "Power",
-        "value": "Typically 2.2–7.5 kW"
-      },
-      {
-        "label": "Typical capacity",
-        "value": "Approx. 20–300 kg/h"
-      },
-      {
-        "label": "Fineness",
-        "value": "Typically 20–120 mesh"
-      }
-    ],
-    "typicalUses": "Flour, spice powder, herbs and dried pepper.",
-    "image": "/products/disc-mill.jpg",
-    "needsConfirmation": false,
-    "shortName": "Disc Mill",
-    "powerSource": [
-      "electric"
-    ],
-    "scale": "small-business",
-    "crops": [
-      "maize",
-      "pepper"
-    ],
-    "relatedSlugs": [
-      "pepper-mill",
-      "multi-purpose-grinding-machine",
-      "electric-motors-for-agricultural-machinery"
-    ],
-    "featured": false
   },
   {
     "id": 18,
@@ -1006,7 +906,7 @@
       "pepper"
     ],
     "relatedSlugs": [
-      "disc-mill",
+      "disk-mill",
       "multi-purpose-grinding-machine",
       "wet-dry-mini-grinding-mill"
     ],
@@ -1021,10 +921,11 @@
     "summary": "A general-purpose grinder for processing a range of dry and moist foods with interchangeable grinding parts, suited to small food businesses that grind several products.",
     "description": "A general-purpose grinder for processing a range of dry and moist foods with interchangeable grinding parts, suited to small food businesses that grind several products.",
     "features": [
-      "Stainless-steel housing",
+      "Large feed hopper",
+      "Grinding head with adjustable fineness",
       "Interchangeable grinding plates/screens",
-      "Electric motor",
-      "Easy-clean design"
+      "Belt drive from an electric motor mounted in the frame",
+      "Sturdy painted steel frame"
     ],
     "specs": [
       {
@@ -1050,7 +951,7 @@
       "pepper"
     ],
     "relatedSlugs": [
-      "disc-mill",
+      "disk-mill",
       "pepper-mill",
       "wet-dry-mini-grinding-mill"
     ],
@@ -1100,54 +1001,11 @@
       "groundnut"
     ],
     "relatedSlugs": [
-      "groundnut-huller",
       "groundnut-sheller",
-      "electric-motors-for-agricultural-machinery"
+      "electric-motors-for-agricultural-machinery",
+      "multi-purpose-grinding-machine"
     ],
     "featured": false
-  },
-  {
-    "id": 22,
-    "slug": "cassava-grater",
-    "name": "Cassava Grater",
-    "catalogueLabel": "Cassava Processing",
-    "category": "food-processing",
-    "summary": "A grating machine that turns peeled cassava into a fine wet mash for gari, agbelima, akple and starch.",
-    "description": "A grating machine that turns peeled cassava into a fine wet mash for gari, agbelima, akple and starch. A rotating drum covered with sharp grating teeth shreds the roots as they are fed in.",
-    "features": [
-      "Rotating toothed grating drum",
-      "Feed hopper and discharge chute",
-      "Stainless or mild-steel body",
-      "Electric motor or petrol/diesel engine"
-    ],
-    "specs": [
-      {
-        "label": "Power",
-        "value": "Typically 3–7.5 kW motor or 6.5–10 hp engine"
-      },
-      {
-        "label": "Typical capacity",
-        "value": "Approx. 500–2,000 kg/h fresh roots"
-      }
-    ],
-    "typicalUses": "Gari, agbelima, kokonte and cassava starch processing.",
-    "image": "/products/cassava-grater.jpg",
-    "needsConfirmation": false,
-    "shortName": "Cassava Grater",
-    "powerSource": [
-      "electric",
-      "petrol"
-    ],
-    "scale": "small-business",
-    "crops": [
-      "cassava"
-    ],
-    "relatedSlugs": [
-      "petrol-engine-for-agricultural-machinery",
-      "wet-dry-mini-grinding-mill",
-      "commercial-fufu-machine"
-    ],
-    "featured": true
   },
   {
     "id": 23,
@@ -1186,8 +1044,8 @@
     ],
     "relatedSlugs": [
       "2-in-1-fufu-machine",
-      "cassava-grater",
-      "wet-dry-mini-grinding-mill"
+      "wet-dry-mini-grinding-mill",
+      "multi-purpose-grinding-machine"
     ],
     "featured": true
   },
@@ -1228,8 +1086,8 @@
     ],
     "relatedSlugs": [
       "commercial-fufu-machine",
-      "cassava-grater",
-      "wet-dry-mini-grinding-mill"
+      "wet-dry-mini-grinding-mill",
+      "pepper-mill"
     ],
     "featured": false
   },
@@ -1565,7 +1423,7 @@
     "relatedSlugs": [
       "pvc-lay-flat-irrigation-hose",
       "diesel-engine-for-agricultural-machinery",
-      "belt-driven-centrifugal-water-pump"
+      "centrifugal-pump"
     ],
     "featured": false
   },
@@ -1607,28 +1465,24 @@
     "relatedSlugs": [
       "pvc-lay-flat-irrigation-hose",
       "diesel-engine-for-agricultural-machinery",
-      "6x6-kirloskar-pump-set-with-10hp-diesel-engine"
+      "kirloskar-water-pump"
     ],
     "featured": false
   },
   {
     "id": 33,
-    "slug": "6x6-kirloskar-pump-set-with-10hp-diesel-engine",
-    "name": "6x6 Kirloskar Pump Set with 10HP Diesel Engine",
+    "slug": "kirloskar-water-pump",
+    "name": "Kirloskar Water Pump",
     "catalogueLabel": "Irrigation",
     "category": "irrigation",
-    "summary": "A heavy-duty 6-inch × 6-inch centrifugal pump set coupled to a 10 hp Kirloskar (India) diesel engine.",
-    "description": "A heavy-duty 6-inch × 6-inch centrifugal pump set coupled to a 10 hp Kirloskar (India) diesel engine. Kirloskar engines are known for durability and low fuel consumption, making these sets popular for large-volume, low-head irrigation.",
+    "summary": "A heavy-duty centrifugal water pump set coupled to a 10 hp Kirloskar (India) diesel engine.",
+    "description": "A heavy-duty centrifugal water pump set coupled to a 10 hp Kirloskar (India) diesel engine. Kirloskar engines are known for durability and low fuel consumption, making these sets popular for large-volume, low-head irrigation.",
     "features": [
-      "6\" × 6\" centrifugal pump",
+      "Heavy-duty centrifugal pump",
       "10 hp Kirloskar diesel engine",
       "Belt or direct coupling on base frame"
     ],
     "specs": [
-      {
-        "label": "Ports",
-        "value": "6\" × 6\""
-      },
       {
         "label": "Engine",
         "value": "10 hp Kirloskar diesel"
@@ -1639,9 +1493,9 @@
       }
     ],
     "typicalUses": "Large-scale irrigation, rice fields, flood dewatering.",
-    "image": "/products/6x6-kirloskar-pump-set-with-10hp-diesel-engine.jpg",
+    "image": "/products/kirloskar-water-pump.jpg",
     "needsConfirmation": true,
-    "shortName": "6x6 Kirloskar Pump Set",
+    "shortName": "Kirloskar Water Pump",
     "powerSource": [
       "diesel"
     ],
@@ -1658,12 +1512,12 @@
   },
   {
     "id": 34,
-    "slug": "pressure-pump",
-    "name": "Pressure Pump",
+    "slug": "electric-water-pump",
+    "name": "Electric Water Pump",
     "catalogueLabel": "Water Supply",
     "category": "irrigation",
-    "summary": "An electric surface pump (peripheral or booster type) that raises water pressure for homes, farms and small buildings, or lifts water from a well or tank to an overhead tank.",
-    "description": "An electric surface pump (peripheral or booster type) that raises water pressure for homes, farms and small buildings, or lifts water from a well or tank to an overhead tank.",
+    "summary": "An electric surface water pump (peripheral or booster type) that raises water pressure for homes, farms and small buildings, or lifts water from a well or tank to an overhead tank.",
+    "description": "An electric surface water pump (peripheral or booster type) that raises water pressure for homes, farms and small buildings, or lifts water from a well or tank to an overhead tank.",
     "features": [
       "Electric motor with thermal protection",
       "Peripheral/centrifugal impeller",
@@ -1681,9 +1535,9 @@
       }
     ],
     "typicalUses": "Domestic water supply, drip irrigation, boosting pressure.",
-    "image": "/products/pressure-pump.png",
+    "image": "/products/electric-water-pump.png",
     "needsConfirmation": false,
-    "shortName": "Pressure Pump",
+    "shortName": "Electric Water Pump",
     "powerSource": [
       "electric"
     ],
@@ -1739,8 +1593,8 @@
     "relatedSlugs": [
       "petrol-water-pump-3-inch-wp30",
       "4-inch-diesel-water-pump",
-      "belt-driven-centrifugal-water-pump",
-      "pressure-pump"
+      "centrifugal-pump",
+      "electric-water-pump"
     ],
     "featured": false
   },
@@ -1778,10 +1632,11 @@
     "scale": "small-business",
     "crops": [],
     "relatedSlugs": [
-      "corn-mill",
+      "disk-mill",
       "sb10d-rice-mill",
-      "belt-driven-centrifugal-water-pump",
-      "4-inch-diesel-water-pump"
+      "centrifugal-pump",
+      "4-inch-diesel-water-pump",
+      "kirloskar-diesel-engine"
     ],
     "featured": false
   },
@@ -1820,7 +1675,8 @@
     "relatedSlugs": [
       "wet-dry-mini-grinding-mill",
       "petrol-water-pump-3-inch-wp30",
-      "cassava-grater"
+      "plate-compactor",
+      "concrete-vibrator"
     ],
     "featured": false
   },
@@ -1857,7 +1713,7 @@
     "scale": "small-business",
     "crops": [],
     "relatedSlugs": [
-      "corn-mill",
+      "disk-mill",
       "sb10-rice-huller-mill",
       "hammer-mill",
       "electric-feed-pelletizing-machine"
@@ -1866,17 +1722,18 @@
   },
   {
     "id": 39,
-    "slug": "car-washing-machine",
-    "name": "Car Washing Machine",
+    "slug": "electric-car-washing-machine",
+    "name": "Electric Car Washing Machine",
     "catalogueLabel": "Other Equipment",
     "category": "utility",
-    "summary": "A high-pressure washer for cleaning vehicles, tractors, farm machinery and buildings.",
-    "description": "A high-pressure washer for cleaning vehicles, tractors, farm machinery and buildings. Engine-driven versions work without mains power.",
+    "summary": "An electric high-pressure washer for car wash bays, cleaning vehicles, tractors, farm machinery and buildings.",
+    "description": "An electric high-pressure washer for car wash bays, cleaning vehicles, tractors, farm machinery and buildings. A large three-phase electric motor drives a plunger pump on a steel frame, with a water filter and pressure gauge, so it can run for long hours at a fixed washing bay with mains power.",
     "features": [
-      "High-pressure plunger pump",
-      "Petrol engine or electric motor",
-      "Trigger gun, hose and nozzles",
-      "Wheeled frame"
+      "Three-phase electric motor built for long running hours",
+      "Plunger-type high-pressure pump with pressure gauge",
+      "Inlet water filter to protect the pump",
+      "Steel base frame for a fixed washing bay",
+      "Quiet, with no fuel to buy or exhaust fumes"
     ],
     "specs": [
       {
@@ -1885,23 +1742,504 @@
       },
       {
         "label": "Typical flow",
-        "value": "Approx. 8–15 L/min"
+        "value": "Approx. 8–21 L/min"
+      },
+      {
+        "label": "Power",
+        "value": "Typically 4–7.5 kW three-phase motor"
+      },
+      {
+        "label": "Supply",
+        "value": "Three-phase mains (380–415 V)"
       }
     ],
     "typicalUses": "Car washing bays, cleaning tractors and equipment, farm hygiene.",
-    "image": "/products/car-washing-machine.jpg",
-    "needsConfirmation": false,
-    "shortName": "Car Washing Machine",
+    "image": "/products/electric-car-washing-machine.jpg",
+    "needsConfirmation": true,
+    "shortName": "Electric Car Washer",
     "powerSource": [
-      "electric",
-      "petrol"
+      "electric"
     ],
     "scale": "small-business",
     "crops": [],
     "relatedSlugs": [
       "petrol-engine-for-agricultural-machinery",
       "electric-motors-for-agricultural-machinery",
-      "pvc-lay-flat-irrigation-hose"
+      "pvc-lay-flat-irrigation-hose",
+      "high-pressure-pump",
+      "diesel-car-wash-machine"
+    ],
+    "featured": false
+  },
+  {
+    "id": 40,
+    "slug": "irrigation-water-pump",
+    "name": "Irrigation Water Pump",
+    "catalogueLabel": "Irrigation",
+    "category": "irrigation",
+    "summary": "A diesel engine pump set: a water-cooled diesel engine coupled to a cast-iron centrifugal pump on one steel base, for pumping water from rivers, dams, wells and canals to your fields.",
+    "description": "A diesel engine pump set: a water-cooled diesel engine coupled to a cast-iron centrifugal pump on one steel base, for pumping water from rivers, dams, wells and canals to your fields. The slow-speed engine is built for long hours of pumping and starts by hand crank, so it works where there is no mains power. It suits vegetable, rice and orchard irrigation and filling tanks and ponds.",
+    "features": [
+      "Water-cooled single-cylinder diesel engine for long running hours",
+      "Cast-iron centrifugal pump with suction and delivery connections",
+      "Engine and pump mounted on one steel base",
+      "Hand-crank start, so no battery or mains power is needed",
+      "Simple mechanical design that local mechanics can service"
+    ],
+    "specs": [
+      {
+        "label": "Power",
+        "value": "Typically 5–10 hp diesel engine (approx. 1,500 r/min)"
+      },
+      {
+        "label": "Pump type",
+        "value": "Single-stage centrifugal"
+      },
+      {
+        "label": "Typical ports",
+        "value": "Approx. 2–4 inch (50–100 mm)"
+      },
+      {
+        "label": "Cooling",
+        "value": "Water cooled"
+      },
+      {
+        "label": "Starting",
+        "value": "Hand crank"
+      }
+    ],
+    "typicalUses": "Irrigating vegetables, rice fields and orchards; filling tanks and ponds; drawing water from rivers, dams and canals.",
+    "image": "/products/irrigation-water-pump.jpg",
+    "needsConfirmation": true,
+    "shortName": "Irrigation Water Pump",
+    "powerSource": [
+      "diesel"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "vegetables",
+      "rice"
+    ],
+    "relatedSlugs": [
+      "pvc-lay-flat-irrigation-hose",
+      "kirloskar-diesel-engine",
+      "centrifugal-pump",
+      "kirloskar-water-pump"
+    ],
+    "featured": false
+  },
+  {
+    "id": 41,
+    "slug": "rice-huller",
+    "name": "Rice Huller",
+    "catalogueLabel": "Rice Processing",
+    "category": "rice-processing",
+    "summary": "A compact rice huller that removes the husk from paddy and polishes it into white rice in a single pass.",
+    "description": "A compact rice huller that removes the husk from paddy and polishes it into white rice in a single pass. Paddy is fed from the top hopper into a steel milling chamber, where a ribbed roller rubs off the husk and bran against a screen. A hand wheel on the outlet sets the pressure, which controls how white the rice comes out. It is belt-driven by an electric motor or a diesel engine, and suits village milling services and small rice processors.",
+    "features": [
+      "Top feed hopper",
+      "Steel huller roller and screen",
+      "Hand wheel to adjust milling pressure and whiteness",
+      "Belt pulley drive from an electric motor or diesel engine",
+      "Heavy cast frame for steady running"
+    ],
+    "specs": [
+      {
+        "label": "Power",
+        "value": "Typically 4–7.5 kW motor or 8–12 hp diesel engine"
+      },
+      {
+        "label": "Typical capacity",
+        "value": "Approx. 200–500 kg/h paddy"
+      },
+      {
+        "label": "Type",
+        "value": "Steel-roller (Engelberg-type) huller and polisher"
+      },
+      {
+        "label": "Drive",
+        "value": "V-belt pulley"
+      }
+    ],
+    "typicalUses": "Village and community rice milling services, small rice processors, milling locally grown paddy.",
+    "image": "/products/rice-huller.jpg",
+    "needsConfirmation": true,
+    "shortName": "Rice Huller",
+    "powerSource": [
+      "electric",
+      "diesel"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "rice"
+    ],
+    "relatedSlugs": [
+      "jlx-rice-destoner",
+      "kirloskar-diesel-engine",
+      "electric-motors-for-agricultural-machinery",
+      "satake-bucket-elevator"
+    ],
+    "featured": false
+  },
+  {
+    "id": 42,
+    "slug": "concrete-vibrator",
+    "name": "Concrete Vibrator",
+    "catalogueLabel": "Construction Equipment",
+    "category": "construction",
+    "summary": "A petrol-driven concrete vibrator that drives a flexible shaft and poker to shake trapped air out of fresh concrete.",
+    "description": "A petrol-driven concrete vibrator that drives a flexible shaft and poker to shake trapped air out of fresh concrete. Pushing the vibrating poker into wet concrete makes it settle and fill the formwork, so slabs, columns, beams and foundations come out denser and stronger. A 4-stroke petrol engine sits in a tubular steel roll frame, so it can be carried around site and used where there is no mains power.",
+    "features": [
+      "4-stroke air-cooled petrol engine with recoil (pull) start",
+      "Tubular steel frame protects the engine and makes carrying easy",
+      "Coupling for a flexible shaft and vibrating poker",
+      "Works anywhere on site, with no mains power"
+    ],
+    "specs": [
+      {
+        "label": "Engine",
+        "value": "Typically 5.5–6.5 hp, 4-stroke petrol"
+      },
+      {
+        "label": "Poker diameter",
+        "value": "Typically 35–60 mm"
+      },
+      {
+        "label": "Flexible shaft",
+        "value": "Typically 4–6 m"
+      },
+      {
+        "label": "Fuel",
+        "value": "Petrol"
+      }
+    ],
+    "typicalUses": "Concrete slabs, columns, beams and foundations; culverts and drains; farm buildings, silos and drying floors.",
+    "image": "/products/concrete-vibrator.jpg",
+    "needsConfirmation": true,
+    "shortName": "Concrete Vibrator",
+    "powerSource": [
+      "petrol"
+    ],
+    "scale": "small-business",
+    "crops": [],
+    "relatedSlugs": [
+      "plate-compactor",
+      "plus-honday-gx200-gasoline-engine",
+      "petrol-engine-for-agricultural-machinery"
+    ],
+    "featured": false
+  },
+  {
+    "id": 43,
+    "slug": "plate-compactor",
+    "name": "Plate Compactor",
+    "catalogueLabel": "Construction Equipment",
+    "category": "construction",
+    "summary": "A petrol plate compactor that packs soil, gravel, sand and paving blocks with a heavy vibrating steel plate.",
+    "description": "A petrol plate compactor that packs soil, gravel, sand and paving blocks with a heavy vibrating steel plate. A belt-driven vibrator under the engine shakes the base plate thousands of times a minute, so the machine moves forward on its own while it firms the ground. It prepares solid bases for floors, driveways, paths, interlocking pavers and trenches, and for farm structures such as stores and drying floors.",
+    "features": [
+      "4-stroke petrol engine with belt drive and clutch",
+      "Heavy steel base plate",
+      "Moves forward on its own as it compacts",
+      "Handle with anti-vibration mounts",
+      "Lifting frame for loading and moving"
+    ],
+    "specs": [
+      {
+        "label": "Engine",
+        "value": "Typically 5.5–6.5 hp, 4-stroke petrol"
+      },
+      {
+        "label": "Compaction force",
+        "value": "Approx. 10–15 kN"
+      },
+      {
+        "label": "Plate size",
+        "value": "Approx. 500 × 350–500 mm"
+      },
+      {
+        "label": "Compaction depth",
+        "value": "Up to approx. 200–300 mm, depending on material"
+      },
+      {
+        "label": "Weight",
+        "value": "Approx. 60–90 kg"
+      }
+    ],
+    "typicalUses": "Soil and gravel bases, sand and paving blocks, trenches, driveways and floors of farm buildings.",
+    "image": "/products/plate-compactor.jpg",
+    "needsConfirmation": true,
+    "shortName": "Plate Compactor",
+    "powerSource": [
+      "petrol"
+    ],
+    "scale": "small-business",
+    "crops": [],
+    "relatedSlugs": [
+      "concrete-vibrator",
+      "plus-honday-gx200-gasoline-engine",
+      "petrol-engine-for-agricultural-machinery"
+    ],
+    "featured": false
+  },
+  {
+    "id": 44,
+    "slug": "high-pressure-pump",
+    "name": "High Pressure Pump",
+    "catalogueLabel": "Other Equipment",
+    "category": "utility",
+    "summary": "A triplex plunger pump: the high-pressure pump at the heart of a commercial car washer.",
+    "description": "A triplex plunger pump: the high-pressure pump at the heart of a commercial car washer. Three plungers in a heavy, oil-lubricated pump body deliver a steady, high-pressure flow of water. It is driven through its shaft, a pulley or a gearbox by an electric motor or an engine, and is used to build or repair car wash machines, pressure cleaners and other high-pressure water systems.",
+    "features": [
+      "Triplex (three-plunger) design for smooth, steady flow",
+      "Oil-lubricated crankcase built for long running hours",
+      "Metal manifold with inlet and outlet ports",
+      "Solid shaft for direct, pulley or gearbox drive",
+      "Plungers and seals can be serviced and replaced"
+    ],
+    "specs": [
+      {
+        "label": "Typical pressure",
+        "value": "Approx. 100–250 bar"
+      },
+      {
+        "label": "Typical flow",
+        "value": "Approx. 10–21 L/min"
+      },
+      {
+        "label": "Drive speed",
+        "value": "Typically 1,450 r/min"
+      },
+      {
+        "label": "Drive",
+        "value": "Electric motor or engine"
+      }
+    ],
+    "typicalUses": "Building or repairing car wash machines and pressure cleaners, high-pressure cleaning systems.",
+    "image": "/products/high-pressure-pump.jpg",
+    "needsConfirmation": true,
+    "shortName": "High Pressure Pump",
+    "powerSource": [
+      "electric",
+      "diesel",
+      "petrol"
+    ],
+    "scale": "small-business",
+    "crops": [],
+    "relatedSlugs": [
+      "electric-car-washing-machine",
+      "diesel-car-wash-machine",
+      "electric-motors-for-agricultural-machinery"
+    ],
+    "featured": false
+  },
+  {
+    "id": 45,
+    "slug": "ex-motor-for-gas",
+    "name": "Ex Motor for Gas (Explosion-Proof Motor)",
+    "catalogueLabel": "Engines & Power",
+    "category": "engines-power",
+    "summary": "A flameproof (explosion-proof) three-phase electric motor for driving pumps and compressors where flammable gas may be present, such as LPG filling plants.",
+    "description": "A flameproof (explosion-proof) three-phase electric motor for driving pumps and compressors where flammable gas may be present, such as LPG filling plants. Its Ex d enclosure is built to contain any spark or explosion inside the motor, so it cannot ignite the gas around it. It drives pumps, compressors, fans and mixers like a standard motor, but is made for hazardous areas. The motor's gas group and temperature class must match your site's hazardous-area rating.",
+    "features": [
+      "Flameproof Ex d enclosure",
+      "Three-phase induction motor, totally enclosed and fan cooled",
+      "Made for gas groups IIB or IIC, temperature class T4 (depending on model)",
+      "Foot mounting",
+      "Sealed terminal box with certified cable entries"
+    ],
+    "specs": [
+      {
+        "label": "Protection",
+        "value": "Ex d IIB T4 or Ex d IIC T4, depending on model"
+      },
+      {
+        "label": "Supply",
+        "value": "Three-phase, 380–415 V, 50 Hz"
+      },
+      {
+        "label": "Speeds",
+        "value": "Approx. 3,000, 1,500 or 1,000 r/min (2, 4 or 6 pole)"
+      },
+      {
+        "label": "Enclosure",
+        "value": "Typically IP55, insulation class F"
+      },
+      {
+        "label": "Power",
+        "value": "Range of ratings available"
+      }
+    ],
+    "typicalUses": "LPG and gas filling plants, gas cylinder plants, fuel stations, oil and chemical sites.",
+    "image": "/products/ex-motor-for-gas.jpg",
+    "needsConfirmation": true,
+    "shortName": "Ex Motor for Gas",
+    "powerSource": [
+      "electric"
+    ],
+    "scale": "commercial",
+    "crops": [],
+    "relatedSlugs": [
+      "electric-motors-for-agricultural-machinery",
+      "centrifugal-pump",
+      "electric-water-pump"
+    ],
+    "featured": false
+  },
+  {
+    "id": 46,
+    "slug": "corn-mill",
+    "name": "Corn Mill",
+    "catalogueLabel": "Grain Milling",
+    "category": "grain-milling",
+    "summary": "A plate-type corn mill that grinds dry maize and other grains into flour or meal between two grinding plates.",
+    "description": "A plate-type corn mill that grinds dry maize and other grains into flour or meal between two grinding plates. Grain is poured into the large top funnel and fed into the grinding chamber, where a turning plate grinds it against a fixed plate. A hand wheel sets the gap between the plates, so the same mill makes coarse grits or fine flour. It is belt-driven by an electric motor or a diesel engine, which makes it a popular choice for community corn-mill services.",
+    "features": [
+      "Large feed funnel",
+      "Replaceable grinding plates",
+      "Hand wheel to adjust fineness",
+      "Belt pulley drive from an electric motor or diesel engine",
+      "Sturdy steel stand"
+    ],
+    "specs": [
+      {
+        "label": "Power",
+        "value": "Typically 5.5–11 kW motor or 10–15 hp diesel engine"
+      },
+      {
+        "label": "Typical capacity",
+        "value": "Approx. 100–300 kg/h, depending on grain and fineness"
+      },
+      {
+        "label": "Type",
+        "value": "Plate (burr) mill"
+      },
+      {
+        "label": "Fineness",
+        "value": "Adjustable with the hand wheel"
+      }
+    ],
+    "typicalUses": "Community corn-milling services, maize flour, kenkey and banku dough preparation, millet and sorghum flour.",
+    "image": "/products/corn-mill.jpg",
+    "needsConfirmation": true,
+    "shortName": "Corn Mill",
+    "powerSource": [
+      "electric",
+      "diesel"
+    ],
+    "scale": "small-business",
+    "crops": [
+      "maize",
+      "millet",
+      "sorghum"
+    ],
+    "relatedSlugs": [
+      "kirloskar-diesel-engine",
+      "disk-mill",
+      "hammer-mill",
+      "electric-maize-thresher"
+    ],
+    "featured": true
+  },
+  {
+    "id": 47,
+    "slug": "diesel-car-wash-machine",
+    "name": "Diesel Car Wash Machine",
+    "catalogueLabel": "Other Equipment",
+    "category": "utility",
+    "summary": "An engine-driven high-pressure washer: an air-cooled diesel engine and a plunger pump on one steel frame, for washing bays without reliable mains power.",
+    "description": "An engine-driven high-pressure washer: an air-cooled diesel engine and a plunger pump on one steel frame, for washing bays without reliable mains power. The engine drives the high-pressure pump directly, and a gauge on the pump shows the working pressure. Because it needs no electricity, it suits roadside car wash bays, construction sites and farms, and it also cleans trucks, tractors, farm machinery and buildings.",
+    "features": [
+      "Air-cooled single-cylinder diesel engine",
+      "Plunger-type high-pressure pump with pressure gauge",
+      "Steel base frame",
+      "Works without mains power"
+    ],
+    "specs": [
+      {
+        "label": "Typical pressure",
+        "value": "Approx. 150–250 bar"
+      },
+      {
+        "label": "Typical flow",
+        "value": "Approx. 15–21 L/min"
+      },
+      {
+        "label": "Engine",
+        "value": "Typically around 10 hp, air-cooled diesel"
+      },
+      {
+        "label": "Fuel",
+        "value": "Diesel"
+      }
+    ],
+    "typicalUses": "Car wash bays without mains power, cleaning trucks, tractors and farm machinery, site and building cleaning.",
+    "image": "/products/diesel-car-wash-machine.jpg",
+    "needsConfirmation": true,
+    "shortName": "Diesel Car Washer",
+    "powerSource": [
+      "diesel"
+    ],
+    "scale": "small-business",
+    "crops": [],
+    "relatedSlugs": [
+      "high-pressure-pump",
+      "electric-car-washing-machine",
+      "diesel-engine-for-agricultural-machinery"
+    ],
+    "featured": false
+  },
+  {
+    "id": 48,
+    "slug": "kirloskar-diesel-engine",
+    "name": "Kirloskar Diesel Engine",
+    "catalogueLabel": "Engines & Power",
+    "category": "engines-power",
+    "summary": "A slow-speed, water-cooled, single-cylinder diesel engine for driving water pumps, corn mills, rice hullers and other belt-driven machines.",
+    "description": "A slow-speed, water-cooled, single-cylinder diesel engine for driving water pumps, corn mills, rice hullers and other belt-driven machines. Running at about 1,500 r/min with a heavy flywheel, engines of this type give steady power for long working hours and are simple to repair. It starts by hand crank and drives machines through a belt pulley or a direct coupling.",
+    "features": [
+      "Single-cylinder, 4-stroke diesel",
+      "Water cooled",
+      "Heavy flywheel for steady power under load",
+      "Hand-crank start",
+      "Output shaft for a belt pulley or coupling"
+    ],
+    "specs": [
+      {
+        "label": "Power",
+        "value": "Typically 5–10 hp, depending on model"
+      },
+      {
+        "label": "Speed",
+        "value": "Approx. 1,500 r/min"
+      },
+      {
+        "label": "Cooling",
+        "value": "Water cooled"
+      },
+      {
+        "label": "Starting",
+        "value": "Hand crank"
+      },
+      {
+        "label": "Fuel",
+        "value": "Diesel"
+      }
+    ],
+    "typicalUses": "Driving irrigation pumps, corn mills, rice hullers, threshers and other belt-driven farm machines.",
+    "image": "/products/kirloskar-diesel-engine.jpg",
+    "needsConfirmation": true,
+    "shortName": "Kirloskar Diesel Engine",
+    "powerSource": [
+      "diesel"
+    ],
+    "scale": "small-business",
+    "crops": [],
+    "relatedSlugs": [
+      "irrigation-water-pump",
+      "corn-mill",
+      "rice-huller",
+      "centrifugal-pump"
     ],
     "featured": false
   }

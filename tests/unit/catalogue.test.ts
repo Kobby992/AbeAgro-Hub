@@ -36,9 +36,9 @@ const search = createProductSearch(
 const slugsFor = (query: string) => (search(query) ?? []).map((hit) => hit.item.slug);
 
 describe("product data", () => {
-  it("has 39 products with unique slugs and existing photos", () => {
-    expect(allProducts).toHaveLength(39);
-    expect(new Set(allProducts.map((product) => product.slug)).size).toBe(39);
+  it("has 45 products with unique slugs and existing photos", () => {
+    expect(allProducts).toHaveLength(45);
+    expect(new Set(allProducts.map((product) => product.slug)).size).toBe(45);
     for (const product of allProducts) {
       expect(existsSync(`public${product.image}`), product.image).toBe(true);
     }
@@ -98,7 +98,8 @@ describe("search", () => {
   });
 
   it("finds machines by what they are used for", () => {
-    expect(slugsFor("gari")).toContain("cassava-grater");
+    expect(slugsFor("paving blocks")).toContain("plate-compactor");
+    expect(slugsFor("car wash")).toContain("diesel-car-wash-machine");
   });
 
   it("separates no search from no results", () => {
@@ -155,8 +156,11 @@ describe("product helpers", () => {
   it("lines up differently named specs when comparing", () => {
     const rows = compareRows([getProduct("sb10-rice-huller-mill")!, getProduct("corn-mill")!]);
     const row = (label: string) => rows.find((item) => item.label === label)?.values;
-    expect(row("Capacity")).toEqual(["900–1,200 kg/h", "Approx. 150–600 kg/h"]);
-    expect(row("Power")).toEqual(["11 kW", "Typically 5.5–15 kW or 10–20 hp engine"]);
+    expect(row("Capacity")).toEqual([
+      "900–1,200 kg/h",
+      "Approx. 100–300 kg/h, depending on grain and fineness",
+    ]);
+    expect(row("Power")).toEqual(["11 kW", "Typically 5.5–11 kW motor or 10–15 hp diesel engine"]);
     expect(row("Weight")).toEqual(["Approx. 230 kg", ""]);
   });
 });

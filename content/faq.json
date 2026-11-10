@@ -7,7 +7,7 @@
   {
     "group": "Delivery",
     "question": "Do you deliver?",
-    "answer": "Yes, nationwide across Ghana, from our base in Kasoa."
+    "answer": "Yes, nationwide across Ghana, from our branches in Accra, Kumasi, Ashaiman and Kasoa."
   },
   {
     "group": "Payment & warranty",
@@ -17,7 +17,12 @@
   {
     "group": "Buying & quotes",
     "question": "Where are you located, and when are you open?",
-    "answer": "Kasoa, Ghana. We are open 9:00am – 5:00pm."
+    "answer": "Our head office is in Accra, with branches in Accra Central, Kumasi, Ashaiman and Kasoa. We are open 9:00am – 5:00pm. The Contact page lists each branch's phone number."
+  },
+  {
+    "group": "Delivery",
+    "question": "Do you serve customers outside Ghana?",
+    "answer": "Yes. We serve farmers and agribusinesses in Ghana, Togo, Burkina Faso and Côte d'Ivoire. Send us your location with your quote request."
   },
   {
     "group": "Buying & quotes",

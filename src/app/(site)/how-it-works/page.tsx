@@ -30,7 +30,7 @@ const STEPS = [
     title: "Get your price and delivery",
     body: [
       "Our sales team replies with price and availability. Payment methods and warranty terms are discussed and agreed with you when your quote is prepared.",
-      "We then arrange delivery to you, anywhere in Ghana, from our base in Kasoa.",
+      "We then arrange delivery to you, anywhere in Ghana, from our branches in Accra, Kumasi, Ashaiman and Kasoa.",
     ],
   },
 ];

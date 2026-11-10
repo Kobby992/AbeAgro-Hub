@@ -1,4 +1,4 @@
-import { MapPin, MessageCircle, Truck, Users } from "lucide-react";
+import { History, MessageCircle, Truck, Users } from "lucide-react";
 import { CountUp } from "@/components/motion/count-up";
 import { categories } from "@/config/categories";
 import { allProducts } from "@/lib/products";
@@ -7,7 +7,7 @@ const TRUST = [
   { Icon: Truck, text: "Nationwide delivery" },
   { Icon: Users, text: "Expert advice" },
   { Icon: MessageCircle, text: "Quotes on WhatsApp" },
-  { Icon: MapPin, text: "Based in Kasoa" },
+  { Icon: History, text: "Trusted since 1978" },
 ];
 
 // Real figures only (BUILD_SPEC §5.2-2): both counts come from the catalogue itself.

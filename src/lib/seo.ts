@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { categoryName, type CategorySlug } from "@/config/categories";
-import { site, WHATSAPP_NUMBER } from "@/config/site";
+import { branches, site, WHATSAPP_NUMBER } from "@/config/site";
 import type { Product } from "@/lib/products";
 
 const DEFAULT_IMAGE = "/og-default.jpg";
@@ -61,13 +61,23 @@ export function businessJsonLd() {
     image: absolute("/brand/logo-full.png"),
     telephone: `+${WHATSAPP_NUMBER}`,
     email: site.email,
+    alternateName: site.formerName,
+    foundingDate: String(site.founded),
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Kasoa",
-      addressRegion: "Central Region",
+      addressLocality: "Accra",
+      addressRegion: "Greater Accra Region",
       addressCountry: "GH",
     },
-    areaServed: "GH",
+    areaServed: ["GH", "TG", "BF", "CI"],
+    department: branches
+      .filter((branch) => branch.label === "Branch")
+      .map((branch) => ({
+        "@type": "LocalBusiness",
+        name: `${site.name} ${branch.name}`,
+        telephone: branch.tel,
+        address: { "@type": "PostalAddress", addressLocality: branch.name, addressCountry: "GH" },
+      })),
   };
 }
 

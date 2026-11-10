@@ -11,6 +11,7 @@ export const categories = [
   { slug: "groundnut-processing", name: "Groundnut Processing" },
   { slug: "animal-feed", name: "Animal Feed" },
   { slug: "engines-power", name: "Engines & Power" },
+  { slug: "construction", name: "Construction Equipment" },
   { slug: "spare-parts", name: "Spare Parts" },
   { slug: "utility", name: "Utility Equipment" },
 ] as const;

@@ -14,7 +14,7 @@ const POPULAR = [
   { label: "Rice mills", query: "rice mill" },
   { label: "Mist blower", query: "mist blower" },
   { label: "Groundnut sheller", query: "groundnut sheller" },
-  { label: "Cassava grater", query: "cassava grater" },
+  { label: "Corn mill", query: "corn mill" },
 ];
 
 const SHOWCASE = getProduct("sb10-rice-huller-mill");
@@ -43,8 +43,8 @@ export function Hero() {
             ))}
           </h1>
           <p className="mt-5 max-w-[48ch] text-lg text-white/85">
-            Water pumps, rice mills, sprayers and food-processing machines, delivered across Ghana
-            from our base in Kasoa.
+            Water pumps, rice mills, sprayers and food-processing machines, from a trusted supplier
+            since 1978, with branches in Accra, Kumasi, Ashaiman and Kasoa.
           </p>
 
           <HeroSearch />

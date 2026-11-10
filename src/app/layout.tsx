@@ -7,7 +7,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: site.name,
-  description: "Agricultural machinery and food-processing equipment, based in Kasoa, Ghana.",
+  description:
+    "Agricultural machinery and food-processing equipment since 1978, with branches in Accra, Kumasi, Ashaiman and Kasoa, Ghana.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

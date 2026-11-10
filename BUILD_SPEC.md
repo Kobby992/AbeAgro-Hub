@@ -8,6 +8,11 @@
 > - `public/brand/` — `logo-full.png` (horizontal, with tagline), `logo-square-tagline.png`, `logo-icon.png` (mark only), `logo-white.png` (for dark backgrounds).
 > - `reference/` — screenshots of the earlier concept site (layout reference only, see §4.1).
 
+> **Updates since this spec was written (November 2026).** Where they differ, these win over the rest of this document:
+> - **Business:** established in 1978 as Abdul Baai Enterprise; serves Ghana, Togo, Burkina Faso and Côte d'Ivoire. Head office in Accra (0244 823 137), branches in Accra Central (024 305 5163), Kumasi (023 580 1203), Ashaiman (024 132 3336) and Kasoa (024 284 9245). Kasoa is no longer described as "our base". The branch list lives in `src/config/site.ts`.
+> - **Catalogue:** 45 products. Added Irrigation Water Pump, Rice Huller, Concrete Vibrator, Plate Compactor, High Pressure Pump, Ex Motor for Gas, Corn Mill (plate type), Diesel Car Wash Machine and Kirloskar Diesel Engine. Removed Groundnut Huller, Disc Mill and Cassava Grater (and with it the gari guide). Renamed Corn Mill → Disk Mill (11–22.5 kW), Belt-Driven Water Pump → Centrifugal Pump, Pressure Pump → Electric Water Pump, 6x6 Kirloskar Pump Set → Kirloskar Water Pump, Car Washing Machine → Electric Car Washing Machine. New category: Construction Equipment.
+> - **Kobby:** the live chatbot is a Jotform AI agent. The Claude-based Kobby from Phase 6 exists only on `develop`.
+
 ---
 
 ## 0. Project snapshot

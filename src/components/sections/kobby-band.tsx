@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 const PROMPTS = [
   "What pump do I need for 2 acres of tomatoes?",
-  "What do I need to start a gari business?",
+  "Which engine should drive my corn mill?",
   "Which mill suits a small corn-mill kiosk?",
 ];
 

@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { noteSearchOrigin } from "@/lib/analytics";
 
-const PHRASES = ["rice mill…", "water pump for 2 acres…", "gari processing…"];
+const PHRASES = ["rice mill…", "water pump for 2 acres…", "corn mill…"];
 const TYPE_MS = 70;
 const HOLD_MS = 1600;
 
