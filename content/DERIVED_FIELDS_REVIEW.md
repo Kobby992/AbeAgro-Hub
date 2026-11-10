@@ -61,16 +61,18 @@ To change a value, edit `content/products.json` or tell Claude Code what to corr
 
 From the owner's _Website Changes and Updates_ document. The nine new machines had no catalogue sheet, so their descriptions and specs come from the owner's photos and typical figures for machines of the same type found online. All are marked for confirmation.
 
-| Product                   | Power source             | Scale          | Crops                        | Note                                  |
-| ------------------------- | ------------------------ | -------------- | ---------------------------- | ------------------------------------- |
-| Disk Mill (was Corn Mill) | electric, diesel         | small-business | maize, millet, sorghum, rice | Power set to 11–22.5 kW by the owner  |
-| Irrigation Water Pump     | diesel                   | small-business | vegetables, rice             | Port size estimated from the photo    |
-| Rice Huller               | electric, diesel         | small-business | rice                         | Capacity and power are typical ranges |
-| Concrete Vibrator         | petrol                   | small-business | none                         | New Construction Equipment category   |
-| Plate Compactor           | petrol                   | small-business | none                         | New Construction Equipment category   |
-| High Pressure Pump        | electric, diesel, petrol | small-business | none                         | Drives from a motor or an engine      |
-| Ex Motor for Gas          | electric                 | commercial     | none                         | Confirm the Ex marking and kW rating  |
-| Diesel Car Wash Machine   | diesel                   | small-business | none                         | Engine size estimated from the photo  |
-| Kirloskar Diesel Engine   | diesel                   | small-business | none                         | Confirm the hp of the model you stock |
+| Product                   | Power source             | Scale          | Crops                        | Note                                                   |
+| ------------------------- | ------------------------ | -------------- | ---------------------------- | ------------------------------------------------------ |
+| Disk Mill (was Corn Mill) | electric, diesel         | small-business | maize, millet, sorghum, rice | Power set to 11–22.5 kW by the owner                   |
+| Irrigation Water Pump     | diesel                   | small-business | vegetables, rice             | Port size estimated from the photo                     |
+| Rice Huller               | electric, diesel         | small-business | rice                         | Capacity and power are typical ranges                  |
+| Concrete Vibrator         | petrol                   | small-business | none                         | New Construction Equipment category                    |
+| Plate Compactor           | petrol                   | small-business | none                         | New Construction Equipment category                    |
+| High Pressure Pump        | electric, diesel, petrol | small-business | none                         | Drives from a motor or an engine                       |
+| Ex Motor for Gas          | electric                 | commercial     | none                         | Confirm the Ex marking and kW rating                   |
+| Diesel Car Wash Machine   | diesel                   | small-business | none                         | Engine size estimated from the photo                   |
+| Kirloskar Diesel Engine   | diesel                   | small-business | none                         | Confirm the hp of the model you stock                  |
+| Corn Mill (Blue)          | electric, diesel         | small-business | maize, millet, sorghum       | Added 10 Nov 2026; specs are typical ranges            |
+| Corn Mill (Green)         | electric, diesel         | small-business | maize, millet, sorghum       | Added 10 Nov 2026; same photo as the earlier Corn Mill |
 
 Removed: Groundnut Huller, Disc Mill, Cassava Grater, and later Corn Mill (plate type), Pepper Mill and 4x4 Water Pump with Diesel Engine.

@@ -117,7 +117,7 @@
     "solutions": ["start-a-rice-mill"]
   },
   "grain-milling": {
-    "intro": "Every community needs flour, and a grinding mill can be a business on its own. Our grain milling range includes a heavy-duty disk mill for maize flour and busy milling services, hammer mills for animal feed ingredients, and a grinding mill with a cyclone that drops flour cleanly into a bag. The disk mill is a common choice for a neighbourhood corn-mill kiosk. Hammer mills suit poultry and livestock feed. Each runs on an electric motor, and several can run on an engine where there is no mains power. ABE Agro Hub delivers milling machines across Ghana from our branches in Accra, Kumasi, Ashaiman and Kasoa. Tap Get quote for price and availability on WhatsApp.",
+    "intro": "Every community needs flour, and a grinding mill can be a business on its own. Our grain milling range includes plate-type corn mills for flour and wet dough, a heavy-duty disk mill for busy milling services, hammer mills for animal feed ingredients, and a grinding mill with a cyclone that drops flour cleanly into a bag. Plate-type corn mills are the common choice for a neighbourhood corn-mill kiosk. Hammer mills suit poultry and livestock feed. Each runs on an electric motor, and several can run on an engine where there is no mains power. ABE Agro Hub delivers milling machines across Ghana from our branches in Accra, Kumasi, Ashaiman and Kasoa. Tap Get quote for price and availability on WhatsApp.",
     "tips": [
       "Choose by what you will grind most: flour for people, or coarser meal for animals.",
       "Check whether you have the power supply for the motor size, or plan for an engine instead.",
@@ -130,8 +130,8 @@
         "answer": "A hammer mill breaks material against a screen and is the standard for animal feed. A disk mill grinds between plates and suits maize flour for people."
       },
       {
-        "question": "Can the disk mill grind other grains?",
-        "answer": "Yes. As well as maize, it also handles millet, sorghum and rice."
+        "question": "What is the difference between a corn mill and a disk mill?",
+        "answer": "Both grind between plates. Our plate-type corn mills also wet-mill soaked maize into dough, while the disk mill is built for higher volumes of dry flour."
       }
     ],
     "solutions": ["corn-mill-kiosk", "poultry-feed-production"]

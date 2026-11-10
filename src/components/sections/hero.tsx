@@ -14,7 +14,7 @@ const POPULAR = [
   { label: "Rice mills", query: "rice mill" },
   { label: "Mist blower", query: "mist blower" },
   { label: "Groundnut sheller", query: "groundnut sheller" },
-  { label: "Disk mill", query: "disk mill" },
+  { label: "Corn mill", query: "corn mill" },
 ];
 
 const SHOWCASE = getProduct("sb10-rice-huller-mill");
