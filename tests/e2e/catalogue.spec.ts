@@ -40,10 +40,10 @@ async function checkPage(page: Page, name: string, projectName: string) {
   });
 }
 
-test("catalogue shows all 44 machines and passes checks", async ({ page }, testInfo) => {
+test("catalogue shows all 43 machines and passes checks", async ({ page }, testInfo) => {
   await page.goto("/machinery");
-  await expect(cards(page)).toHaveCount(44);
-  await expect(status(page)).toHaveText("44 machines");
+  await expect(cards(page)).toHaveCount(43);
+  await expect(status(page)).toHaveText("43 machines");
   await checkPage(page, "catalogue", testInfo.project.name);
 });
 
@@ -78,7 +78,7 @@ test("filters narrow results, write to the URL and clear", async ({ page }) => {
 
   await page.getByRole("button", { name: "Clear filters" }).click();
   await expect(page).toHaveURL(/\/machinery$/);
-  await expect(status(page)).toHaveText("44 machines");
+  await expect(status(page)).toHaveText("43 machines");
 });
 
 test("a search with no results offers Kamal with the query", async ({ page }) => {
@@ -137,7 +137,7 @@ test("category page passes checks", async ({ page }, testInfo) => {
   await checkPage(page, "category", testInfo.project.name);
 });
 
-test("all 44 product pages render with accurate content and no price", async ({ request }) => {
+test("all 43 product pages render with accurate content and no price", async ({ request }) => {
   for (const product of products) {
     const response = await request.get(`/machinery/${product.slug}`);
     expect(response.status(), product.slug).toBe(200);
@@ -253,12 +253,12 @@ test("cards glide when filters change, unless motion is reduced", async ({ page 
     });
 
   await page.goto("/machinery");
-  await expect(cards(page)).toHaveCount(44);
+  await expect(cards(page)).toHaveCount(43);
   expect(await animatedCards()).toBeGreaterThan(0);
 
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/machinery");
-  await expect(cards(page)).toHaveCount(44);
+  await expect(cards(page)).toHaveCount(43);
   expect(await animatedCards()).toBe(0);
 });
 

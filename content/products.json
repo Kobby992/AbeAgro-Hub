@@ -1386,48 +1386,6 @@
     "featured": false
   },
   {
-    "id": 33,
-    "slug": "kirloskar-water-pump",
-    "name": "Kirloskar Water Pump",
-    "catalogueLabel": "Irrigation",
-    "category": "irrigation",
-    "summary": "A heavy-duty centrifugal water pump set coupled to a 10 hp Kirloskar (India) diesel engine.",
-    "description": "A heavy-duty centrifugal water pump set coupled to a 10 hp Kirloskar (India) diesel engine. Kirloskar engines are known for durability and low fuel consumption, making these sets popular for large-volume, low-head irrigation.",
-    "features": [
-      "Heavy-duty centrifugal pump",
-      "10 hp Kirloskar diesel engine",
-      "Belt or direct coupling on base frame"
-    ],
-    "specs": [
-      {
-        "label": "Engine",
-        "value": "10 hp Kirloskar diesel"
-      },
-      {
-        "label": "Duty",
-        "value": "High flow, low-to-medium head – confirm curve"
-      }
-    ],
-    "typicalUses": "Large-scale irrigation, rice fields, flood dewatering.",
-    "image": "/products/kirloskar-water-pump.jpg",
-    "needsConfirmation": true,
-    "shortName": "Kirloskar Water Pump",
-    "powerSource": [
-      "diesel"
-    ],
-    "scale": "commercial",
-    "crops": [
-      "rice"
-    ],
-    "relatedSlugs": [
-      "pvc-lay-flat-irrigation-hose",
-      "diesel-engine-for-agricultural-machinery",
-      "irrigation-water-pump",
-      "kirloskar-diesel-engine"
-    ],
-    "featured": false
-  },
-  {
     "id": 34,
     "slug": "electric-water-pump",
     "name": "Electric Water Pump",
@@ -1740,8 +1698,7 @@
     "relatedSlugs": [
       "pvc-lay-flat-irrigation-hose",
       "kirloskar-diesel-engine",
-      "centrifugal-pump",
-      "kirloskar-water-pump"
+      "centrifugal-pump"
     ],
     "featured": true
   },

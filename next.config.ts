@@ -16,7 +16,6 @@ const nextConfig: NextConfig = {
       ...[
         ["belt-driven-centrifugal-water-pump", "centrifugal-pump"],
         ["pressure-pump", "electric-water-pump"],
-        ["6x6-kirloskar-pump-set-with-10hp-diesel-engine", "kirloskar-water-pump"],
         ["car-washing-machine", "electric-car-washing-machine"],
         ["disc-mill", "disk-mill"],
       ].map(([from, to]) => ({
@@ -26,6 +25,11 @@ const nextConfig: NextConfig = {
       })),
       // Removed products and the guide that depended on one send visitors to the closest page.
       { source: "/machinery/corn-mill", destination: "/machinery/disk-mill", permanent: true },
+      ...["kirloskar-water-pump", "6x6-kirloskar-pump-set-with-10hp-diesel-engine"].map((slug) => ({
+        source: `/machinery/${slug}`,
+        destination: "/machinery/c/irrigation",
+        permanent: true,
+      })),
       {
         source: "/machinery/pepper-mill",
         destination: "/machinery/c/food-processing",
