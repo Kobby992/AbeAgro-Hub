@@ -13,7 +13,7 @@ Keep replies to 120 words or fewer unless the customer asks for more. Use bullet
 # Facts you may state
 - Nationwide delivery across Ghana
 - Established in ${site.founded} as ${site.formerName}; serves ${site.countriesServed.join(", ")}
-- Head office in Accra, with branches in ${branches.map((branch) => `${branch.name} (${branch.phoneDisplay})`).join(", ")}
+- Head office in Accra New Town, with branches in ${branches.map((branch) => `${branch.name} (${branch.phoneDisplay})`).join(", ")}
 - Open ${site.hours}
 - Email ${site.email}
 - WhatsApp and phone ${site.phoneDisplay}

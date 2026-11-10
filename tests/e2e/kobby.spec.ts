@@ -70,7 +70,7 @@ test("the full quote flow ends in a valid WhatsApp link and a saved lead", async
   await expect(send).toBeVisible();
   const url = new URL((await send.getAttribute("href")) ?? "");
   expect(url.origin).toBe("https://wa.me");
-  expect(url.pathname).toBe("/233557042005");
+  expect(url.pathname).toBe("/233235801203");
 
   const text = url.searchParams.get("text") ?? "";
   const reference = /ABE-Q-[\w-]+/.exec(text)?.[0] ?? "";

@@ -144,7 +144,7 @@ describe("tools", () => {
     expect(result.reference).toMatch(REFERENCE_PATTERN);
     const url = new URL(result.whatsappUrl);
     expect(url.origin).toBe("https://wa.me");
-    expect(url.pathname).toBe("/233557042005");
+    expect(url.pathname).toBe("/233235801203");
     const text = url.searchParams.get("text") ?? "";
     expect(text).toContain(result.reference);
     expect(text).toContain("Disk Mill");
@@ -457,7 +457,7 @@ describe("evals", () => {
       ],
     });
     const text = encodeURIComponent("ABE-Q-1 Disk Mill × 1");
-    expect(grade(flow, quote(`https://wa.me/233557042005?text=${text}`))).toEqual([]);
+    expect(grade(flow, quote(`https://wa.me/233235801203?text=${text}`))).toEqual([]);
     expect(grade(flow, quote(`https://evil.example/?text=${text}`)).join()).toContain("evil");
     expect(grade(flow, { replies: ["Done."], tools: [] })).toEqual(["No valid quote was prepared"]);
   });

@@ -1273,7 +1273,7 @@ Q: What payment methods do you accept, and what warranty do I get?
 A: Payment methods and warranty terms are discussed and agreed with you when your quote is prepared.
 
 Q: Where are you located, and when are you open?
-A: Our head office is in Accra, with branches in Accra Central, Kumasi, Ashaiman and Kasoa. We are open 9:00am – 5:00pm. The Contact page lists each branch's phone number.
+A: Our head office is in Accra New Town, with branches in Accra Central, Kumasi, Ashaiman and Kasoa. We are open 9:00am – 5:00pm. The Contact page lists each branch's phone number.
 
 Q: Do you serve customers outside Ghana?
 A: Yes. We serve farmers and agribusinesses in Ghana, Togo, Burkina Faso and Côte d'Ivoire. Send us your location with your quote request.
@@ -1376,9 +1376,9 @@ Visit or call any of our branches. We are open 9:00am – 5:00pm.
 
 - Head Office
 
-#### Accra
+#### Accra New Town
 
-Call Accra on 0244 823 137
+Call Accra New Town on 0244 823 137
 
 - Branch
 
@@ -1390,7 +1390,7 @@ Call Accra Central on 024 305 5163
 
 #### Kumasi
 
-Call Kumasi on 023 580 1203
+Call Kumasi on 024 927 1638
 
 - Branch
 
@@ -1440,9 +1440,9 @@ Discuss a partnership on WhatsApp
 WhatsApp is the quickest way to reach our sales team.
 Chat on WhatsApp
 
-- Call +233 55 704 2005
+- Call +233 23 580 1203
 - sales@abeagrohub.com
-- Head office in Accra · 5 branches
+- Head office in Accra New Town · 5 branches
 - Open 9:00am – 5:00pm
 - We deliver nationwide
 
@@ -1450,13 +1450,13 @@ Chat on WhatsApp
 
 #### Our branches
 
-Call the branch nearest you, or send your quote request on WhatsApp to +233 55 704 2005.
+Call the branch nearest you, or send your quote request on WhatsApp to +233 23 580 1203.
 
 - Head Office
 
-#### Accra
+#### Accra New Town
 
-Call Accra on 0244 823 137
+Call Accra New Town on 0244 823 137
 
 - Branch
 
@@ -1468,7 +1468,7 @@ Call Accra Central on 024 305 5163
 
 #### Kumasi
 
-Call Kumasi on 023 580 1203
+Call Kumasi on 024 927 1638
 
 - Branch
 
