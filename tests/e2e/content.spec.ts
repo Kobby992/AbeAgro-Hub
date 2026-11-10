@@ -124,18 +124,18 @@ test("contact page has every way to reach ABE", async ({ page }) => {
   const main = page.getByRole("main");
   await expect(main.getByRole("link", { name: "Chat on WhatsApp" })).toHaveAttribute(
     "href",
-    /^https:\/\/wa\.me\/233557042005/,
+    /^https:\/\/wa\.me\/233235801203/,
   );
-  await expect(main.getByRole("link", { name: /Call \+233 55 704 2005/ })).toHaveAttribute(
+  await expect(main.getByRole("link", { name: /Call \+233 23 580 1203/ })).toHaveAttribute(
     "href",
-    "tel:+233557042005",
+    "tel:+233235801203",
   );
   await expect(main.getByRole("link", { name: "sales@abeagrohub.com" })).toBeVisible();
-  await expect(main.getByTitle("Map of Accra, Ghana")).toHaveAttribute("loading", "lazy");
+  await expect(main.getByTitle("Map of Accra New Town, Ghana")).toHaveAttribute("loading", "lazy");
   for (const [branch, tel] of <const>[
-    ["Accra", "tel:+233244823137"],
+    ["Accra New Town", "tel:+233244823137"],
     ["Accra Central", "tel:+233243055163"],
-    ["Kumasi", "tel:+233235801203"],
+    ["Kumasi", "tel:+233249271638"],
     ["Ashaiman", "tel:+233241323336"],
     ["Kasoa", "tel:+233242849245"],
   ]) {

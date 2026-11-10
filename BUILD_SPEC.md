@@ -11,6 +11,7 @@
 > **Updates since this spec was written (November 2026).** Where they differ, these win over the rest of this document:
 > - **Business:** established in 1978 as Abdul Baai Enterprise; serves Ghana, Togo, Burkina Faso and Côte d'Ivoire. Head office in Accra (0244 823 137), branches in Accra Central (024 305 5163), Kumasi (023 580 1203), Ashaiman (024 132 3336) and Kasoa (024 284 9245). Kasoa is no longer described as "our base". The branch list lives in `src/config/site.ts`.
 > - **Catalogue:** 42 products. Added Irrigation Water Pump, Rice Huller, Concrete Vibrator, Plate Compactor, High Pressure Pump, Ex Motor for Gas, Corn Mill (plate type), Diesel Car Wash Machine and Kirloskar Diesel Engine. Removed Groundnut Huller, Disc Mill and Cassava Grater (and with it the gari guide), then the new Corn Mill, Pepper Mill and 4x4 Water Pump with Diesel Engine. Renamed Corn Mill → Disk Mill (11–22.5 kW), Belt-Driven Water Pump → Centrifugal Pump, Pressure Pump → Electric Water Pump, 6x6 Kirloskar Pump Set → Kirloskar Water Pump, Car Washing Machine → Electric Car Washing Machine. New category: Construction Equipment.
+> - **WhatsApp and head office (10 November 2026):** all quotes now go to **+233 23 580 1203** (`wa.me/233235801203`), replacing every mention of +233 55 704 2005 below. The number is set in `src/config/site.ts` and no longer read from `NEXT_PUBLIC_WHATSAPP_NUMBER`. Head office: Accra New Town. Kumasi branch: 024 927 1638.
 > - **Kobby:** the live chatbot is a Jotform AI agent. The Claude-based Kobby from Phase 6 exists only on `develop`.
 
 ---

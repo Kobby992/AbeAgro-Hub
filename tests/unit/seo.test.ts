@@ -32,12 +32,13 @@ describe("structured data", () => {
     expect(businessJsonLd()).toMatchObject({
       name: "ABE Agro Hub",
       url: "https://www.abeagrohub.com",
-      telephone: "+233557042005",
+      telephone: "+233235801203",
       email: "sales@abeagrohub.com",
       alternateName: "Abdul Baai Enterprise",
       foundingDate: "1978",
       areaServed: ["GH", "TG", "BF", "CI"],
       address: {
+        streetAddress: "Accra New Town",
         addressLocality: "Accra",
         addressRegion: "Greater Accra Region",
         addressCountry: "GH",
@@ -45,7 +46,7 @@ describe("structured data", () => {
     });
     expect(businessJsonLd().department.map((branch) => branch.telephone)).toEqual([
       "+233243055163",
-      "+233235801203",
+      "+233249271638",
       "+233241323336",
       "+233242849245",
     ]);

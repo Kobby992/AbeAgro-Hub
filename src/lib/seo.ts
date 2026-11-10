@@ -65,6 +65,7 @@ export function businessJsonLd() {
     foundingDate: String(site.founded),
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Accra New Town",
       addressLocality: "Accra",
       addressRegion: "Greater Accra Region",
       addressCountry: "GH",

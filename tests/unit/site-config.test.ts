@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 
 describe("site config", () => {
   it("uses the confirmed WhatsApp number", () => {
-    expect(WHATSAPP_NUMBER).toBe("233557042005");
-    expect(whatsappUrl).toBe("https://wa.me/233557042005");
+    expect(WHATSAPP_NUMBER).toBe("233235801203");
+    expect(whatsappUrl).toBe("https://wa.me/233235801203");
   });
 
   it("uses the confirmed contact details", () => {

@@ -18,7 +18,8 @@ These are the things only you can answer. Nothing here is invented on the websit
 
 - [ ] **Opening days:** the site says 9:00am – 5:00pm without days. Monday to Friday? Saturdays? Search engines get no opening hours until you confirm.
 - [ ] **Street addresses and map pins:** the contact page lists all five branches with phone numbers, and the map shows Accra in general. Send the street address of the head office (and branches if you like) to pin them exactly.
-- [ ] **Phone calls:** the contact page offers "Call +233 55 704 2005". Does that number take normal calls?
+- [ ] **Phone calls:** the contact page offers "Call +233 23 580 1203" (the WhatsApp number). Does that number take normal calls?
+- [ ] **Hostinger setting:** the site no longer reads `NEXT_PUBLIC_WHATSAPP_NUMBER`. You can delete it from the Node.js environment variables in hPanel.
 - [ ] **Services:** the About page now mentions reliable after-sales support, in your words. Do you also offer installation, training or spare parts? One FAQ answer is waiting on this.
 - [ ] **About page:** team details, if you want them included. (Founding year, story and vision are in, from your November 2026 document.)
 - [ ] **Partners page:** check you are happy to offer "verified listings", "qualified enquiries" and "local support", which come from the earlier concept.
