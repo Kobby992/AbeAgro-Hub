@@ -124,7 +124,7 @@ test("add 3 items, submit: correct WhatsApp link, lead saved, email sent", async
   await expect.poll(() => opened.length).toBeGreaterThan(0);
 
   const url = opened[0] ?? "";
-  expect(url.startsWith("https://wa.me/233557042005?text=")).toBe(true);
+  expect(url.startsWith("https://wa.me/233235801203?text=")).toBe(true);
   const text = messageIn(url);
   const reference = referenceIn(text);
   expect(reference).toMatch(/^ABE-Q-\d{6}-[0-9A-HJKMNP-TV-Z]{4}$/);

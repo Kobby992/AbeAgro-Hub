@@ -10,7 +10,7 @@ import { pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta("/contact", {
   title: "Contact ABE Agro Hub | Accra, Kumasi, Ashaiman, Kasoa",
-  description: `WhatsApp ${site.phoneDisplay} or email ${site.email}. Head office in Accra, branches in ${branchTowns}. Open ${site.hours}, delivering nationwide.`,
+  description: `WhatsApp ${site.phoneDisplay} or email ${site.email}. Head office in Accra New Town, branches in ${branchTowns}. Open ${site.hours}, delivering nationwide.`,
 });
 
 const WHATSAPP_INTRO = "Hello ABE Agro Hub 👋";
@@ -19,7 +19,7 @@ export default function ContactPage() {
   const details = [
     { Icon: Phone, content: <a href={`tel:+${WHATSAPP_NUMBER}`}>Call {site.phoneDisplay}</a> },
     { Icon: Mail, content: <a href={`mailto:${site.email}`}>{site.email}</a> },
-    { Icon: MapPin, content: <a href="#branches">Head office in Accra · 5 branches</a> },
+    { Icon: MapPin, content: <a href="#branches">Head office in Accra New Town · 5 branches</a> },
     { Icon: Clock, content: `Open ${site.hours}` },
     { Icon: Truck, content: "We deliver nationwide" },
   ];
@@ -46,8 +46,8 @@ export default function ContactPage() {
             ))}
           </ul>
           <iframe
-            title="Map of Accra, Ghana"
-            src="https://www.google.com/maps?q=Accra,+Ghana&output=embed"
+            title="Map of Accra New Town, Ghana"
+            src="https://www.google.com/maps?q=Accra+New+Town,+Accra,+Ghana&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             className="mt-6 h-72 w-full rounded-lg border border-border"
@@ -64,8 +64,8 @@ export default function ContactPage() {
           Our branches
         </h2>
         <p className="mb-4 max-w-prose text-muted-foreground">
-          Call the branch nearest you, or send your quote request on WhatsApp to {site.phoneDisplay}
-          .
+          Call the branch nearest you, or send your quote request on WhatsApp to{" "}
+          <span className="whitespace-nowrap">{site.phoneDisplay}</span>.
         </p>
         <BranchList />
       </section>

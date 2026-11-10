@@ -74,7 +74,7 @@ test("Get quote on a card opens WhatsApp with that product filled in", async ({ 
   const link = page.getByRole("link", { name: "Get quote for Disk Mill on WhatsApp" });
   const href = await link.getAttribute("href");
   const url = new URL(href ?? "");
-  expect(url.origin + url.pathname).toBe("https://wa.me/233557042005");
+  expect(url.origin + url.pathname).toBe("https://wa.me/233235801203");
   expect(url.searchParams.get("text")).toContain("*Disk Mill* × 1");
   expect(url.searchParams.get("text")).toContain("https://www.abeagrohub.com/machinery/disk-mill");
 });

@@ -10,7 +10,7 @@ const QUOTE = {
 
 describe("whatsappLink", () => {
   it("goes to the ABE number and encodes the text", () => {
-    expect(whatsappLink("a b&c")).toBe("https://wa.me/233557042005?text=a%20b%26c");
+    expect(whatsappLink("a b&c")).toBe("https://wa.me/233235801203?text=a%20b%26c");
   });
 });
 

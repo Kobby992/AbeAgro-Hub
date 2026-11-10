@@ -1,5 +1,7 @@
 // The only place the WhatsApp number lives (BUILD_SPEC §0). Import it; never hard-code it elsewhere.
-export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "233557042005";
+// Set here in code (digits only, no "+"), not from an environment variable: the owner changes it by
+// editing this line, and an old Hostinger variable must not override it.
+export const WHATSAPP_NUMBER = "233235801203";
 
 export const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}`;
 
@@ -8,9 +10,9 @@ export const site = {
   tagline: "Mechanizing Agriculture. Empowering Nations.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.abeagrohub.com",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "sales@abeagrohub.com",
-  phoneDisplay: "+233 55 704 2005",
-  location: "Head office in Accra, Ghana",
-  shortLocation: "Accra, Ghana",
+  phoneDisplay: "+233 23 580 1203",
+  location: "Head office in Accra New Town, Ghana",
+  shortLocation: "Accra New Town, Ghana",
   hours: "9:00am – 5:00pm",
   founded: 1978,
   formerName: "Abdul Baai Enterprise",
@@ -20,13 +22,18 @@ export const site = {
 } as const;
 
 /**
- * Branches and their phone numbers, as given by the owner (November 2026). WhatsApp quotes still go
+ * Branches and their phone numbers, as given by the owner (updated 10 November 2026). WhatsApp quotes still go
  * to WHATSAPP_NUMBER above; these numbers are for calling a branch.
  */
 export const branches = [
-  { name: "Accra", label: "Head Office", phoneDisplay: "0244 823 137", tel: "+233244823137" },
+  {
+    name: "Accra New Town",
+    label: "Head Office",
+    phoneDisplay: "0244 823 137",
+    tel: "+233244823137",
+  },
   { name: "Accra Central", label: "Branch", phoneDisplay: "024 305 5163", tel: "+233243055163" },
-  { name: "Kumasi", label: "Branch", phoneDisplay: "023 580 1203", tel: "+233235801203" },
+  { name: "Kumasi", label: "Branch", phoneDisplay: "024 927 1638", tel: "+233249271638" },
   { name: "Ashaiman", label: "Branch", phoneDisplay: "024 132 3336", tel: "+233241323336" },
   { name: "Kasoa", label: "Branch", phoneDisplay: "024 284 9245", tel: "+233242849245" },
 ] as const;

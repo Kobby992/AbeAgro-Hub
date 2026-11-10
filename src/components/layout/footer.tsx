@@ -68,7 +68,7 @@ export function Footer() {
                   {site.email}
                 </a>
               </li>
-              <li>Head office: Accra</li>
+              <li>Head office: Accra New Town</li>
               <li>
                 <Link href="/contact#branches" className={linkClasses}>
                   Branches in {branchTowns}
