@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { categories } from "@/config/categories";
-import { footerLinks, site } from "@/config/site";
+import { branchTowns, footerLinks, site } from "@/config/site";
 import { GENERAL_QUOTE_LINK } from "@/lib/whatsapp";
 
 const linkClasses = "inline-flex min-h-11 items-center hover:underline lg:min-h-8";
@@ -68,7 +68,12 @@ export function Footer() {
                   {site.email}
                 </a>
               </li>
-              <li>{site.shortLocation}</li>
+              <li>Head office: Accra</li>
+              <li>
+                <Link href="/contact#branches" className={linkClasses}>
+                  Branches in {branchTowns}
+                </Link>
+              </li>
               <li>Open {site.hours}</li>
               <li>Nationwide delivery</li>
             </ul>

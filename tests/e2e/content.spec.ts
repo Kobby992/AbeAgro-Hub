@@ -131,7 +131,18 @@ test("contact page has every way to reach ABE", async ({ page }) => {
     "tel:+233557042005",
   );
   await expect(main.getByRole("link", { name: "sales@abeagrohub.com" })).toBeVisible();
-  await expect(main.getByTitle("Map of Kasoa, Ghana")).toHaveAttribute("loading", "lazy");
+  await expect(main.getByTitle("Map of Accra, Ghana")).toHaveAttribute("loading", "lazy");
+  for (const [branch, tel] of <const>[
+    ["Accra", "tel:+233244823137"],
+    ["Accra Central", "tel:+233243055163"],
+    ["Kumasi", "tel:+233235801203"],
+    ["Ashaiman", "tel:+233241323336"],
+    ["Kasoa", "tel:+233242849245"],
+  ]) {
+    await expect(
+      main.getByRole("link", { name: new RegExp(`^Call ${branch} on`) }),
+    ).toHaveAttribute("href", tel);
+  }
 });
 
 for (const [path, kind, submitter] of [

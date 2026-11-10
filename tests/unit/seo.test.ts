@@ -34,9 +34,21 @@ describe("structured data", () => {
       url: "https://www.abeagrohub.com",
       telephone: "+233557042005",
       email: "sales@abeagrohub.com",
-      areaServed: "GH",
-      address: { addressLocality: "Kasoa", addressRegion: "Central Region", addressCountry: "GH" },
+      alternateName: "Abdul Baai Enterprise",
+      foundingDate: "1978",
+      areaServed: ["GH", "TG", "BF", "CI"],
+      address: {
+        addressLocality: "Accra",
+        addressRegion: "Greater Accra Region",
+        addressCountry: "GH",
+      },
     });
+    expect(businessJsonLd().department.map((branch) => branch.telephone)).toEqual([
+      "+233243055163",
+      "+233235801203",
+      "+233241323336",
+      "+233242849245",
+    ]);
     expect(businessJsonLd()).not.toHaveProperty("openingHoursSpecification");
   });
 
@@ -84,8 +96,8 @@ describe("crawling", () => {
     for (const { slug } of allProducts) {
       expect(urls).toContain(`https://www.abeagrohub.com/machinery/${slug}`);
     }
-    expect(urls.filter((url) => url.includes("/machinery/c/"))).toHaveLength(13);
-    expect(urls.filter((url) => url.includes("/solutions/"))).toHaveLength(6);
+    expect(urls.filter((url) => url.includes("/machinery/c/"))).toHaveLength(14);
+    expect(urls.filter((url) => url.includes("/solutions/"))).toHaveLength(5);
     for (const hidden of ["/quote", "/compare", "/styleguide", "/api"]) {
       expect(urls.some((url) => url.includes(hidden))).toBe(false);
     }

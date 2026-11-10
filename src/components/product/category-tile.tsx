@@ -1,4 +1,4 @@
-import { Bird, CookingPot, Nut, ShowerHead, SprayCan, Wheat, Wrench } from "lucide-react";
+import { Bird, CookingPot, HardHat, Nut, ShowerHead, SprayCan, Wheat, Wrench } from "lucide-react";
 import Link from "next/link";
 import { ViewTransition, type ComponentType, type SVGProps } from "react";
 import {
@@ -30,6 +30,7 @@ const icons: Record<
   "groundnut-processing": { Icon: Nut, motion: "icon-bounce" },
   "animal-feed": { Icon: Bird, motion: "icon-bounce" },
   "engines-power": { Icon: GearIcon, motion: "icon-spin" },
+  construction: { Icon: HardHat, motion: "icon-bounce" },
   "spare-parts": { Icon: Wrench, motion: "icon-sway" },
   utility: { Icon: ShowerHead, motion: "icon-sway" },
 };

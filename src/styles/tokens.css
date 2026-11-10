@@ -113,7 +113,8 @@
 }
 
 [data-cat="post-harvest"],
-[data-cat="rice-processing"] {
+[data-cat="rice-processing"],
+[data-cat="construction"] {
   --cat: var(--abe-gold);
   --cat-ink: var(--abe-gold-ink);
   --cat-tint: var(--abe-gold-tint);

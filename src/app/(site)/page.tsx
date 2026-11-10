@@ -13,7 +13,7 @@ import { pageMeta, websiteJsonLd } from "@/lib/seo";
 export const metadata = pageMeta("/", {
   title: "Agricultural Machinery & Food-Processing Equipment in Ghana | ABE Agro Hub",
   description:
-    "Water pumps, rice mills, corn mills, sprayers and food-processing machines, delivered across Ghana from Kasoa. Get a quote on WhatsApp.",
+    "Water pumps, rice mills, corn mills, sprayers and food-processing machines, supplied since 1978 and delivered across Ghana. Get a quote on WhatsApp.",
 });
 
 // Section order from BUILD_SPEC §6.2.

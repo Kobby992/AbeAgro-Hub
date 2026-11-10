@@ -8,7 +8,7 @@ import { ProductActions } from "@/components/product/product-actions";
 import { ProductGrid } from "@/components/product/product-grid";
 import { CategoryBadge, ConfirmHint } from "@/components/ui/tags";
 import { categoryName, type CategorySlug } from "@/config/categories";
-import { site } from "@/config/site";
+import { branchTowns } from "@/config/site";
 import {
   allProducts,
   getProduct,
@@ -163,7 +163,7 @@ export default async function ProductPage({ params }: Props) {
 
           <Section id="delivery" title="Delivery and support">
             <div className="max-w-prose space-y-3">
-              <p>We deliver nationwide across Ghana from our base in {site.shortLocation}.</p>
+              <p>We deliver nationwide across Ghana from our branches in {branchTowns}.</p>
               <p>
                 Payment methods and warranty terms are discussed and agreed with you when your quote
                 is prepared.

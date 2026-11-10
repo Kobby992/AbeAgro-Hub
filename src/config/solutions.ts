@@ -23,13 +23,6 @@ export const solutions: {
     category: "grain-milling",
   },
   {
-    slug: "gari-processing",
-    title: "Process gari",
-    blurb: "Grate fresh cassava faster, the first step to making gari.",
-    image: "/products/cassava-grater.jpg",
-    category: "food-processing",
-  },
-  {
     slug: "vegetable-irrigation",
     title: "Irrigate vegetables",
     blurb: "Bring water from a river or well to your beds with a pump and hose.",

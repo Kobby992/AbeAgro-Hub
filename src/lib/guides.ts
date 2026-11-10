@@ -1,7 +1,6 @@
 import type { ComponentType } from "react";
 import CocoaSpraying, { guide as cocoa } from "../../content/solutions/cocoa-spraying.mdx";
 import CornMillKiosk, { guide as cornMill } from "../../content/solutions/corn-mill-kiosk.mdx";
-import GariProcessing, { guide as gari } from "../../content/solutions/gari-processing.mdx";
 import PoultryFeed, { guide as feed } from "../../content/solutions/poultry-feed-production.mdx";
 import RiceMill, { guide as rice } from "../../content/solutions/start-a-rice-mill.mdx";
 import VegetableIrrigation, {
@@ -20,7 +19,6 @@ export type GuideData = {
 export const guides: Record<string, { Body: ComponentType; data: GuideData }> = {
   "start-a-rice-mill": { Body: RiceMill, data: rice },
   "corn-mill-kiosk": { Body: CornMillKiosk, data: cornMill },
-  "gari-processing": { Body: GariProcessing, data: gari },
   "vegetable-irrigation": { Body: VegetableIrrigation, data: irrigation },
   "poultry-feed-production": { Body: PoultryFeed, data: feed },
   "cocoa-spraying": { Body: CocoaSpraying, data: cocoa },

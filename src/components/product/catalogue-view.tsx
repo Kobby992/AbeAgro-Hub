@@ -182,7 +182,7 @@ export function CatalogueView({ items }: { items: CatalogueItem[] }) {
           id="catalogue-search"
           type="search"
           autoComplete="off"
-          placeholder="Try rice mill, water pump or gari"
+          placeholder="Try rice mill, water pump or corn mill"
           onChange={(event) => {
             const value = event.target.value.trim();
             clearTimeout(timer.current);

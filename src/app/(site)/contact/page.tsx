@@ -2,14 +2,15 @@ import { Clock, Mail, MapPin, MessageCircle, Phone, Truck } from "lucide-react";
 import type { Metadata } from "next";
 import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { ContentPage } from "@/components/layout/content-page";
+import { BranchList } from "@/components/sections/branch-list";
 import { Button } from "@/components/ui/button";
-import { site, WHATSAPP_NUMBER } from "@/config/site";
+import { branchTowns, site, WHATSAPP_NUMBER } from "@/config/site";
 import { whatsappLink } from "@/lib/whatsapp";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta("/contact", {
-  title: "Contact ABE Agro Hub | Kasoa, Ghana",
-  description: `WhatsApp or call ${site.phoneDisplay}, or email ${site.email}. Based in Kasoa, open ${site.hours}, delivering nationwide.`,
+  title: "Contact ABE Agro Hub | Accra, Kumasi, Ashaiman, Kasoa",
+  description: `WhatsApp ${site.phoneDisplay} or email ${site.email}. Head office in Accra, branches in ${branchTowns}. Open ${site.hours}, delivering nationwide.`,
 });
 
 const WHATSAPP_INTRO = "Hello ABE Agro Hub 👋";
@@ -18,7 +19,7 @@ export default function ContactPage() {
   const details = [
     { Icon: Phone, content: <a href={`tel:+${WHATSAPP_NUMBER}`}>Call {site.phoneDisplay}</a> },
     { Icon: Mail, content: <a href={`mailto:${site.email}`}>{site.email}</a> },
-    { Icon: MapPin, content: site.location },
+    { Icon: MapPin, content: <a href="#branches">Head office in Accra · 5 branches</a> },
     { Icon: Clock, content: `Open ${site.hours}` },
     { Icon: Truck, content: "We deliver nationwide" },
   ];
@@ -45,8 +46,8 @@ export default function ContactPage() {
             ))}
           </ul>
           <iframe
-            title="Map of Kasoa, Ghana"
-            src="https://www.google.com/maps?q=Kasoa,+Ghana&output=embed"
+            title="Map of Accra, Ghana"
+            src="https://www.google.com/maps?q=Accra,+Ghana&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             className="mt-6 h-72 w-full rounded-lg border border-border"
@@ -57,6 +58,17 @@ export default function ContactPage() {
           <EnquiryForm kind="contact" whatsappIntro={WHATSAPP_INTRO} />
         </div>
       </div>
+
+      <section id="branches" aria-labelledby="branches-heading" className="mt-12 scroll-mt-28">
+        <h2 id="branches-heading" className="mb-2 text-3xl">
+          Our branches
+        </h2>
+        <p className="mb-4 max-w-prose text-muted-foreground">
+          Call the branch nearest you, or send your quote request on WhatsApp to {site.phoneDisplay}
+          .
+        </p>
+        <BranchList />
+      </section>
     </ContentPage>
   );
 }

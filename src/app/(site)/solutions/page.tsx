@@ -7,7 +7,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata: Metadata = pageMeta("/solutions", {
   title: "Start or Grow an Agri-Business in Ghana | ABE Agro Hub",
   description:
-    "Guides to starting a rice mill, corn-mill kiosk, gari processing, vegetable irrigation, poultry feed production and cocoa spraying, with the machines each one needs.",
+    "Guides to starting a rice mill, corn-mill kiosk, vegetable irrigation, poultry feed production and cocoa spraying, with the machines each one needs.",
 });
 
 export default function SolutionsPage() {
