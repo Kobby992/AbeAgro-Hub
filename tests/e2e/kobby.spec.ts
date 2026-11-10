@@ -116,15 +116,15 @@ test("a limit from the server shows the WhatsApp fallback", async ({ page }) => 
 });
 
 test("on a product page Kobby opens about that machine and sends the page", async ({ page }) => {
-  const dialog = await openKobby(page, "/machinery/corn-mill");
-  await expect(dialog.getByText("Ask me anything about the")).toContainText("Corn Mill");
+  const dialog = await openKobby(page, "/machinery/disk-mill");
+  await expect(dialog.getByText("Ask me anything about the")).toContainText("Disk Mill");
   await expect(dialog.getByRole("button", { name: "Is this right for me?" })).toBeVisible();
   await expect(dialog.getByRole("button", { name: "What power does it need?" })).toBeVisible();
 
   const request = page.waitForRequest("/api/kobby");
   await dialog.getByRole("button", { name: "Add to quote" }).click();
   const payload = (await request).postDataJSON() as { path: string };
-  expect(payload.path).toBe("/machinery/corn-mill");
+  expect(payload.path).toBe("/machinery/disk-mill");
 });
 
 test("the chat survives moving to another page, and reset clears it", async ({ page }) => {
@@ -159,8 +159,8 @@ test("Escape closes the panel and returns focus; Tab stays inside", async ({ pag
 // The teaser pointed at the corner launcher, which is off until the owner asks for it back.
 test.skip("the teaser shows once after 20 seconds on a product page", async ({ page }) => {
   await page.clock.install();
-  await page.goto("/machinery/corn-mill");
-  const teaser = page.getByRole("button", { name: /Need help choosing a Corn Mill/ });
+  await page.goto("/machinery/disk-mill");
+  const teaser = page.getByRole("button", { name: /Need help choosing a Disk Mill/ });
   await expect(teaser).toHaveCount(0);
   // The timer starts once the page has hydrated, so keep moving the clock until it fires.
   await expect(async () => {

@@ -98,10 +98,10 @@ describe("history", () => {
 describe("page details", () => {
   it("names the machine on a product page and what is on the list", () => {
     const details = pageDetails(
-      { path: "/machinery/corn-mill", quoteList: [{ slug: "hammer-mill", qty: 2 }] },
+      { path: "/machinery/disk-mill", quoteList: [{ slug: "hammer-mill", qty: 2 }] },
       "",
     );
-    expect(details).toContain("(corn-mill)");
+    expect(details).toContain("(disk-mill)");
     expect(details).toContain("(hammer-mill) × 2");
   });
 
@@ -124,7 +124,7 @@ describe("tools", () => {
     name: "Ama Mensah",
     phone: "024 123 4567",
     location: "Kasoa, Central Region",
-    items: [{ slug: "corn-mill", qty: 2 }],
+    items: [{ slug: "disk-mill", qty: 2 }],
   };
   const context: ToolContext = { customerText: "my number is 0241234567" };
 
@@ -147,7 +147,7 @@ describe("tools", () => {
     expect(url.pathname).toBe("/233557042005");
     const text = url.searchParams.get("text") ?? "";
     expect(text).toContain(result.reference);
-    expect(text).toContain("Corn Mill");
+    expect(text).toContain("Disk Mill");
     expect(text).toContain("× 2");
     expect(onQuote).toHaveBeenCalledWith(result.reference);
 
@@ -176,22 +176,22 @@ describe("tools", () => {
     const result = (await addToQuoteList.execute!(
       {
         items: [
-          { slug: "corn-mill", qty: 1 },
+          { slug: "disk-mill", qty: 1 },
           { slug: "made-up", qty: 1 },
         ],
       },
       tooling,
     )) as { added: { slug: string; qty: number }[] };
     expect(result.added).toHaveLength(1);
-    expect(result.added[0]).toMatchObject({ slug: "corn-mill", qty: 1 });
+    expect(result.added[0]).toMatchObject({ slug: "disk-mill", qty: 1 });
   });
 
   it("only draws cards for real machines", async () => {
     const { showProducts } = createKobbyTools(context);
-    const result = (await showProducts.execute!({ slugs: ["corn-mill", "made-up"] }, tooling)) as {
+    const result = (await showProducts.execute!({ slugs: ["disk-mill", "made-up"] }, tooling)) as {
       cards: { slug: string; quoteHref: string }[];
     };
-    expect(result.cards.map((card) => card.slug)).toEqual(["corn-mill"]);
+    expect(result.cards.map((card) => card.slug)).toEqual(["disk-mill"]);
     expect(result.cards[0]?.quoteHref).toContain("wa.me");
   });
 
@@ -212,7 +212,7 @@ describe("quick replies", () => {
       "Grinding & milling",
       "Get a quote",
     ]);
-    expect(quickReplies([], "Corn Mill").map((chip) => chip.label)).toEqual([
+    expect(quickReplies([], "Disk Mill").map((chip) => chip.label)).toEqual([
       "Is this right for me?",
       "What power does it need?",
       "Add to quote",
@@ -319,7 +319,7 @@ describe("API route", () => {
 
     const { POST } = await freshRoute();
     const response = await POST(
-      post({ ...body, path: "/machinery/corn-mill" }, { "x-forwarded-for": "203.0.113.10" }),
+      post({ ...body, path: "/machinery/disk-mill" }, { "x-forwarded-for": "203.0.113.10" }),
     );
     await response.text();
     vi.unstubAllGlobals();
@@ -337,7 +337,7 @@ describe("API route", () => {
     expect(system).toHaveLength(2);
     expect(system[0]?.text).toContain("<knowledge>");
     expect(system[0]?.cache_control).toEqual({ type: "ephemeral" });
-    expect(system[1]?.text).toContain("Corn Mill");
+    expect(system[1]?.text).toContain("Disk Mill");
     expect(system[1]?.cache_control).toBeUndefined();
     const tools = request?.body.tools as { name: string }[];
     expect(tools.map((tool) => tool.name)).toEqual([
@@ -406,13 +406,13 @@ describe("evals", () => {
     expect: {
       calls_any: ["showProducts"],
       not_calls: ["handoffToHuman"],
-      mentions_any: ["corn-mill"],
+      mentions_any: ["disk-mill"],
       text_any: ["sales team"],
     },
   };
   const good = {
     replies: ["Our sales team can help."],
-    tools: [{ name: "showProducts", input: { slugs: ["corn-mill"] }, output: {} }],
+    tools: [{ name: "showProducts", input: { slugs: ["disk-mill"] }, output: {} }],
   };
 
   it("passes a reply that meets the expectations", () => {
@@ -445,7 +445,7 @@ describe("evals", () => {
   });
 
   it("checks the WhatsApp link in the quote flow", () => {
-    const flow: EvalCase = { id: "flow", turns: ["x"], expect: { quote_flow: ["corn-mill"] } };
+    const flow: EvalCase = { id: "flow", turns: ["x"], expect: { quote_flow: ["disk-mill"] } };
     const quote = (whatsappUrl: string) => ({
       replies: ["Done."],
       tools: [
@@ -456,7 +456,7 @@ describe("evals", () => {
         },
       ],
     });
-    const text = encodeURIComponent("ABE-Q-1 Corn Mill × 1");
+    const text = encodeURIComponent("ABE-Q-1 Disk Mill × 1");
     expect(grade(flow, quote(`https://wa.me/233557042005?text=${text}`))).toEqual([]);
     expect(grade(flow, quote(`https://evil.example/?text=${text}`)).join()).toContain("evil");
     expect(grade(flow, { replies: ["Done."], tools: [] })).toEqual(["No valid quote was prepared"]);

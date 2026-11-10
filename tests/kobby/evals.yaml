@@ -38,7 +38,7 @@ cases:
   - id: corn-mill-kiosk
     turns: ["I want to open a corn mill kiosk for my community"]
     expect:
-      mentions_any: [corn-mill, disk-mill, grain-grinding-mill, hammer-mill]
+      mentions_any: [disk-mill, grain-grinding-mill, hammer-mill]
   - id: cocoa-spraying
     turns: ["I need something to spray my cocoa farm"]
     expect:
