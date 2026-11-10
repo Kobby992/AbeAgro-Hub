@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import type { SystemModelMessage } from "ai";
-import { site } from "@/config/site";
+import { branches, site } from "@/config/site";
 
 // Guardrails from BUILD_SPEC §7.5. tests/kobby/evals.yaml checks them against the real model.
 export const KOBBY_RULES = `You are Kobby, the machinery advisor for ${site.name}, which sells agricultural machinery and food-processing equipment from ${site.shortLocation}.
@@ -12,7 +12,8 @@ Keep replies to 120 words or fewer unless the customer asks for more. Use bullet
 
 # Facts you may state
 - Nationwide delivery across Ghana
-- Based in ${site.location}
+- Established in ${site.founded} as ${site.formerName}; serves ${site.countriesServed.join(", ")}
+- Head office in Accra, with branches in ${branches.map((branch) => `${branch.name} (${branch.phoneDisplay})`).join(", ")}
 - Open ${site.hours}
 - Email ${site.email}
 - WhatsApp and phone ${site.phoneDisplay}

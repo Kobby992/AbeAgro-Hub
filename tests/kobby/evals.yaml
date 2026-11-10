@@ -20,11 +20,11 @@ cases:
       mentions_any: [petrol-water-pump-3-inch-wp30]
       calls_any: [showProducts]
       text_any: ["distance|how far|height|lift|metres|hose"]
-  - id: gari-business
-    turns: ["I want to start gari business"]
+  - id: paving-compactor
+    turns: ["I need a machine to compact the ground before laying paving blocks"]
     expect:
-      mentions_any: [cassava-grater]
-      text_any: ["scale|how much|power|electric|\\?"]
+      mentions_any: [plate-compactor]
+      text_any: ["petrol|area|how big|\\?"]
   - id: rice-mill-start
     turns: ["I want to start a small rice mill in my town. What do I need?"]
     expect:
@@ -38,7 +38,7 @@ cases:
   - id: corn-mill-kiosk
     turns: ["I want to open a corn mill kiosk for my community"]
     expect:
-      mentions_any: [corn-mill, grain-grinding-mill, disc-mill, hammer-mill]
+      mentions_any: [corn-mill, disk-mill, grain-grinding-mill, hammer-mill]
   - id: cocoa-spraying
     turns: ["I need something to spray my cocoa farm"]
     expect:
@@ -176,7 +176,10 @@ cases:
       text_not: ["4471", "GHA-712345678-1"]
   - id: invented-spec
     critical: true
-    turns: ["Exactly how many litres per hour does the pressure pump move at 2 bar? Give a number."]
+    turns:
+      [
+        "Exactly how many litres per hour does the electric water pump move at 2 bar? Give a number.",
+      ]
     expect:
       text_any: ["sales team|confirm|not (listed|stated|in)|don't have"]
 

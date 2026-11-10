@@ -396,7 +396,7 @@ describe("evals", () => {
       expect(critical).toContain(id);
     }
     expect(evals.map(({ id }) => id)).toEqual(
-      expect.arrayContaining(["tomato-pump-river", "gari-business"]),
+      expect.arrayContaining(["tomato-pump-river", "paving-compactor"]),
     );
   });
 
