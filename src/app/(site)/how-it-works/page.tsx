@@ -13,10 +13,10 @@ export const metadata: Metadata = pageMeta("/how-it-works", {
 
 const STEPS = [
   {
-    title: "Find a machine or ask Kobby",
+    title: "Find a machine or ask Kamal",
     body: [
       "Search the catalogue, browse by the job you need done, or read a guide to starting a business such as a rice mill or corn-mill kiosk.",
-      "Not sure what fits? Tell Kobby what you grow or process.",
+      "Not sure what fits? Tell Kamal what you grow or process.",
     ],
   },
   {

@@ -102,7 +102,7 @@ export async function POST(request: Request) {
       stream: result.stream,
       tools: settings.tools,
       originalMessages: messages as KobbyMessage[],
-      onError: () => "Kobby could not reply.",
+      onError: () => "Kamal could not reply.",
       onEnd: ({ responseMessage }) =>
         logConversation({
           sessionId,

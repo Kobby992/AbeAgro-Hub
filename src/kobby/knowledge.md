@@ -1290,13 +1290,13 @@ A: No. There is no account to create, and you do not pay on this website.
 Q: How much is delivery, and how long does it take?
 A: Our sales team confirms delivery for your location when they prepare your quote.
 
-Q: Who is Kobby?
-A: Kobby is ABE Agro Hub's AI machinery advisor. Tell Kobby what you grow or process, and Kobby helps you find a suitable machine and send a quote request.
+Q: Who is Kamal?
+A: Kamal is ABE Agro Hub's AI machinery advisor. Tell Kamal what you grow or process, and Kamal helps you find a suitable machine and send a quote request.
 
-Q: Can Kobby tell me the price?
-A: No. Our sales team confirms prices and availability. Kobby can send them your request on WhatsApp.
+Q: Can Kamal tell me the price?
+A: No. Our sales team confirms prices and availability. Kamal can send them your request on WhatsApp.
 
-Q: Are my chats with Kobby saved?
+Q: Are my chats with Kamal saved?
 A: Yes, chats are saved to improve our service. Please do not share payment details.
 
 ## How it works
@@ -1307,10 +1307,10 @@ There is no online checkout. You talk to a real person, who confirms everything 
 
 - 1
 
-#### Find a machine or ask Kobby
+#### Find a machine or ask Kamal
 
 Search the catalogue, browse by the job you need done, or read a guide to starting a business such as a rice mill or corn-mill kiosk.
-Not sure what fits? Tell Kobby what you grow or process.
+Not sure what fits? Tell Kamal what you grow or process.
 
 - 2
 
@@ -1493,7 +1493,7 @@ This policy explains what information ABE Agro Hub collects through this website
 - Quote requests: your name, phone number, location, the machines you ask about and any message you add.
 - One-tap quotes: the machine you asked about. Your name and number reach us only if you send the WhatsApp message.
 - Contact and partner forms: your name, contact details, company if you give it, and your message.
-- Chats with Kobby: what you type to Kobby, our AI machinery advisor, and its replies. We keep these for up to 180 days to improve our service. Please do not share payment details in a chat.
+- Chats with Kamal: what you type to Kamal, our AI machinery advisor, and its replies. We keep these for up to 180 days to improve our service. Please do not share payment details in a chat.
 - Chatbot: what you type into the chat assistant on this website. The assistant is provided by Jotform, so your messages are processed by Jotform. Please do not share payment details in a chat.
 - Technical details: the page you were on, campaign tags in the link you followed, and your browser type.
 

@@ -51,18 +51,18 @@
     "needsOwner": "Confirm which installation, training and spare-parts services to describe."
   },
   {
-    "group": "Using Kobby",
-    "question": "Who is Kobby?",
-    "answer": "Kobby is ABE Agro Hub's AI machinery advisor. Tell Kobby what you grow or process, and Kobby helps you find a suitable machine and send a quote request."
+    "group": "Using Kamal",
+    "question": "Who is Kamal?",
+    "answer": "Kamal is ABE Agro Hub's AI machinery advisor. Tell Kamal what you grow or process, and Kamal helps you find a suitable machine and send a quote request."
   },
   {
-    "group": "Using Kobby",
-    "question": "Can Kobby tell me the price?",
-    "answer": "No. Our sales team confirms prices and availability. Kobby can send them your request on WhatsApp."
+    "group": "Using Kamal",
+    "question": "Can Kamal tell me the price?",
+    "answer": "No. Our sales team confirms prices and availability. Kamal can send them your request on WhatsApp."
   },
   {
-    "group": "Using Kobby",
-    "question": "Are my chats with Kobby saved?",
+    "group": "Using Kamal",
+    "question": "Are my chats with Kamal saved?",
     "answer": "Yes, chats are saved to improve our service. Please do not share payment details."
   }
 ]

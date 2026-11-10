@@ -288,13 +288,13 @@ export function CatalogueView({ items }: { items: CatalogueItem[] }) {
         <div className="rounded-lg border border-border bg-card p-6">
           <p className="text-lg font-semibold">No machines match that.</p>
           <p className="mt-1 text-muted-foreground">
-            Try a word such as pump, or ask Kobby what would suit you.
+            Try a word such as pump, or ask Kamal what would suit you.
           </p>
           <KobbyPromptButton
             prompt={filters.q ? `I am looking for: ${filters.q}` : undefined}
             className={cn(buttonVariants({ variant: "primary" }), "mt-4")}
           >
-            Ask Kobby
+            Ask Kamal
           </KobbyPromptButton>
         </div>
       ) : (

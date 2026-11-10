@@ -64,7 +64,7 @@ function script(prompt: Prompt): LanguageModelV4StreamPart[] {
   return textParts("Tell me what you grow or process, and I will help you find a machine.");
 }
 
-/** A scripted stand-in for Claude. It tests the route, tools and chat, never Kobby's judgement. */
+/** A scripted stand-in for Claude. It tests the route, tools and chat, never Kamal's judgement. */
 export function createTestModel(): LanguageModel {
   const model: LanguageModelV4 = {
     specificationVersion: "v4",
@@ -72,7 +72,7 @@ export function createTestModel(): LanguageModel {
     modelId: "scripted",
     supportedUrls: {},
     doGenerate() {
-      throw new Error("Kobby only streams");
+      throw new Error("Kamal only streams");
     },
     async doStream({ prompt }) {
       const parts = script(prompt);

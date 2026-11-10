@@ -30,14 +30,14 @@ describe("knowledge", () => {
     for (const section of ["How it works", "About", "Partners", "Contact", "Privacy", "Terms"]) {
       expect(knowledge).toMatch(new RegExp(`^## ${section}`, "m"));
     }
-    expect(knowledge).toContain("Who is Kobby?");
+    expect(knowledge).toContain("Who is Kamal?");
   });
 
   it("holds no prices and no owner to-dos", () => {
     expect(kobbyKnowledge()).not.toMatch(/GH[S₵¢]|₵|\bcedis?\b|TODO/i);
   });
 
-  it("marks unconfirmed specs for Kobby to flag", () => {
+  it("marks unconfirmed specs for Kamal to flag", () => {
     expect(kobbyKnowledge()).toContain("TO BE CONFIRMED");
   });
 });
@@ -219,7 +219,7 @@ describe("quick replies", () => {
     ]);
   });
 
-  it("shows none while Kobby waits for an answer", () => {
+  it("shows none while Kamal waits for an answer", () => {
     const asking = assistantMessage(1, "What is your name?") as KobbyMessage;
     expect(quickReplies([asking])).toEqual([]);
   });
@@ -303,7 +303,7 @@ describe("API route", () => {
     }
   });
 
-  it("sends Anthropic the cached knowledge block and Kobby's limits", async () => {
+  it("sends Anthropic the cached knowledge block and Kamal's limits", async () => {
     // Captures the request instead of sending it. No real call is made.
     const sent: { url: string; body: Record<string, unknown> }[] = [];
     vi.stubGlobal("fetch", async (url: string, init: { body: string }) => {

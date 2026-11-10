@@ -34,7 +34,7 @@ async function countMessage(day: string): Promise<number> {
       .where(eq(kobbyDailyUsage.day, day));
     return row?.messages ?? countInMemory(day);
   } catch (error) {
-    console.error("Kobby usage not counted in MySQL:", (error as Error).message);
+    console.error("Kamal usage not counted in MySQL:", (error as Error).message);
     return countInMemory(day);
   }
 }
@@ -104,6 +104,6 @@ export async function logConversation(log: ConversationLog): Promise<void> {
     }
     await purgeOldConversations(new Date());
   } catch (error) {
-    console.error("Kobby conversation not logged:", (error as Error).message);
+    console.error("Kamal conversation not logged:", (error as Error).message);
   }
 }

@@ -1,6 +1,6 @@
 /**
- * Compiles the website into src/kobby/knowledge.md, which goes into Kobby's system prompt
- * (BUILD_SPEC §7.2). Runs before every build, so Kobby always matches what the site says.
+ * Compiles the website into src/kobby/knowledge.md, which goes into Kamal's system prompt
+ * (BUILD_SPEC §7.2). Runs before every build, so Kamal always matches what the site says.
  *
  * Pages are rendered with React rather than copied, so their wording has one source.
  */
@@ -148,5 +148,5 @@ const knowledge = [
 // Formatted so the generated file passes the same format check as everything else in the repo.
 void format(knowledge, { parser: "markdown" }).then((formatted) => {
   writeFileSync(OUTPUT, formatted);
-  console.log(`Kobby knowledge: ${Math.round(formatted.length / 1024)} KB written to src/kobby/`);
+  console.log(`Kamal knowledge: ${Math.round(formatted.length / 1024)} KB written to src/kobby/`);
 });

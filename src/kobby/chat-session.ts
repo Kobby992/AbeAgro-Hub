@@ -67,7 +67,7 @@ function productChips(name: string): Chip[] {
   ];
 }
 
-/** Next steps to tap. None while Kobby waits on an answer, such as the customer's name (§7.4). */
+/** Next steps to tap. None while Kamal waits on an answer, such as the customer's name (§7.4). */
 export function quickReplies(messages: KobbyMessage[], productName?: string): Chip[] {
   const last = messages.at(-1);
   if (!last) return productName ? productChips(productName) : OPENING_CHIPS;

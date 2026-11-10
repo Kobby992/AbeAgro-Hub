@@ -7,7 +7,7 @@ import { createKobbyTools, type ToolContext } from "@/kobby/tools";
 export const DEFAULT_MODEL = "claude-haiku-5-5";
 export const MAX_HISTORY_MESSAGES = 12;
 
-/** The real model, or null when Kobby has no API key and must offer WhatsApp instead. */
+/** The real model, or null when Kamal has no API key and must offer WhatsApp instead. */
 export async function kobbyModel(): Promise<LanguageModel | null> {
   // Browser tests run the whole chat without a key or any cost. Never set this in production.
   if (process.env.KOBBY_TEST_MODEL) {
@@ -31,7 +31,7 @@ function toolPart(message: UIMessage, type: string) {
 
 /**
  * Sends the last 12 messages, starting on a customer message. Older ones become a short note, so a
- * long chat stays cheap but Kobby does not ask again for a name it was already given (§7.7).
+ * long chat stays cheap but Kamal does not ask again for a name it was already given (§7.7).
  */
 export function trimHistory<T extends UIMessage>(messages: T[]): { recent: T[]; earlier: string } {
   if (messages.length <= MAX_HISTORY_MESSAGES) return { recent: messages, earlier: "" };

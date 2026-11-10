@@ -2,25 +2,25 @@ import { readFileSync } from "node:fs";
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
 
-// Kobby runs on a scripted model here (src/kobby/test-model.ts). These tests prove the route, tools
-// and chat work together. Kobby's judgement is tested against the real model by tests/kobby/evals.yaml.
+// Kamal runs on a scripted model here (src/kobby/test-model.ts). These tests prove the route, tools
+// and chat work together. Kamal's judgement is tested against the real model by tests/kobby/evals.yaml.
 
 async function openKobby(page: Page, url = "/") {
   await page.goto(url);
-  await page.getByRole("button", { name: /Ask Kobby (what you need|about this machine)/ }).click();
+  await page.getByRole("button", { name: /Ask Kamal (what you need|about this machine)/ }).click();
   const dialog = page.getByRole("dialog");
-  await expect(dialog.getByRole("heading", { name: "Kobby" })).toBeVisible();
+  await expect(dialog.getByRole("heading", { name: "Kamal" })).toBeVisible();
   return dialog;
 }
 
 async function say(page: Page, text: string) {
-  await page.getByRole("textbox", { name: "Your message to Kobby" }).fill(text);
+  await page.getByRole("textbox", { name: "Your message to Kamal" }).fill(text);
   await page.getByRole("button", { name: "Send message" }).click();
 }
 
 test("opens with the greeting and chips, and answers with streamed text", async ({ page }) => {
   const dialog = await openKobby(page);
-  await expect(dialog.getByText("Akwaaba! I'm Kobby from ABE Agro Hub.")).toBeVisible();
+  await expect(dialog.getByText("Akwaaba! I'm Kamal from ABE Agro Hub.")).toBeVisible();
   for (const chip of ["Find a water pump", "Start a rice mill", "Grinding & milling"]) {
     await expect(dialog.getByRole("button", { name: chip })).toBeVisible();
   }
@@ -50,7 +50,7 @@ test("a chip shows product cards with their three actions", async ({ page }) => 
   expect(stored).toContain("petrol-water-pump-3-inch-wp30");
 });
 
-test("Kobby adds to the same quote list the site uses", async ({ page }) => {
+test("Kamal adds to the same quote list the site uses", async ({ page }) => {
   const dialog = await openKobby(page);
   await say(page, "Add two pumps to my list");
   await expect(dialog.getByText("Added to your quote list:")).toBeVisible();
@@ -98,7 +98,7 @@ test("a failed reply offers WhatsApp and a retry", async ({ page }) => {
   const dialog = await openKobby(page);
   await say(page, "server error please");
   const alert = dialog.getByRole("alert");
-  await expect(alert.getByText("Kobby can't reply right now.")).toBeVisible();
+  await expect(alert.getByText("Kamal can't reply right now.")).toBeVisible();
   await expect(alert.getByRole("link", { name: "Message us on WhatsApp" })).toHaveAttribute(
     "href",
     /wa\.me/,
@@ -115,7 +115,7 @@ test("a limit from the server shows the WhatsApp fallback", async ({ page }) => 
   await expect(dialog.getByRole("alert").getByRole("link")).toHaveAttribute("href", /wa\.me/);
 });
 
-test("on a product page Kobby opens about that machine and sends the page", async ({ page }) => {
+test("on a product page Kamal opens about that machine and sends the page", async ({ page }) => {
   const dialog = await openKobby(page, "/machinery/disk-mill");
   await expect(dialog.getByText("Ask me anything about the")).toContainText("Disk Mill");
   await expect(dialog.getByRole("button", { name: "Is this right for me?" })).toBeVisible();
@@ -137,7 +137,7 @@ test("the chat survives moving to another page, and reset clears it", async ({ p
 
   await page.keyboard.press("Escape");
   await page.goto("/");
-  await page.getByRole("button", { name: "Ask Kobby what you need" }).click();
+  await page.getByRole("button", { name: "Ask Kamal what you need" }).click();
   await expect(reply).toBeVisible();
 
   await dialog.getByRole("button", { name: "Start a new chat" }).click();
@@ -153,7 +153,7 @@ test("Escape closes the panel and returns focus; Tab stays inside", async ({ pag
   ).toBe(true);
   await page.keyboard.press("Escape");
   await expect(dialog).toBeHidden();
-  await expect(page.getByRole("button", { name: "Ask Kobby what you need" })).toBeFocused();
+  await expect(page.getByRole("button", { name: "Ask Kamal what you need" })).toBeFocused();
 });
 
 // The teaser pointed at the corner launcher, which is off until the owner asks for it back.

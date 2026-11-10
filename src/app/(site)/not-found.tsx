@@ -31,7 +31,7 @@ export default function NotFound() {
         </Form>
         <div className="mt-6 flex flex-wrap gap-3">
           <KobbyPromptButton className={cn(buttonVariants({ variant: "gold" }))}>
-            Ask Kobby what you need
+            Ask Kamal what you need
           </KobbyPromptButton>
           <Button asChild variant="outline">
             <Link href="/">Back to home</Link>

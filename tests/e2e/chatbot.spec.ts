@@ -87,19 +87,19 @@ const FAKE_WIDGET = `
   document.body.append(box);
 `;
 
-test("an Ask Kobby button opens the chatbot, not the panel", async ({ page }) => {
+test("an Ask Kamal button opens the chatbot, not the panel", async ({ page }) => {
   await page.route(EMBED, (route) =>
     route.fulfill({ contentType: "text/javascript", body: FAKE_WIDGET }),
   );
   await page.goto("/");
   await firstAction(page);
   await expect(page.locator(".ai-agent-chat-avatar")).toBeAttached();
-  await page.getByRole("button", { name: "Ask Kobby what you need" }).click();
+  await page.getByRole("button", { name: "Ask Kamal what you need" }).click();
   await expect(page.locator(".embedded-agent-container.opened")).toBeAttached();
   await expect(page.getByRole("dialog")).toHaveCount(0);
 });
 
-test("an Ask Kobby button keeps trying until the chatbot responds", async ({ page }) => {
+test("an Ask Kamal button keeps trying until the chatbot responds", async ({ page }) => {
   await page.route(EMBED, (route) =>
     route.fulfill({
       contentType: "text/javascript",
@@ -111,12 +111,12 @@ test("an Ask Kobby button keeps trying until the chatbot responds", async ({ pag
   );
   await page.goto("/");
   await hydrated(page);
-  await page.getByRole("button", { name: "Ask Kobby what you need" }).click();
+  await page.getByRole("button", { name: "Ask Kamal what you need" }).click();
   await expect(page.locator(".embedded-agent-container.opened")).toBeAttached();
   await expect(page.getByRole("dialog")).toHaveCount(0);
 });
 
-test("pressing a second Ask Kobby button does not close the open chatbot", async ({ page }) => {
+test("pressing a second Ask Kamal button does not close the open chatbot", async ({ page }) => {
   await page.route(EMBED, (route) =>
     route.fulfill({ contentType: "text/javascript", body: FAKE_WIDGET }),
   );
@@ -133,16 +133,16 @@ test("pressing a second Ask Kobby button does not close the open chatbot", async
         setTimeout(() => resolve(count), 1_000);
       }),
   );
-  const button = page.getByRole("button", { name: "Ask Kobby what you need" });
+  const button = page.getByRole("button", { name: "Ask Kamal what you need" });
   await button.click();
   await button.click();
   expect(await clicks).toBe(1);
 });
 
-test("if Jotform cannot be reached, an Ask Kobby button opens the panel", async ({ page }) => {
+test("if Jotform cannot be reached, an Ask Kamal button opens the panel", async ({ page }) => {
   await page.route(EMBED, (route) => route.abort());
   await page.goto("/");
   await hydrated(page);
-  await page.getByRole("button", { name: "Ask Kobby what you need" }).click();
+  await page.getByRole("button", { name: "Ask Kamal what you need" }).click();
   await expect(page.getByRole("dialog")).toBeVisible({ timeout: 6_000 });
 });

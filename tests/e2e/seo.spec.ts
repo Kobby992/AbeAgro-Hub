@@ -157,11 +157,11 @@ test("an event fires for a filter and for comparing machines", async ({ page }) 
     .toContainEqual({ name: "compare_used", props: { slugs: "disk-mill,hammer-mill" } });
 });
 
-test("an event fires when an Ask Kobby button is pressed", async ({ page }) => {
+test("an event fires when an Ask Kamal button is pressed", async ({ page }) => {
   const events = await recordEvents(page);
   await page.goto("/");
   await hydrated(page);
-  await page.getByRole("button", { name: "Ask Kobby what you need" }).click();
+  await page.getByRole("button", { name: "Ask Kamal what you need" }).click();
   await expect.poll(events).toContainEqual({
     name: "kobby_opened",
     props: { page: "/", trigger: "cta" },

@@ -19,7 +19,7 @@ function withBold(text: string): ReactNode[] {
     .map((piece, index) => (index % 2 ? <strong key={index}>{piece}</strong> : piece));
 }
 
-/** The little Markdown Kobby uses. Built as React elements, so model text can never become HTML. */
+/** The little Markdown Kamal uses. Built as React elements, so model text can never become HTML. */
 function Formatted({ text }: { text: string }) {
   const blocks = text.trim().split(/\n{2,}/);
   return (

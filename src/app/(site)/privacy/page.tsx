@@ -31,7 +31,7 @@ export default function PrivacyPage() {
             give it, and your message.
           </li>
           <li>
-            <strong>Chats with Kobby:</strong> what you type to Kobby, our AI machinery advisor, and
+            <strong>Chats with Kamal:</strong> what you type to Kamal, our AI machinery advisor, and
             its replies. We keep these for up to 180 days to improve our service. Please do not
             share payment details in a chat.
           </li>

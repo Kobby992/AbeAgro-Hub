@@ -16,7 +16,7 @@ export function KobbyBand() {
         <Furrows tone="dark" className="absolute inset-0 -z-10 size-full" />
         <h2 className="max-w-2xl text-3xl md:text-4xl">Not sure which machine fits your farm?</h2>
         <p className="mt-2 max-w-prose text-lg">
-          Tell Kobby what you grow or process. Start with one of these:
+          Tell Kamal what you grow or process. Start with one of these:
         </p>
         <ul className="mt-5 flex flex-col gap-3 lg:flex-row">
           {PROMPTS.map((prompt) => (

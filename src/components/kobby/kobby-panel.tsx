@@ -37,7 +37,7 @@ function failureMessage(error: Error): string {
   if (error.message.includes("rate_limited")) {
     return "You've sent a lot of messages. Wait a few minutes, or talk to our team on WhatsApp now.";
   }
-  return "Kobby can't reply right now. Our sales team can help you on WhatsApp.";
+  return "Kamal can't reply right now. Our sales team can help you on WhatsApp.";
 }
 
 function quoteListCalls(messages: KobbyMessage[]) {
@@ -69,7 +69,7 @@ export default function KobbyPanel() {
     if (status === "ready") saveChat(messages);
   }, [messages, status]);
 
-  // Kobby's list additions join the same list as the site's buttons, once each.
+  // Kamal's list additions join the same list as the site's buttons, once each.
   useEffect(() => {
     for (const { id, items } of quoteListCalls(messages)) {
       if (appliedCalls.current.has(id)) continue;
@@ -138,7 +138,7 @@ export default function KobbyPanel() {
               </span>
               <div className="min-w-0 flex-1">
                 <Dialog.Title className="font-sans text-lg leading-tight font-bold">
-                  Kobby
+                  Kamal
                 </Dialog.Title>
                 <Dialog.Description className="text-sm text-muted-foreground">
                   ABE Agro Hub machinery advisor
@@ -169,7 +169,7 @@ export default function KobbyPanel() {
             role="log"
             aria-live="polite"
             aria-busy={isBusy}
-            aria-label="Chat with Kobby"
+            aria-label="Chat with Kamal"
             className="flex flex-1 flex-col gap-3 overflow-y-auto p-3"
           >
             <p className="max-w-[90%] rounded-lg bg-background px-3 py-2">
@@ -178,7 +178,7 @@ export default function KobbyPanel() {
                   Akwaaba! Ask me anything about the <strong>{product.name}</strong>.
                 </>
               ) : (
-                "Akwaaba! I'm Kobby from ABE Agro Hub. Tell me what you grow or process, and I'll help you find the right machine and send a quote request to our team on WhatsApp."
+                "Akwaaba! I'm Kamal from ABE Agro Hub. Tell me what you grow or process, and I'll help you find the right machine and send a quote request to our team on WhatsApp."
               )}
             </p>
             {messages.map((message) => (
@@ -186,7 +186,7 @@ export default function KobbyPanel() {
             ))}
             {showTyping && (
               <p className="flex w-fit gap-1 rounded-lg bg-background px-3 py-3">
-                <span className="sr-only">Kobby is typing</span>
+                <span className="sr-only">Kamal is typing</span>
                 {[0, 150, 300].map((delay) => (
                   <span
                     key={delay}
@@ -275,7 +275,7 @@ function Composer({
         rows={1}
         value={text}
         maxLength={MAX_MESSAGE_LENGTH}
-        aria-label="Your message to Kobby"
+        aria-label="Your message to Kamal"
         placeholder="Type your message"
         onChange={(event) => setText(event.target.value)}
         onKeyDown={onKeyDown}

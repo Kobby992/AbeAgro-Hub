@@ -133,7 +133,7 @@ function report(results: Result[]): boolean {
 
 async function main() {
   if (process.env.KOBBY_TEST_MODEL) {
-    console.warn("SCRIPTED MODEL: this checks the eval runner only, not Kobby's answers.");
+    console.warn("SCRIPTED MODEL: this checks the eval runner only, not Kamal's answers.");
   } else if (!process.env.ANTHROPIC_API_KEY) {
     console.error("NOT RUN: ANTHROPIC_API_KEY is not set. No evals were run.");
     process.exit(2);
