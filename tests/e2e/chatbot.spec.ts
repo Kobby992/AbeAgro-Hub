@@ -26,7 +26,7 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
-for (const path of ["/", "/machinery", "/machinery/corn-mill", "/about", "/quote", "/not-a-page"]) {
+for (const path of ["/", "/machinery", "/machinery/disk-mill", "/about", "/quote", "/not-a-page"]) {
   test(`the chatbot loads once on ${path}`, async ({ page }) => {
     let requests = 0;
     await page.route(EMBED, (route) => {

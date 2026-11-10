@@ -50,7 +50,6 @@ To change a value, edit `content/products.json` or tell Claude Code what to corr
 | Satake Bucket Elevator                        | Satake Bucket Elevator  | electric                      | commercial     | rice                                           |          | SB30 Rice Mill, JLX Rice Destoner, SB10 Rice Mill, CHP150 Rice Mill           |
 | 3-inch Petrol Water Pump (PM&T WP30)          | 3-inch Petrol Pump      | petrol                        | small-business | vegetables                                     | Yes      | PVC Lay-Flat Hose, Petrol Engine, PLUS.HONDAY GX200 Engine                    |
 | 4-inch Diesel Water Pump                      | 4-inch Diesel Pump      | diesel                        | commercial     | vegetables, rice                               |          | PVC Lay-Flat Hose, Diesel Engine, Centrifugal Pump                            |
-| 4x4 Water Pump with Diesel Engine             | 4x4 Diesel Pump Set     | diesel                        | commercial     | vegetables, rice                               |          | PVC Lay-Flat Hose, Diesel Engine, Kirloskar Water Pump                        |
 | Kirloskar Water Pump                          | Kirloskar Water Pump    | diesel                        | commercial     | rice                                           |          | PVC Lay-Flat Hose, Diesel Engine, 4x4 Diesel Pump Set                         |
 | Electric Water Pump                           | Electric Water Pump     | electric                      | household      | vegetables                                     |          | PVC Lay-Flat Hose, Electric Motors, 3-inch Petrol Pump                        |
 | PVC Lay-Flat Irrigation Hose                  | PVC Lay-Flat Hose       | none                          | small-business | vegetables, rice                               |          | 3-inch Petrol Pump, 4-inch Diesel Pump, Belt-Driven Water Pump, Pressure Pump |
@@ -62,17 +61,16 @@ To change a value, edit `content/products.json` or tell Claude Code what to corr
 
 From the owner's _Website Changes and Updates_ document. The nine new machines had no catalogue sheet, so their descriptions and specs come from the owner's photos and typical figures for machines of the same type found online. All are marked for confirmation.
 
-| Product                     | Power source             | Scale          | Crops                        | Note                                  |
-| --------------------------- | ------------------------ | -------------- | ---------------------------- | ------------------------------------- |
-| Disk Mill (was Corn Mill)   | electric, diesel         | small-business | maize, millet, sorghum, rice | Power set to 11–22.5 kW by the owner  |
-| Irrigation Water Pump       | diesel                   | small-business | vegetables, rice             | Port size estimated from the photo    |
-| Rice Huller                 | electric, diesel         | small-business | rice                         | Capacity and power are typical ranges |
-| Concrete Vibrator           | petrol                   | small-business | none                         | New Construction Equipment category   |
-| Plate Compactor             | petrol                   | small-business | none                         | New Construction Equipment category   |
-| High Pressure Pump          | electric, diesel, petrol | small-business | none                         | Drives from a motor or an engine      |
-| Ex Motor for Gas            | electric                 | commercial     | none                         | Confirm the Ex marking and kW rating  |
-| Corn Mill (new, plate type) | electric, diesel         | small-business | maize, millet, sorghum       | Featured on the home page             |
-| Diesel Car Wash Machine     | diesel                   | small-business | none                         | Engine size estimated from the photo  |
-| Kirloskar Diesel Engine     | diesel                   | small-business | none                         | Confirm the hp of the model you stock |
+| Product                   | Power source             | Scale          | Crops                        | Note                                  |
+| ------------------------- | ------------------------ | -------------- | ---------------------------- | ------------------------------------- |
+| Disk Mill (was Corn Mill) | electric, diesel         | small-business | maize, millet, sorghum, rice | Power set to 11–22.5 kW by the owner  |
+| Irrigation Water Pump     | diesel                   | small-business | vegetables, rice             | Port size estimated from the photo    |
+| Rice Huller               | electric, diesel         | small-business | rice                         | Capacity and power are typical ranges |
+| Concrete Vibrator         | petrol                   | small-business | none                         | New Construction Equipment category   |
+| Plate Compactor           | petrol                   | small-business | none                         | New Construction Equipment category   |
+| High Pressure Pump        | electric, diesel, petrol | small-business | none                         | Drives from a motor or an engine      |
+| Ex Motor for Gas          | electric                 | commercial     | none                         | Confirm the Ex marking and kW rating  |
+| Diesel Car Wash Machine   | diesel                   | small-business | none                         | Engine size estimated from the photo  |
+| Kirloskar Diesel Engine   | diesel                   | small-business | none                         | Confirm the hp of the model you stock |
 
-Removed: Groundnut Huller, Disc Mill, Cassava Grater.
+Removed: Groundnut Huller, Disc Mill, Cassava Grater, and later Corn Mill (plate type), Pepper Mill and 4x4 Water Pump with Diesel Engine.

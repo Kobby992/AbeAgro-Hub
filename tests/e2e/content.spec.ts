@@ -62,7 +62,7 @@ for (const [path] of PAGES) {
 
 test("no internal link is broken", async ({ page, request }) => {
   test.setTimeout(120_000);
-  const start = ["/", "/machinery", "/machinery/corn-mill", "/compare", "/quote"];
+  const start = ["/", "/machinery", "/machinery/disk-mill", "/compare", "/quote"];
   const seen = new Set<string>();
   for (const path of [...start, ...PAGES.map(([p]) => p)]) {
     await page.goto(path);

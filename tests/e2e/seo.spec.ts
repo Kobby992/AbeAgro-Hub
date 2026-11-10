@@ -33,15 +33,15 @@ test("the home page can be indexed and describes the business and site search", 
 });
 
 test("a product page has its title, preview image and data, with no price", async ({ page }) => {
-  await page.goto("/machinery/corn-mill");
-  await expect(page).toHaveTitle("Corn Mill in Ghana | ABE Agro Hub");
+  await page.goto("/machinery/disk-mill");
+  await expect(page).toHaveTitle("Disk Mill in Ghana | ABE Agro Hub");
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
-    "https://www.abeagrohub.com/machinery/corn-mill",
+    "https://www.abeagrohub.com/machinery/disk-mill",
   );
   await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
     "content",
-    "https://www.abeagrohub.com/products/corn-mill.jpg",
+    "https://www.abeagrohub.com/products/disk-mill.jpg",
   );
   const blocks = await jsonLd(page);
   expect(types(blocks)).toEqual(expect.arrayContaining(["Product", "BreadcrumbList"]));
@@ -76,7 +76,7 @@ test("the quote and compare pages stay out of search results", async ({ page }) 
 
 test("sitemap, robots and llms.txt are served", async ({ request }) => {
   const sitemap = await (await request.get("/sitemap.xml")).text();
-  expect(sitemap).toContain("https://www.abeagrohub.com/machinery/corn-mill");
+  expect(sitemap).toContain("https://www.abeagrohub.com/machinery/disk-mill");
   const robots = await (await request.get("/robots.txt")).text();
   expect(robots).toContain("Sitemap: https://www.abeagrohub.com/sitemap.xml");
   const llms = await request.get("/llms.txt");
@@ -117,10 +117,10 @@ async function recordEvents(page: Page) {
 
 test("events fire for viewing and adding a product", async ({ page }) => {
   const events = await recordEvents(page);
-  await page.goto("/machinery/corn-mill");
+  await page.goto("/machinery/disk-mill");
   await expect.poll(events).toContainEqual({
     name: "product_viewed",
-    props: { slug: "corn-mill", category: "grain-milling" },
+    props: { slug: "disk-mill", category: "grain-milling" },
   });
   await hydrated(page);
   await page
@@ -129,7 +129,7 @@ test("events fire for viewing and adding a product", async ({ page }) => {
     .click();
   await expect.poll(events).toContainEqual({
     name: "quote_item_added",
-    props: { slug: "corn-mill", qty: 1, source: "pdp" },
+    props: { slug: "disk-mill", qty: 1, source: "pdp" },
   });
 });
 
@@ -151,10 +151,10 @@ test("an event fires for a filter and for comparing machines", async ({ page }) 
     .poll(events)
     .toContainEqual({ name: "filter_applied", props: { filter: "power", value: "diesel" } });
 
-  await page.goto("/compare?ids=corn-mill,hammer-mill");
+  await page.goto("/compare?ids=disk-mill,hammer-mill");
   await expect
     .poll(events)
-    .toContainEqual({ name: "compare_used", props: { slugs: "corn-mill,hammer-mill" } });
+    .toContainEqual({ name: "compare_used", props: { slugs: "disk-mill,hammer-mill" } });
 });
 
 test("an event fires when an Ask Kobby button is pressed", async ({ page }) => {

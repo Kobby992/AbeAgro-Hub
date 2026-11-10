@@ -117,7 +117,7 @@
     "solutions": ["start-a-rice-mill"]
   },
   "grain-milling": {
-    "intro": "Every community needs flour, and a grinding mill can be a business on its own. Our grain milling range includes plate-type corn mills for maize flour and meal, a heavy-duty disk mill for busy milling services, hammer mills for animal feed ingredients, and a grinding mill with a cyclone that drops flour cleanly into a bag. Corn mills are a common choice for a neighbourhood kiosk. Hammer mills suit poultry and livestock feed. The disk mill suits high-volume flour production. Each runs on an electric motor, and several can run on an engine where there is no mains power. ABE Agro Hub delivers milling machines across Ghana from our branches in Accra, Kumasi, Ashaiman and Kasoa. Tap Get quote for price and availability on WhatsApp.",
+    "intro": "Every community needs flour, and a grinding mill can be a business on its own. Our grain milling range includes a heavy-duty disk mill for maize flour and busy milling services, hammer mills for animal feed ingredients, and a grinding mill with a cyclone that drops flour cleanly into a bag. The disk mill is a common choice for a neighbourhood corn-mill kiosk. Hammer mills suit poultry and livestock feed. Each runs on an electric motor, and several can run on an engine where there is no mains power. ABE Agro Hub delivers milling machines across Ghana from our branches in Accra, Kumasi, Ashaiman and Kasoa. Tap Get quote for price and availability on WhatsApp.",
     "tips": [
       "Choose by what you will grind most: flour for people, or coarser meal for animals.",
       "Check whether you have the power supply for the motor size, or plan for an engine instead.",
@@ -126,18 +126,18 @@
     ],
     "faqs": [
       {
-        "question": "What is the difference between a hammer mill and a corn mill?",
-        "answer": "A hammer mill breaks material against a screen and is the standard for animal feed. A plate-type corn mill grinds between two plates, and a hand wheel sets how fine the flour comes out."
+        "question": "What is the difference between a hammer mill and a disk mill?",
+        "answer": "A hammer mill breaks material against a screen and is the standard for animal feed. A disk mill grinds between plates and suits maize flour for people."
       },
       {
-        "question": "Can a corn mill grind other grains?",
+        "question": "Can the disk mill grind other grains?",
         "answer": "Yes. As well as maize, it also handles millet, sorghum and rice."
       }
     ],
     "solutions": ["corn-mill-kiosk", "poultry-feed-production"]
   },
   "food-processing": {
-    "intro": "Food processing machines take the hardest work out of everyday Ghanaian foods. Our range includes fufu machines for homes, chop bars and restaurants, pepper mills, wet and dry grinding mills for market grinding services, multi-purpose grinders and groundnut paste machines. Many of these can start or grow a small business, whether that is a grinding service at the market or a chop bar serving more customers at lunchtime. Some run on mains power and others on petrol, so check what suits your location. ABE Agro Hub delivers nationwide from our branches in Accra, Kumasi, Ashaiman and Kasoa. Tap Get quote on any machine and our sales team will reply on WhatsApp with price and availability.",
+    "intro": "Food processing machines take the hardest work out of everyday Ghanaian foods. Our range includes fufu machines for homes, chop bars and restaurants, wet and dry grinding mills for market grinding services, multi-purpose grinders and groundnut paste machines. Many of these can start or grow a small business, whether that is a grinding service at the market or a chop bar serving more customers at lunchtime. Some run on mains power and others on petrol, so check what suits your location. ABE Agro Hub delivers nationwide from our branches in Accra, Kumasi, Ashaiman and Kasoa. Tap Get quote on any machine and our sales team will reply on WhatsApp with price and availability.",
     "tips": [
       "List what you will process, then look for one machine that handles the foods you make most.",
       "Check your power. Food machines vary from small countertop units to larger motors, and some use a petrol engine.",

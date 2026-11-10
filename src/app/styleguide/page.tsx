@@ -44,7 +44,7 @@ const TYPE_SCALE = [
   ["text-xs", "13px"],
 ] as const;
 
-const CARD_SLUGS = ["sb10-rice-huller-mill", "petrol-water-pump-3-inch-wp30", "corn-mill"];
+const CARD_SLUGS = ["sb10-rice-huller-mill", "petrol-water-pump-3-inch-wp30", "disk-mill"];
 
 const demoProducts: DemoProduct[] = CARD_SLUGS.flatMap((slug) => {
   const product = products.find((item) => item.slug === slug);
