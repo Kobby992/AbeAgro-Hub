@@ -36,9 +36,9 @@ const search = createProductSearch(
 const slugsFor = (query: string) => (search(query) ?? []).map((hit) => hit.item.slug);
 
 describe("product data", () => {
-  it("has 44 products with unique slugs and existing photos", () => {
-    expect(allProducts).toHaveLength(44);
-    expect(new Set(allProducts.map((product) => product.slug)).size).toBe(44);
+  it("has 43 products with unique slugs and existing photos", () => {
+    expect(allProducts).toHaveLength(43);
+    expect(new Set(allProducts.map((product) => product.slug)).size).toBe(43);
     for (const product of allProducts) {
       expect(existsSync(`public${product.image}`), product.image).toBe(true);
     }

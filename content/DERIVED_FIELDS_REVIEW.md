@@ -50,7 +50,6 @@ To change a value, edit `content/products.json` or tell Claude Code what to corr
 | Satake Bucket Elevator                        | Satake Bucket Elevator  | electric                      | commercial     | rice                                           |          | SB30 Rice Mill, JLX Rice Destoner, SB10 Rice Mill, CHP150 Rice Mill           |
 | 3-inch Petrol Water Pump (PM&T WP30)          | 3-inch Petrol Pump      | petrol                        | small-business | vegetables                                     | Yes      | PVC Lay-Flat Hose, Petrol Engine, PLUS.HONDAY GX200 Engine                    |
 | 4-inch Diesel Water Pump                      | 4-inch Diesel Pump      | diesel                        | commercial     | vegetables, rice                               |          | PVC Lay-Flat Hose, Diesel Engine, Centrifugal Pump                            |
-| Kirloskar Water Pump                          | Kirloskar Water Pump    | diesel                        | commercial     | rice                                           |          | PVC Lay-Flat Hose, Diesel Engine, 4x4 Diesel Pump Set                         |
 | Electric Water Pump                           | Electric Water Pump     | electric                      | household      | vegetables                                     |          | PVC Lay-Flat Hose, Electric Motors, 3-inch Petrol Pump                        |
 | PVC Lay-Flat Irrigation Hose                  | PVC Lay-Flat Hose       | none                          | small-business | vegetables, rice                               |          | 3-inch Petrol Pump, 4-inch Diesel Pump, Belt-Driven Water Pump, Pressure Pump |
 | Diesel Engine for Agricultural Machinery      | Diesel Engine           | diesel                        | small-business | none                                           |          | Corn Mill, SB10D Rice Mill, Belt-Driven Water Pump, 4-inch Diesel Pump        |
@@ -75,4 +74,4 @@ From the owner's _Website Changes and Updates_ document. The nine new machines h
 | Corn Mill (Blue)          | electric, diesel         | small-business | maize, millet, sorghum       | Added 10 Nov 2026; specs are typical ranges            |
 | Corn Mill (Green)         | electric, diesel         | small-business | maize, millet, sorghum       | Added 10 Nov 2026; same photo as the earlier Corn Mill |
 
-Removed: Groundnut Huller, Disc Mill, Cassava Grater, and later Corn Mill (plate type), Pepper Mill and 4x4 Water Pump with Diesel Engine.
+Removed: Groundnut Huller, Disc Mill, Cassava Grater, and later Corn Mill (plate type), Pepper Mill and 4x4 Water Pump with Diesel Engine, then Kirloskar Water Pump (10 Nov 2026).
